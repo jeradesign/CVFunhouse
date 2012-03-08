@@ -7,9 +7,16 @@
 //
 
 #import "CVFFlipsideViewController.h"
+#import <AVFoundation/AVFoundation.h>
+#import "CVFImageProcessorDelegate.h"
 
-@interface CVFMainViewController : UIViewController <CVFFlipsideViewControllerDelegate, UIPopoverControllerDelegate>
+@interface CVFMainViewController : UIViewController <CVFFlipsideViewControllerDelegate,
+    UIPopoverControllerDelegate,
+    AVCaptureVideoDataOutputSampleBufferDelegate,
+    CVFImageProcessorDelegate>
 
 @property (strong, nonatomic) UIPopoverController *flipsidePopoverController;
+@property (weak, nonatomic) IBOutlet UIView *previewView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
