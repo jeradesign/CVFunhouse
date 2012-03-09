@@ -106,9 +106,15 @@
 
 #pragma mark - Camera support
 
-- (void)setupCamera
-{
+- (void)setupCamera {
     _cameraDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    NSArray *devices = [AVCaptureDevice devices];
+    for (AVCaptureDevice *device in devices) {
+        if (device.position == AVCaptureDevicePositionFront) {
+            _cameraDevice = device;
+            break;
+        }
+    }
 }
 
 - (void)turnCameraOn {
@@ -129,9 +135,9 @@
     [_session addOutput:output];
     
     // Configure your output.
-//    dispatch_queue_t queue = dispatch_queue_create("myQueue", NULL);
-    [output setSampleBufferDelegate:self queue:dispatch_get_main_queue()];
-//    dispatch_release(queue);
+    dispatch_queue_t queue = dispatch_queue_create("myQueue", NULL);
+    [output setSampleBufferDelegate:self queue:queue];
+    dispatch_release(queue);
     
     // Specify the pixel format
     output.videoSettings = 
@@ -139,12 +145,12 @@
                                 forKey:(id)kCVPixelBufferPixelFormatTypeKey];
     output.alwaysDiscardsLateVideoFrames = YES;
     
-    _previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:_session];
-    _previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-    AVCaptureVideoOrientation orientation = AVCaptureVideoOrientationLandscapeRight;
-    [_previewLayer setOrientation:orientation];
-    _previewLayer.frame = self.previewView.bounds;
-    [self.previewView.layer addSublayer:_previewLayer];
+//    _previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:_session];
+//    _previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+//    AVCaptureVideoOrientation orientation = AVCaptureVideoOrientationLandscapeRight;
+//    [_previewLayer setOrientation:orientation];
+//    _previewLayer.frame = self.previewView.bounds;
+//    [self.previewView.layer addSublayer:_previewLayer];
     
     // Start the session running to start the flow of data
     [_session commitConfiguration];

@@ -33,6 +33,10 @@
 		425370FB15084A7400BFE3C0 /* tables.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 425370CB15084A7400BFE3C0 /* tables.cpp */; };
 		4275AFC91509599100D74063 /* persistence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4275AFC81509599100D74063 /* persistence.cpp */; };
 		4275AFCC15095A2C00D74063 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4275AFCB15095A2C00D74063 /* libz.dylib */; };
+		4275AFD2150977BC00D74063 /* FunHouseMirror57.png in Resources */ = {isa = PBXBuildFile; fileRef = 4275AFD1150977BC00D74063 /* FunHouseMirror57.png */; };
+		4275AFD4150977C200D74063 /* FunHouseMirror114.png in Resources */ = {isa = PBXBuildFile; fileRef = 4275AFD3150977C200D74063 /* FunHouseMirror114.png */; };
+		4275AFD6150977CA00D74063 /* FunHouseMirror144.png in Resources */ = {isa = PBXBuildFile; fileRef = 4275AFD5150977CA00D74063 /* FunHouseMirror144.png */; };
+		4275AFD81509780600D74063 /* FunHouseMirror72.png in Resources */ = {isa = PBXBuildFile; fileRef = 4275AFD71509780600D74063 /* FunHouseMirror72.png */; };
 		427F397F150948C0000454AA /* accum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 427F3952150948C0000454AA /* accum.cpp */; };
 		427F3980150948C0000454AA /* approx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 427F3953150948C0000454AA /* approx.cpp */; };
 		427F3981150948C0000454AA /* canny.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 427F3954150948C0000454AA /* canny.cpp */; };
@@ -118,6 +122,10 @@
 		425370CB15084A7400BFE3C0 /* tables.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tables.cpp; sourceTree = "<group>"; };
 		4275AFC81509599100D74063 /* persistence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = persistence.cpp; sourceTree = "<group>"; };
 		4275AFCB15095A2C00D74063 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		4275AFD1150977BC00D74063 /* FunHouseMirror57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FunHouseMirror57.png; sourceTree = "<group>"; };
+		4275AFD3150977C200D74063 /* FunHouseMirror114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FunHouseMirror114.png; sourceTree = "<group>"; };
+		4275AFD5150977CA00D74063 /* FunHouseMirror144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FunHouseMirror144.png; sourceTree = "<group>"; };
+		4275AFD71509780600D74063 /* FunHouseMirror72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FunHouseMirror72.png; sourceTree = "<group>"; };
 		427F394D150948C0000454AA /* _featuretree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _featuretree.h; sourceTree = "<group>"; };
 		427F394E150948C0000454AA /* _geom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _geom.h; sourceTree = "<group>"; };
 		427F394F150948C0000454AA /* _imgproc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _imgproc.h; sourceTree = "<group>"; };
@@ -321,6 +329,10 @@
 		42AA08481508314500B379F4 = {
 			isa = PBXGroup;
 			children = (
+				4275AFD71509780600D74063 /* FunHouseMirror72.png */,
+				4275AFD5150977CA00D74063 /* FunHouseMirror144.png */,
+				4275AFD3150977C200D74063 /* FunHouseMirror114.png */,
+				4275AFD1150977BC00D74063 /* FunHouseMirror57.png */,
 				4275AFCB15095A2C00D74063 /* libz.dylib */,
 				42AA085D1508314600B379F4 /* CVFunhouse */,
 				42537096150849F600BFE3C0 /* OpenCV */,
@@ -435,6 +447,10 @@
 				42AA08621508314600B379F4 /* InfoPlist.strings in Resources */,
 				42AA086B1508314600B379F4 /* MainStoryboard_iPhone.storyboard in Resources */,
 				42AA086E1508314600B379F4 /* MainStoryboard_iPad.storyboard in Resources */,
+				4275AFD2150977BC00D74063 /* FunHouseMirror57.png in Resources */,
+				4275AFD4150977C200D74063 /* FunHouseMirror114.png in Resources */,
+				4275AFD6150977CA00D74063 /* FunHouseMirror144.png in Resources */,
+				4275AFD81509780600D74063 /* FunHouseMirror72.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
