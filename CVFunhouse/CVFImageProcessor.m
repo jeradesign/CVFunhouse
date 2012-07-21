@@ -13,10 +13,8 @@
 
 @interface CVFImageProcessor ()
 
--(void)processIplImage:(IplImage*)image;
 -(UIImage*)UIImageFromIplImage:(IplImage*)iplImage;
 -(CGImageRef)CGImageFromIplImage:(IplImage*)iplImage;
--(void)imageReady:(IplImage*)image;
 
 @end
 
@@ -57,6 +55,10 @@
 }
 
 
+/* Override this method do your image processing.           */
+/* You are responsible for releasing ipImage.               */
+/* Return your IplImage by calling imageReady:              */
+/* The IplImage you pass back will be disposed of for you.  */
 -(void)processIplImage:(IplImage*)iplImage
 {
     IplImage *grayImage = cvCreateImage(cvGetSize(iplImage), IPL_DEPTH_8U, 3);
