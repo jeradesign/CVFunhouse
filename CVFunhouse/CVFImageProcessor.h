@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#include "opencv2/core/core_c.h"
+#include "opencv2/imgproc/imgproc_c.h"
+
 @protocol CVFImageProcessorDelegate;
 
 @interface CVFImageProcessor : NSObject
@@ -15,5 +18,7 @@
 @property (nonatomic, weak) id<CVFImageProcessorDelegate> delegate;
 
 -(void)processImageBuffer:(CVImageBufferRef)imageBuffer;
+-(void)imageReady:(IplImage*)image;
+-(void)processIplImage:(IplImage*)iplImage;
 
 @end

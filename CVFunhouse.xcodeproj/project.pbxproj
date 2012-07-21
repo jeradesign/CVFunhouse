@@ -28,6 +28,7 @@
 		42B3377015BA945A00CBD888 /* CVFunhouse72.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B3376F15BA945A00CBD888 /* CVFunhouse72.png */; };
 		42B3377615BA949400CBD888 /* CVFunhouse114.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B3377515BA949400CBD888 /* CVFunhouse114.png */; };
 		42B3377915BA94A000CBD888 /* CVFunhouse57.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B3377815BA94A000CBD888 /* CVFunhouse57.png */; };
+		42B3377C15BB2F5200CBD888 /* CVFCannyDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B3377B15BB2F5200CBD888 /* CVFCannyDemo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,8 @@
 		42B3376F15BA945A00CBD888 /* CVFunhouse72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CVFunhouse72.png; sourceTree = "<group>"; };
 		42B3377515BA949400CBD888 /* CVFunhouse114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CVFunhouse114.png; sourceTree = "<group>"; };
 		42B3377815BA94A000CBD888 /* CVFunhouse57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CVFunhouse57.png; sourceTree = "<group>"; };
+		42B3377A15BB2F5200CBD888 /* CVFCannyDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVFCannyDemo.h; sourceTree = "<group>"; };
+		42B3377B15BB2F5200CBD888 /* CVFCannyDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVFCannyDemo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +135,8 @@
 				42AA08731508314600B379F4 /* CVFFlipsideViewController.m */,
 				42537092150839FF00BFE3C0 /* CVFImageProcessor.h */,
 				42537093150839FF00BFE3C0 /* CVFImageProcessor.m */,
+				42B3377A15BB2F5200CBD888 /* CVFCannyDemo.h */,
+				42B3377B15BB2F5200CBD888 /* CVFCannyDemo.m */,
 				4253709515083BA800BFE3C0 /* CVFImageProcessorDelegate.h */,
 				42AA085E1508314600B379F4 /* Supporting Files */,
 			);
@@ -223,6 +228,7 @@
 				42AA08711508314600B379F4 /* CVFMainViewController.m in Sources */,
 				42AA08741508314600B379F4 /* CVFFlipsideViewController.m in Sources */,
 				42537094150839FF00BFE3C0 /* CVFImageProcessor.m in Sources */,
+				42B3377C15BB2F5200CBD888 /* CVFCannyDemo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
