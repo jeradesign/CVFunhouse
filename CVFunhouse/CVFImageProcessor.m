@@ -59,6 +59,11 @@
 
 -(void)processIplImage:(IplImage*)iplImage
 {
+    IplImage *grayImage = cvCreateImage(cvGetSize(iplImage), IPL_DEPTH_8U, 3);
+    cvCvtColor(iplImage, grayImage, CV_BGR2RGB);
+    cvReleaseImage(&iplImage);
+    
+    /*
     IplImage *grayImage = cvCreateImage(cvGetSize(iplImage), IPL_DEPTH_8U, 1);
     cvCvtColor(iplImage, grayImage, CV_BGRA2GRAY);
     cvReleaseImage(&iplImage);
@@ -71,9 +76,9 @@
     cvCanny( img_blur, img_canny, 10, 100, 3 );
     cvReleaseImage(&img_blur);
     
-    cvNot(img_canny, img_canny);
+    cvNot(img_canny, img_canny);*/
     
-    [self imageReady:img_canny];
+    [self imageReady:grayImage];
 }
 
 
@@ -104,18 +109,38 @@ static void ReleaseDataCallback(void *info, const void *data, size_t size)
 
 -(CGImageRef)CGImageFromIplImage:(IplImage*)iplImage
 {
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    // Allocating the buffer for CGImage
+    NSData *data =
+    [NSData dataWithBytes:iplImage->imageData length:iplImage->imageSize];
+    CGDataProviderRef provider =
+    CGDataProviderCreateWithCFData((__bridge CFDataRef)data);
+
+    // Creating CGImage from chunk of IplImage
+    CGImageRef imageRef = CGImageCreate(
+                                        iplImage->width, iplImage->height,
+                                        iplImage->depth, iplImage->depth * iplImage->nChannels, iplImage->widthStep,
+                                        colorSpace, kCGImageAlphaNone|kCGBitmapByteOrderDefault,
+                                        provider, NULL, false, kCGRenderingIntentDefault
+                                        );
+    
+    /*
     size_t bitsPerComponent = 8;
-    size_t bitsPerPixel = 8;
+    size_t bitsPerPixel = 24;
     size_t bytesPerRow = iplImage->widthStep;
-    CGColorSpaceRef space = CGColorSpaceCreateDeviceGray(); // must release after CGImageCreate
+   // CGColorSpaceRef space = CGColorSpaceCreateDeviceGray(); // must release after CGImageCreate
+    CGColorSpaceRef space = CGColorSpaceCreateDeviceRGB();
+    
     CGBitmapInfo bitmapInfo = kCGBitmapByteOrderDefault | kCGImageAlphaNone;
     CGDataProviderRef provider = CGDataProviderCreateWithData(iplImage,
                                                               iplImage->imageData,
                                                               0,
                                                               ReleaseDataCallback);
     const CGFloat *decode = NULL;
-    bool shouldInterpolate = false;
+    bool shouldInterpolate = true;
     CGColorRenderingIntent intent = kCGRenderingIntentDefault;
+    
+    
     
     CGImageRef cgImageRef = CGImageCreate(iplImage->width,
                                           iplImage->height,
@@ -128,10 +153,11 @@ static void ReleaseDataCallback(void *info, const void *data, size_t size)
                                           decode,
                                           shouldInterpolate,
                                           intent);
-    
-    CGColorSpaceRelease(space);
+    */
+    CGColorSpaceRelease(colorSpace);
     CGDataProviderRelease(provider);
-    return cgImageRef;
+    return imageRef;
+    //return cgImageRef;
 }
 
 @end

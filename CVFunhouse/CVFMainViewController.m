@@ -140,6 +140,7 @@
     [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:kCVPixelFormatType_32BGRA] 
                                 forKey:(id)kCVPixelBufferPixelFormatTypeKey];
     output.alwaysDiscardsLateVideoFrames = YES;
+    //kCVPixelFormatType_32BGRA
     
 //    _previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:_session];
 //    _previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
