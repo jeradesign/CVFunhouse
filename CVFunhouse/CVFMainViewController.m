@@ -9,6 +9,7 @@
 #import "CVFMainViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "CVFCannyDemo.h"
+#import "CVFSephiaDemo.h"
 
 @interface CVFMainViewController ()
 
@@ -32,7 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _imageProcessor = [[CVFCannyDemo alloc] init];
+    _imageProcessor = [[CVFSephiaDemo alloc] init];
     _imageProcessor.delegate = self;
     [self setupCamera];
     [self turnCameraOn];
