@@ -9,6 +9,7 @@
 #import "CVFMainViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "CVFCannyDemo.h"
+#import "CVFSephiaDemo.h"
 
 @interface CVFMainViewController ()
 
