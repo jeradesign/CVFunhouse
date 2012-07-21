@@ -56,7 +56,7 @@
 
 
 /* Override this method do your image processing.           */
-/* You are responsible for releasing ipImage.               */
+/* You are responsible for releasing iplImage.              */
 /* Return your IplImage by calling imageReady:              */
 /* The IplImage you pass back will be disposed of for you.  */
 -(void)processIplImage:(IplImage*)iplImage
@@ -111,22 +111,6 @@ static void ReleaseDataCallback(void *info, const void *data, size_t size)
 
 -(CGImageRef)CGImageFromIplImage:(IplImage*)iplImage
 {
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    // Allocating the buffer for CGImage
-    NSData *data =
-    [NSData dataWithBytes:iplImage->imageData length:iplImage->imageSize];
-    CGDataProviderRef provider =
-    CGDataProviderCreateWithCFData((__bridge CFDataRef)data);
-
-    // Creating CGImage from chunk of IplImage
-    CGImageRef imageRef = CGImageCreate(
-                                        iplImage->width, iplImage->height,
-                                        iplImage->depth, iplImage->depth * iplImage->nChannels, iplImage->widthStep,
-                                        colorSpace, kCGImageAlphaNone|kCGBitmapByteOrderDefault,
-                                        provider, NULL, false, kCGRenderingIntentDefault
-                                        );
-    
-    /*
     size_t bitsPerComponent = 8;
     size_t bitsPerPixel = 24;
     size_t bytesPerRow = iplImage->widthStep;
@@ -155,11 +139,9 @@ static void ReleaseDataCallback(void *info, const void *data, size_t size)
                                           decode,
                                           shouldInterpolate,
                                           intent);
-    */
-    CGColorSpaceRelease(colorSpace);
+    CGColorSpaceRelease(space);
     CGDataProviderRelease(provider);
-    return imageRef;
-    //return cgImageRef;
+    return cgImageRef;
 }
 
 @end
