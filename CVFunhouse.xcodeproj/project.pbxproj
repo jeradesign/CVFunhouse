@@ -14,10 +14,6 @@
 		425370911508384900BFE3C0 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4253708F1508384900BFE3C0 /* CoreVideo.framework */; };
 		42537094150839FF00BFE3C0 /* CVFImageProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 42537093150839FF00BFE3C0 /* CVFImageProcessor.m */; };
 		4275AFCC15095A2C00D74063 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4275AFCB15095A2C00D74063 /* libz.dylib */; };
-		4275AFD2150977BC00D74063 /* FunHouseMirror57.png in Resources */ = {isa = PBXBuildFile; fileRef = 4275AFD1150977BC00D74063 /* FunHouseMirror57.png */; };
-		4275AFD4150977C200D74063 /* FunHouseMirror114.png in Resources */ = {isa = PBXBuildFile; fileRef = 4275AFD3150977C200D74063 /* FunHouseMirror114.png */; };
-		4275AFD6150977CA00D74063 /* FunHouseMirror144.png in Resources */ = {isa = PBXBuildFile; fileRef = 4275AFD5150977CA00D74063 /* FunHouseMirror144.png */; };
-		4275AFD81509780600D74063 /* FunHouseMirror72.png in Resources */ = {isa = PBXBuildFile; fileRef = 4275AFD71509780600D74063 /* FunHouseMirror72.png */; };
 		42AA08581508314600B379F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AA08571508314600B379F4 /* UIKit.framework */; };
 		42AA085A1508314600B379F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AA08591508314600B379F4 /* Foundation.framework */; };
 		42AA085C1508314600B379F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AA085B1508314600B379F4 /* CoreGraphics.framework */; };
@@ -28,6 +24,10 @@
 		42AA086E1508314600B379F4 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42AA086C1508314600B379F4 /* MainStoryboard_iPad.storyboard */; };
 		42AA08711508314600B379F4 /* CVFMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AA08701508314600B379F4 /* CVFMainViewController.m */; };
 		42AA08741508314600B379F4 /* CVFFlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AA08731508314600B379F4 /* CVFFlipsideViewController.m */; };
+		42B3376D15BA944400CBD888 /* CVFunhouse144.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B3376C15BA944400CBD888 /* CVFunhouse144.png */; };
+		42B3377015BA945A00CBD888 /* CVFunhouse72.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B3376F15BA945A00CBD888 /* CVFunhouse72.png */; };
+		42B3377615BA949400CBD888 /* CVFunhouse114.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B3377515BA949400CBD888 /* CVFunhouse114.png */; };
+		42B3377915BA94A000CBD888 /* CVFunhouse57.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B3377815BA94A000CBD888 /* CVFunhouse57.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,10 +40,6 @@
 		42537093150839FF00BFE3C0 /* CVFImageProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVFImageProcessor.m; sourceTree = "<group>"; };
 		4253709515083BA800BFE3C0 /* CVFImageProcessorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVFImageProcessorDelegate.h; sourceTree = "<group>"; };
 		4275AFCB15095A2C00D74063 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		4275AFD1150977BC00D74063 /* FunHouseMirror57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FunHouseMirror57.png; sourceTree = "<group>"; };
-		4275AFD3150977C200D74063 /* FunHouseMirror114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FunHouseMirror114.png; sourceTree = "<group>"; };
-		4275AFD5150977CA00D74063 /* FunHouseMirror144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FunHouseMirror144.png; sourceTree = "<group>"; };
-		4275AFD71509780600D74063 /* FunHouseMirror72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FunHouseMirror72.png; sourceTree = "<group>"; };
 		42AA08531508314600B379F4 /* CVFunhouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CVFunhouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42AA08571508314600B379F4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		42AA08591508314600B379F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -60,6 +56,10 @@
 		42AA08701508314600B379F4 /* CVFMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CVFMainViewController.m; sourceTree = "<group>"; };
 		42AA08721508314600B379F4 /* CVFFlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CVFFlipsideViewController.h; sourceTree = "<group>"; };
 		42AA08731508314600B379F4 /* CVFFlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CVFFlipsideViewController.m; sourceTree = "<group>"; };
+		42B3376C15BA944400CBD888 /* CVFunhouse144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CVFunhouse144.png; sourceTree = "<group>"; };
+		42B3376F15BA945A00CBD888 /* CVFunhouse72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CVFunhouse72.png; sourceTree = "<group>"; };
+		42B3377515BA949400CBD888 /* CVFunhouse114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CVFunhouse114.png; sourceTree = "<group>"; };
+		42B3377815BA94A000CBD888 /* CVFunhouse57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CVFunhouse57.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,12 +85,12 @@
 		42AA08481508314500B379F4 = {
 			isa = PBXGroup;
 			children = (
+				42B3377815BA94A000CBD888 /* CVFunhouse57.png */,
+				42B3377515BA949400CBD888 /* CVFunhouse114.png */,
+				42B3376F15BA945A00CBD888 /* CVFunhouse72.png */,
+				42B3376C15BA944400CBD888 /* CVFunhouse144.png */,
 				42171D1315BA6C37008BEA68 /* libstdc++.dylib */,
 				42171D1115BA6C19008BEA68 /* opencv2.framework */,
-				4275AFD71509780600D74063 /* FunHouseMirror72.png */,
-				4275AFD5150977CA00D74063 /* FunHouseMirror144.png */,
-				4275AFD3150977C200D74063 /* FunHouseMirror114.png */,
-				4275AFD1150977BC00D74063 /* FunHouseMirror57.png */,
 				4275AFCB15095A2C00D74063 /* libz.dylib */,
 				42AA085D1508314600B379F4 /* CVFunhouse */,
 				42AA08561508314600B379F4 /* Frameworks */,
@@ -204,10 +204,10 @@
 				42AA08621508314600B379F4 /* InfoPlist.strings in Resources */,
 				42AA086B1508314600B379F4 /* MainStoryboard_iPhone.storyboard in Resources */,
 				42AA086E1508314600B379F4 /* MainStoryboard_iPad.storyboard in Resources */,
-				4275AFD2150977BC00D74063 /* FunHouseMirror57.png in Resources */,
-				4275AFD4150977C200D74063 /* FunHouseMirror114.png in Resources */,
-				4275AFD6150977CA00D74063 /* FunHouseMirror144.png in Resources */,
-				4275AFD81509780600D74063 /* FunHouseMirror72.png in Resources */,
+				42B3376D15BA944400CBD888 /* CVFunhouse144.png in Resources */,
+				42B3377015BA945A00CBD888 /* CVFunhouse72.png in Resources */,
+				42B3377615BA949400CBD888 /* CVFunhouse114.png in Resources */,
+				42B3377915BA94A000CBD888 /* CVFunhouse57.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

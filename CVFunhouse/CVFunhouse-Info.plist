@@ -14,10 +14,10 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>FunHouseMirror57.png</string>
-				<string>FunHouseMirror114.png</string>
-				<string>FunHouseMirror144.png</string>
-				<string>FunHouseMirror72.png</string>
+				<string>CVFunhouse57.png</string>
+				<string>CVFunhouse114.png</string>
+				<string>CVFunhouse144.png</string>
+				<string>CVFunhouse72.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<true/>
