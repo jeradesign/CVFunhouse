@@ -33,7 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _imageProcessor = [[CVFImageProcessor alloc] init];
+    _imageProcessor = [[CVFSephiaDemo alloc] init];
     _imageProcessor.delegate = self;
     [self setupCamera];
     [self turnCameraOn];
