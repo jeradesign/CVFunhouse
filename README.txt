@@ -1,0 +1,1 @@
+NOTE: CVFunhouse includes a copy of the OpenCV library in built as an iOS framework.  OpenCV is licensed separately under similar terms.  See file "OpenCV license.txt" for details.  For more information on OpenCV (including full source code to the library), see http://opencv.org/
