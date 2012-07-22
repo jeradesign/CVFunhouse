@@ -10,7 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "CVFImageProcessorDelegate.h"
 
-@interface CVFMainViewController : UIViewController <UITableViewDataSource, UITableViewDelegate,CVFFlipsideViewControllerDelegate,
+@interface CVFMainViewController : UIViewController <CVFFlipsideViewControllerDelegate,
     UIPopoverControllerDelegate,
     AVCaptureVideoDataOutputSampleBufferDelegate,
     CVFImageProcessorDelegate>

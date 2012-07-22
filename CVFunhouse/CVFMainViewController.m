@@ -32,30 +32,15 @@
 @synthesize previewView = _previewView;
 @synthesize imageView = _imageView;
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-   
-    
-    
     _imageProcessor = [[CVFSephiaDemo alloc] init];
     _imageProcessor.delegate = self;
+    CameraState = 1;
     [self setupCamera];
     [self turnCameraOn];
-    //_flipsidePopoverController = [[CVFFlipsideViewController alloc] init];
-    
-    UIButton *test = [[UIButton alloc] init];
-    [test setTitle:@"Flip" forState:UIControlStateNormal];
-    [test setFrame:CGRectMake(self.view.bounds.size.width/2, 10, 50, 30)];
-    [test setAlpha:1.0];
-    [test setBackgroundColor:[UIColor blackColor]];
-    [self.view addSubview:test];
-    [test addTarget:self action:@selector(flipAction:) forControlEvents:UIControlEventTouchUpInside];
-    //_flipsidePopoverController = [[UIPopoverController alloc] init];
-    
-    CameraState = 2;
     
     
 }
