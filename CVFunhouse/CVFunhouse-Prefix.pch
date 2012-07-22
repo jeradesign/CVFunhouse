@@ -9,9 +9,8 @@
 #endif
 
 #ifdef __cplusplus
-#import <OpenCV/opencv2/opencv.hpp>
+#import "opencv2/opencv.hpp"
 #endif
-
 
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
