@@ -14,8 +14,12 @@
 - (void)flipsideViewControllerDidFinish:(CVFFlipsideViewController *)controller;
 @end
 
-@interface CVFFlipsideViewController : UIViewController
-
+@interface CVFFlipsideViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+{
+    NSMutableArray *flipsidePopoverArray;
+}
+@property (retain, nonatomic) NSMutableArray *flipsidePopoverArray;
+@property (retain, nonatomic) IBOutlet UITableView *menuTable;
 @property (weak, nonatomic) id <CVFFlipsideViewControllerDelegate> delegate;
 
 - (IBAction)done:(id)sender;

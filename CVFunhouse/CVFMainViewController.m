@@ -10,6 +10,8 @@
 #import <AVFoundation/AVFoundation.h>
 #import "CVFCannyDemo.h"
 #import "CVFSephiaDemo.h"
+#import "CVFFlipsideViewController.h"
+
 
 @interface CVFMainViewController ()
 
@@ -30,11 +32,41 @@
 @synthesize previewView = _previewView;
 @synthesize imageView = _imageView;
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+   
+    
+    
     _imageProcessor = [[CVFSephiaDemo alloc] init];
     _imageProcessor.delegate = self;
+    [self setupCamera];
+    [self turnCameraOn];
+    //_flipsidePopoverController = [[CVFFlipsideViewController alloc] init];
+    
+    UIButton *test = [[UIButton alloc] init];
+    [test setTitle:@"Flip" forState:UIControlStateNormal];
+    [test setFrame:CGRectMake(self.view.bounds.size.width/2, 10, 50, 30)];
+    [test setAlpha:1.0];
+    [test setBackgroundColor:[UIColor blackColor]];
+    [self.view addSubview:test];
+    [test addTarget:self action:@selector(flipAction:) forControlEvents:UIControlEventTouchUpInside];
+    //_flipsidePopoverController = [[UIPopoverController alloc] init];
+    
+    CameraState = 2;
+    
+    
+}
+
+
+
+
+- (IBAction)flipAction:(id)se
+{
+    CameraState = CameraState == 1 ? 2 : 1;
+    [self turnCameraOff];
     [self setupCamera];
     [self turnCameraOn];
 }
@@ -107,12 +139,20 @@
     _cameraDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     NSArray *devices = [AVCaptureDevice devices];
     for (AVCaptureDevice *device in devices) {
-        if (device.position == AVCaptureDevicePositionFront) {
+        if (device.position == AVCaptureDevicePositionFront && CameraState == 1) {
+            
+            _cameraDevice = device;
+            break;
+        }
+        if (device.position == AVCaptureDevicePositionBack && CameraState == 2) {
+            
             _cameraDevice = device;
             break;
         }
     }
 }
+
+
 
 - (void)turnCameraOn {
     NSError *error;
