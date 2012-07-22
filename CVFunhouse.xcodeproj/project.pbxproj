@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		420A3F8515BC6724004804EF /* CVFPassThru.m in Sources */ = {isa = PBXBuildFile; fileRef = 420A3F8415BC6724004804EF /* CVFPassThru.m */; };
 		42171D1215BA6C19008BEA68 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42171D1115BA6C19008BEA68 /* opencv2.framework */; };
 		42171D1415BA6C37008BEA68 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42171D1315BA6C37008BEA68 /* libstdc++.dylib */; };
 		4253708C1508383800BFE3C0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4253708B1508383800BFE3C0 /* AVFoundation.framework */; };
@@ -33,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		420A3F8315BC6724004804EF /* CVFPassThru.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVFPassThru.h; sourceTree = "<group>"; };
+		420A3F8415BC6724004804EF /* CVFPassThru.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVFPassThru.m; sourceTree = "<group>"; };
 		42171D1115BA6C19008BEA68 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		42171D1315BA6C37008BEA68 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		4253708B1508383800BFE3C0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -142,6 +145,8 @@
 				42B3377B15BB2F5200CBD888 /* CVFCannyDemo.m */,
 				CD7E937515BB5354004D709A /* CVFSephiaDemo.h */,
 				CD7E937615BB5354004D709A /* CVFSephiaDemo.m */,
+				420A3F8315BC6724004804EF /* CVFPassThru.h */,
+				420A3F8415BC6724004804EF /* CVFPassThru.m */,
 				4253709515083BA800BFE3C0 /* CVFImageProcessorDelegate.h */,
 				42AA085E1508314600B379F4 /* Supporting Files */,
 			);
@@ -235,6 +240,7 @@
 				42537094150839FF00BFE3C0 /* CVFImageProcessor.m in Sources */,
 				42B3377C15BB2F5200CBD888 /* CVFCannyDemo.m in Sources */,
 				CD7E937715BB5354004D709A /* CVFSephiaDemo.m in Sources */,
+				420A3F8515BC6724004804EF /* CVFPassThru.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
