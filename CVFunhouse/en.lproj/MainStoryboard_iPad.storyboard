@@ -74,6 +74,10 @@
                                 <rect key="frame" x="0.0" y="44" width="320" height="808"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="5" id="8Yy-BJ-uj0"/>
+                                    <outlet property="delegate" destination="5" id="am0-fu-LVE"/>
+                                </connections>
                             </tableView>
                             <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="17">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -98,7 +102,7 @@
         </scene>
     </scenes>
     <classes>
-        <class className="CVFFlipsideViewController" superclassName="UITableViewController">
+        <class className="CVFFlipsideViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CVFFlipsideViewController.h"/>
             <relationships>
                 <relationship kind="action" name="done:"/>

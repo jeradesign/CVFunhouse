@@ -14,7 +14,7 @@
 - (void)flipsideViewControllerDidFinish:(CVFFlipsideViewController *)controller;
 @end
 
-@interface CVFFlipsideViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+@interface CVFFlipsideViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
     NSMutableArray *flipsidePopoverArray;
 }

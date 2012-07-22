@@ -36,7 +36,7 @@
 {
     [super viewDidLoad];
     
-    _imageProcessor = [[CVFSephiaDemo alloc] init];
+    _imageProcessor = [[CVFCannyDemo alloc] init];
     _imageProcessor.delegate = self;
     CameraState = 1;
     [self setupCamera];

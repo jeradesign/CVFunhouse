@@ -26,10 +26,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _flipsidePopoverArray = [[NSMutableArray alloc] initWithObjects:@"Flip Camera", nil];
-    //[_flipsidePopoverArray addObject:@"Flip Camera"];
-    [_flipsidePopoverArray addObject:@"Sepia Filter Demo"];
-    [_flipsidePopoverArray addObject:@"Canny Algo Demo"];
+    _flipsidePopoverArray = [[NSMutableArray alloc] initWithObjects:
+                             @"Canny Edge Detector",
+                             @"Sepia Filter",
+                             NULL];
     _menuTable = [[UITableView alloc] init];
     _menuTable.delegate = self;
     [self setMenuTable:_menuTable];
@@ -67,7 +67,7 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault 
                                       reuseIdentifier:CellIdentifier] ;
     }
     
@@ -75,8 +75,16 @@
         cell.textLabel.text = [_flipsidePopoverArray objectAtIndex:indexPath.row];
     }
     
-    return cell;
+    int demoNumber = [[NSUserDefaults standardUserDefaults] boolForKey:@"demoNumber"];
     
+    if (indexPath.row == demoNumber) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+
+    return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
