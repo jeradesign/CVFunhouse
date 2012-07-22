@@ -18,6 +18,7 @@
 - (void)setupCamera;
 - (void)turnCameraOn;
 - (void)turnCameraOff;
+- (void)resetImageProcessor;
 
 @end
 
@@ -31,21 +32,48 @@
 @synthesize flipsidePopoverController = _flipsidePopoverController;
 @synthesize previewView = _previewView;
 @synthesize imageView = _imageView;
+//@synthesize imageProcessor = _imageProcessor;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    _imageProcessor = [[CVFCannyDemo alloc] init];
-    _imageProcessor.delegate = self;
+    [self resetImageProcessor];
     CameraState = 1;
     [self setupCamera];
     [self turnCameraOn];
-    
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(resetImageProcessor)
+                                                 name:@"demoNumber"
+                                               object:nil];
 }
 
+- (void)resetImageProcessor {
+    int demoNumber = [[NSUserDefaults standardUserDefaults] integerForKey:@"demoNumber"];
 
+    switch (demoNumber) {
+        case 0:
+            self.imageProcessor = [[CVFCannyDemo alloc] init];
+            break;
+            
+        case 1:
+            self.imageProcessor = [[CVFSephiaDemo alloc] init];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+- (void)setImageProcessor:(CVFImageProcessor *)imageProcessor
+{
+    _imageProcessor = imageProcessor;
+    _imageProcessor.delegate = self;
+}
+
+- (CVFImageProcessor *)imageProcessor {
+    return _imageProcessor;
+}
 
 
 - (IBAction)flipAction:(id)se
@@ -192,7 +220,7 @@
         // Get a CMSampleBuffer's Core Video image buffer for the media data
         CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
         
-        [_imageProcessor processImageBuffer:imageBuffer];
+        [self.imageProcessor processImageBuffer:imageBuffer];
     }
 }
 

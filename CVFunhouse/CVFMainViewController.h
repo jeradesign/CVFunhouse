@@ -10,6 +10,8 @@
 #import <AVFoundation/AVFoundation.h>
 #import "CVFImageProcessorDelegate.h"
 
+@class CVFImageProcessor;
+
 @interface CVFMainViewController : UIViewController <CVFFlipsideViewControllerDelegate,
     UIPopoverControllerDelegate,
     AVCaptureVideoDataOutputSampleBufferDelegate,
@@ -20,9 +22,7 @@
 @property (strong, nonatomic) UIPopoverController *flipsidePopoverController;
 @property (weak, nonatomic) IBOutlet UIView *previewView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-
-
-
+@property (strong, atomic) CVFImageProcessor *imageProcessor;
 
 
 - (IBAction)flipAction:(id)se;

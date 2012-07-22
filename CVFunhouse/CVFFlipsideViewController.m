@@ -8,8 +8,9 @@
 
 #import "CVFFlipsideViewController.h"
 
-@interface CVFFlipsideViewController ()
-
+@interface CVFFlipsideViewController () {
+    int _demoNumber;    
+}
 @end
 
 @implementation CVFFlipsideViewController
@@ -52,6 +53,10 @@
     }
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    _demoNumber = [[NSUserDefaults standardUserDefaults] integerForKey:@"demoNumber"];
+}
+
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
@@ -74,10 +79,8 @@
     if(indexPath.row < [_flipsidePopoverArray count]) {
         cell.textLabel.text = [_flipsidePopoverArray objectAtIndex:indexPath.row];
     }
-    
-    int demoNumber = [[NSUserDefaults standardUserDefaults] boolForKey:@"demoNumber"];
-    
-    if (indexPath.row == demoNumber) {
+        
+    if (indexPath.row == _demoNumber) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
     else {
@@ -88,7 +91,16 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    NSIndexPath *oldIndexPath = [NSIndexPath indexPathForRow:_demoNumber inSection:0];
+    
+    [[tableView cellForRowAtIndexPath:oldIndexPath] setAccessoryType:UITableViewCellAccessoryNone];
+    [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
+    
+    _demoNumber = [indexPath row];
+    [[NSUserDefaults standardUserDefaults] setInteger:_demoNumber forKey:@"demoNumber"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"demoNumber" object:nil];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
