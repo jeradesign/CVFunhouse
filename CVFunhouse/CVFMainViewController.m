@@ -8,12 +8,13 @@
 
 #import "CVFMainViewController.h"
 #import <AVFoundation/AVFoundation.h>
-#import "CVFCannyDemo.h"
-#import "CVFFaceDetect.h"
-#import "CVFSephiaDemo.h"
-#import "CVFPassThru.h"
 #import "CVFFlipsideViewController.h"
 
+#import "CVFCannyDemo.h"
+#import "CVFFaceDetect.h"
+#import "CVFFarneback.h"
+#import "CVFSephiaDemo.h"
+#import "CVFPassThru.h"
 
 @interface CVFMainViewController ()
 
@@ -63,10 +64,14 @@
             break;
             
         case 2:
-            self.imageProcessor = [[CVFSephiaDemo alloc] init];
+            self.imageProcessor = [[CVFFarneback alloc] init];
             break;
             
         case 3:
+            self.imageProcessor = [[CVFSephiaDemo alloc] init];
+            break;
+            
+        case 4:
             self.imageProcessor = [[CVFPassThru alloc] init];
             break;
             

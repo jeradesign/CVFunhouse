@@ -29,8 +29,9 @@
     [super viewDidLoad];
     _flipsidePopoverArray = [[NSMutableArray alloc] initWithObjects:
                              @"Canny Edge Detector",
-                             @"Sepia Filter",
                              @"Face Detector",
+                             @"Farneback",
+                             @"Sepia Filter",
                              @"Pass Thru",
                              NULL];
     _menuTable = [[UITableView alloc] init];

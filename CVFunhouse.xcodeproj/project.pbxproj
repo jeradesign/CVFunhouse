@@ -17,6 +17,7 @@
 		4275AFCC15095A2C00D74063 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4275AFCB15095A2C00D74063 /* libz.dylib */; };
 		4285252815BF698800622EE8 /* CVFFaceDetect.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4285252715BF698800622EE8 /* CVFFaceDetect.mm */; };
 		4285252F15BF750000622EE8 /* haarcascade_frontalface_alt.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4285252E15BF750000622EE8 /* haarcascade_frontalface_alt.xml */; };
+		4285253215BF792F00622EE8 /* CVFFarneback.m in Sources */ = {isa = PBXBuildFile; fileRef = 4285253115BF792F00622EE8 /* CVFFarneback.m */; };
 		42AA08581508314600B379F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AA08571508314600B379F4 /* UIKit.framework */; };
 		42AA085A1508314600B379F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AA08591508314600B379F4 /* Foundation.framework */; };
 		42AA085C1508314600B379F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AA085B1508314600B379F4 /* CoreGraphics.framework */; };
@@ -51,6 +52,8 @@
 		4285252615BF696700622EE8 /* CVFFaceDetect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVFFaceDetect.h; sourceTree = "<group>"; };
 		4285252715BF698800622EE8 /* CVFFaceDetect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CVFFaceDetect.mm; sourceTree = "<group>"; };
 		4285252E15BF750000622EE8 /* haarcascade_frontalface_alt.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_alt.xml; sourceTree = "<group>"; };
+		4285253015BF791600622EE8 /* CVFFarneback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVFFarneback.h; sourceTree = "<group>"; };
+		4285253115BF792F00622EE8 /* CVFFarneback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVFFarneback.m; sourceTree = "<group>"; };
 		42AA08531508314600B379F4 /* CVFunhouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CVFunhouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42AA08571508314600B379F4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		42AA08591508314600B379F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -162,7 +165,9 @@
 				CD7E937515BB5354004D709A /* CVFSephiaDemo.h */,
 				CD7E937615BB5354004D709A /* CVFSephiaDemo.m */,
 				420A3F8315BC6724004804EF /* CVFPassThru.h */,
+				4285253015BF791600622EE8 /* CVFFarneback.h */,
 				420A3F8415BC6724004804EF /* CVFPassThru.m */,
+				4285253115BF792F00622EE8 /* CVFFarneback.m */,
 				4285252615BF696700622EE8 /* CVFFaceDetect.h */,
 				4285252715BF698800622EE8 /* CVFFaceDetect.mm */,
 				4253709515083BA800BFE3C0 /* CVFImageProcessorDelegate.h */,
@@ -261,6 +266,7 @@
 				CD7E937715BB5354004D709A /* CVFSephiaDemo.m in Sources */,
 				420A3F8515BC6724004804EF /* CVFPassThru.m in Sources */,
 				4285252815BF698800622EE8 /* CVFFaceDetect.mm in Sources */,
+				4285253215BF792F00622EE8 /* CVFFarneback.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
