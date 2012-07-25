@@ -32,6 +32,7 @@
                              @"Face Detector",
                              @"Farneback",
                              @"Laplace",
+                             @"Lukas-Kanade",
                              @"Sepia Filter",
                              @"Pass Thru",
                              NULL];
