@@ -31,6 +31,7 @@
                              @"Canny Edge Detector",
                              @"Face Detector",
                              @"Farneback",
+                             @"Laplace",
                              @"Sepia Filter",
                              @"Pass Thru",
                              NULL];

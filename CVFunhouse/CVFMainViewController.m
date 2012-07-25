@@ -13,6 +13,7 @@
 #import "CVFCannyDemo.h"
 #import "CVFFaceDetect.h"
 #import "CVFFarneback.h"
+#import "CVFLaplace.h"
 #import "CVFSephiaDemo.h"
 #import "CVFPassThru.h"
 
@@ -68,10 +69,14 @@
             break;
             
         case 3:
-            self.imageProcessor = [[CVFSephiaDemo alloc] init];
+            self.imageProcessor = [[CVFLaplace alloc] init];
             break;
             
         case 4:
+            self.imageProcessor = [[CVFSephiaDemo alloc] init];
+            break;
+            
+        case 5:
             self.imageProcessor = [[CVFPassThru alloc] init];
             break;
             
