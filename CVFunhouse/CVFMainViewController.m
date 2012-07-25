@@ -9,6 +9,7 @@
 #import "CVFMainViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "CVFCannyDemo.h"
+#import "CVFFaceDetect.h"
 #import "CVFSephiaDemo.h"
 #import "CVFPassThru.h"
 #import "CVFFlipsideViewController.h"
@@ -58,10 +59,14 @@
             break;
             
         case 1:
-            self.imageProcessor = [[CVFSephiaDemo alloc] init];
+            self.imageProcessor = [[CVFFaceDetect alloc] init];
             break;
             
         case 2:
+            self.imageProcessor = [[CVFSephiaDemo alloc] init];
+            break;
+            
+        case 3:
             self.imageProcessor = [[CVFPassThru alloc] init];
             break;
             
