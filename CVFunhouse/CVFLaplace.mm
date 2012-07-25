@@ -47,12 +47,13 @@ Mat smoothed, laplace, result;
     else
         medianBlur(frame, smoothed, ksize);
     
+    cvReleaseImage(&rgbImage);
+    
     Laplacian(smoothed, laplace, CV_16S, 5);
     convertScaleAbs(laplace, result, (sigma+1)*0.25);
     
-    IplImage *resultImage = (IplImage*)cvAlloc(sizeof(IplImage));
-    *resultImage = result;
-    resultImage = cvCloneImage(resultImage);
+    IplImage tempImage = result;
+    IplImage *resultImage = cvCloneImage(&tempImage);
     // Call imageReady with your new image.
     [self imageReady:resultImage];
 }
