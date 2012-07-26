@@ -33,6 +33,7 @@
                              @"Farneback",
                              @"Laplace",
                              @"Lukas-Kanade",
+                             @"Motion Templates",
                              @"Sepia Filter",
                              @"Pass Thru",
                              NULL];

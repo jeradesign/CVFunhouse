@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4209534315C0AC0600C37CD8 /* CVFLukasKanade.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4209534215C0AC0600C37CD8 /* CVFLukasKanade.mm */; };
+		4209534715C0BEB200C37CD8 /* CVFMotionTemplates.m in Sources */ = {isa = PBXBuildFile; fileRef = 4209534615C0BEB200C37CD8 /* CVFMotionTemplates.m */; };
 		420A3F8515BC6724004804EF /* CVFPassThru.m in Sources */ = {isa = PBXBuildFile; fileRef = 420A3F8415BC6724004804EF /* CVFPassThru.m */; };
 		42171D1215BA6C19008BEA68 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42171D1115BA6C19008BEA68 /* opencv2.framework */; };
 		42171D1415BA6C37008BEA68 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42171D1315BA6C37008BEA68 /* libstdc++.dylib */; };
@@ -41,6 +42,8 @@
 /* Begin PBXFileReference section */
 		4209534115C0ABF000C37CD8 /* CVFLukasKanade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CVFLukasKanade.h; path = CVFunhouse/CVFLukasKanade.h; sourceTree = "<group>"; };
 		4209534215C0AC0600C37CD8 /* CVFLukasKanade.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CVFLukasKanade.mm; path = CVFunhouse/CVFLukasKanade.mm; sourceTree = "<group>"; };
+		4209534515C0BE8A00C37CD8 /* CVFMotionTemplates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CVFMotionTemplates.h; path = CVFunhouse/CVFMotionTemplates.h; sourceTree = "<group>"; };
+		4209534615C0BEB200C37CD8 /* CVFMotionTemplates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CVFMotionTemplates.m; path = CVFunhouse/CVFMotionTemplates.m; sourceTree = "<group>"; };
 		420A3F8315BC6724004804EF /* CVFPassThru.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CVFPassThru.h; path = CVFunhouse/CVFPassThru.h; sourceTree = "<group>"; };
 		420A3F8415BC6724004804EF /* CVFPassThru.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CVFPassThru.m; path = CVFunhouse/CVFPassThru.m; sourceTree = "<group>"; };
 		42171D1115BA6C19008BEA68 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
@@ -123,6 +126,8 @@
 				4285253415BF83FF00622EE8 /* CVFLaplace.mm */,
 				4209534115C0ABF000C37CD8 /* CVFLukasKanade.h */,
 				4209534215C0AC0600C37CD8 /* CVFLukasKanade.mm */,
+				4209534515C0BE8A00C37CD8 /* CVFMotionTemplates.h */,
+				4209534615C0BEB200C37CD8 /* CVFMotionTemplates.m */,
 			);
 			name = Demos;
 			sourceTree = "<group>";
@@ -287,6 +292,7 @@
 				4285253215BF792F00622EE8 /* CVFFarneback.m in Sources */,
 				4285253515BF83FF00622EE8 /* CVFLaplace.mm in Sources */,
 				4209534315C0AC0600C37CD8 /* CVFLukasKanade.mm in Sources */,
+				4209534715C0BEB200C37CD8 /* CVFMotionTemplates.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
