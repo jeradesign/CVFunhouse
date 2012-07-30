@@ -189,6 +189,8 @@ static void  update_mhi( IplImage* img, IplImage* dst, int diff_threshold )
     
     update_mhi( image, motion, 30 );
     
+    cvReleaseImage(&image);
+    
     // Call imageReady with your new image.
     IplImage *outImage = cvCloneImage(motion);
     [self imageReady:outImage];

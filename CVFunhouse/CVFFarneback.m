@@ -50,12 +50,8 @@ static void drawOptFlowMap(const CvMat* flow, CvMat* cflowmap, int step,
  *      imageReady: will dispose of the IplImage you pass it once the system is
  *      done with it.
  */
--(void)processIplImage:(IplImage*)iplImage
+-(void)processIplImage:(IplImage*)frame
 {
-    IplImage *frame = cvCreateImage(cvGetSize(iplImage), IPL_DEPTH_8U, 3);
-    cvCvtColor(iplImage, frame, CV_BGR2RGB);
-    cvReleaseImage(&iplImage);
-
     int firstFrame = (gray == 0);
     if(!gray)
     {
@@ -65,6 +61,7 @@ static void drawOptFlowMap(const CvMat* flow, CvMat* cflowmap, int step,
         cflow = cvCreateMat(gray->rows, gray->cols, CV_8UC3);
     }
     cvCvtColor(frame, gray, CV_BGR2GRAY);
+    cvReleaseImage(&frame);
     
     if( !firstFrame )
     {
