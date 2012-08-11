@@ -88,10 +88,8 @@
             break;
             
         case 7:
-            self.imageProcessor = [[CVFPassThru alloc] init];
-            break;
-            
         default:
+            self.imageProcessor = [[CVFPassThru alloc] init];
             break;
     }
 }
