@@ -48,10 +48,19 @@
                                     <action selector="flipAction:" destination="2" eventType="touchUpInside" id="IBk-Ue-zv9"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="left" text="30.00 FPS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="8Qh-6U-N8N">
+                                <rect key="frame" x="338" y="28" width="92" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="fpsLabel" destination="8Qh-6U-N8N" id="p7r-5Y-fzc"/>
                         <outlet property="imageView" destination="7O3-qG-bEB" id="Nxu-c1-Z2p"/>
                         <segue destination="5" kind="popover" identifier="showAlternate" popoverAnchorView="3Kb-lW-bhg" id="22">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -113,6 +122,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CVFMainViewController.h"/>
             <relationships>
                 <relationship kind="action" name="flipAction:"/>
+                <relationship kind="outlet" name="fpsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="previewView" candidateClass="UIView"/>
             </relationships>

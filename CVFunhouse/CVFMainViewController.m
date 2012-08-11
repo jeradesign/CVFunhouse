@@ -34,8 +34,10 @@
     AVCaptureSession *_session;
     AVCaptureVideoPreviewLayer *_previewLayer;
     CVFImageProcessor *_imageProcessor;
+    NSDate *_lastFrameTime;
 }
 
+@synthesize fpsLabel = _fpsLabel;
 @synthesize flipsidePopoverController = _flipsidePopoverController;
 @synthesize previewView = _previewView;
 @synthesize imageView = _imageView;
@@ -118,6 +120,7 @@
     [self turnCameraOff];
     [self setPreviewView:nil];
     [self setImageView:nil];
+    [self setFpsLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -173,6 +176,15 @@
 {
 //    NSLog(@"Image Received");
     [self.imageView setImage:image];
+    NSDate *now = [NSDate date];
+    NSTimeInterval frameDelay = [now timeIntervalSinceDate:_lastFrameTime];
+    if (frameDelay <= 0.000001) {
+        self.fpsLabel.text = @"30.000 FPS";
+    } else {
+        double fps = 1.0/frameDelay;
+        self.fpsLabel.text = [NSString stringWithFormat:@"%05.2f FPS", fps];
+    }
+    _lastFrameTime = now;
 }
 
 #pragma mark - Camera support

@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIView *previewView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, atomic) CVFImageProcessor *imageProcessor;
+@property (weak, nonatomic) IBOutlet UILabel *fpsLabel;
 
 
 - (IBAction)flipAction:(id)se;
