@@ -88,23 +88,21 @@
                                     <outlet property="delegate" destination="5" id="am0-fu-LVE"/>
                                 </connections>
                             </tableView>
-                            <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="17">
+                            <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="17">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Demos" id="18">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="19">
-                                            <connections>
-                                                <action selector="done:" destination="5" id="21"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
+                                    <navigationItem title="Demos" id="18"/>
                                 </items>
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="menuTable" destination="sA0-X1-b9n" id="z1A-5M-ZAy"/>
+                        <outlet property="navBar" destination="17" id="mzC-dU-KrK"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="836" y="101"/>
@@ -116,6 +114,7 @@
             <relationships>
                 <relationship kind="action" name="done:"/>
                 <relationship kind="outlet" name="menuTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="navBar" candidateClass="UINavigationBar"/>
             </relationships>
         </class>
         <class className="CVFMainViewController" superclassName="UIViewController">

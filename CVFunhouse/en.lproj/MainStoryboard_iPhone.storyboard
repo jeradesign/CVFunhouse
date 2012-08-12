@@ -104,6 +104,9 @@
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="menuTable" destination="qXS-hy-zGE" id="YQy-5S-iYb"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="368" y="182"/>

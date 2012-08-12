@@ -16,18 +16,18 @@
 @implementation CVFFlipsideViewController
 @synthesize menuTable = _menuTable;
 @synthesize delegate = _delegate;
+@synthesize navBar = _navBar;
 @synthesize flipsidePopoverArray = _flipsidePopoverArray;
 
 - (void)awakeFromNib
 {
-    self.contentSizeForViewInPopover = CGSizeMake(320.0, 480.0);
     [super awakeFromNib];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _flipsidePopoverArray = [[NSMutableArray alloc] initWithObjects:
+    self.flipsidePopoverArray = [[NSMutableArray alloc] initWithObjects:
                              @"Canny Edge Detector",
                              @"Face Detector",
                              @"Farneback",
@@ -37,15 +37,14 @@
                              @"Sepia Filter",
                              @"Pass Thru",
                              NULL];
-    _menuTable = [[UITableView alloc] init];
-    _menuTable.delegate = self;
-    [self setMenuTable:_menuTable];
     
 	// Do any additional setup after loading the view, typically from a nib.
+    [self reloadViewHeight];
 }
 
 - (void)viewDidUnload
 {
+    [self setNavBar:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -61,6 +60,23 @@
 
 - (void) viewWillAppear:(BOOL)animated {
     _demoNumber = [[NSUserDefaults standardUserDefaults] integerForKey:@"demoNumber"];
+}
+
+-(void) reloadViewHeight
+{
+    float currentTotal = 0;
+
+    currentTotal += self.navBar.bounds.size.height;
+    
+    //Need to total each section
+    for (int i = 0; i < [self.menuTable numberOfSections]; i++) 
+    {
+        CGRect sectionRect = [self.menuTable rectForSection:i];
+        currentTotal += sectionRect.size.height;
+    }
+    
+    //Set the contentSizeForViewInPopover
+    self.contentSizeForViewInPopover = CGSizeMake(320, currentTotal);
 }
 
 #pragma mark - Table view data source
