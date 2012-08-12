@@ -105,7 +105,7 @@ static NSString *SwitchCellIdentifier = @"SwitchCell";
 - (void)createSwitchCell:(UITableViewCell **)cell_p {
     *cell_p = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:SwitchCellIdentifier];
-    CGRect frame = CGRectMake(174.0, 12.0, 120.0, kSliderHeight);
+    CGRect frame = CGRectMake(220.0, 16.0, 0.0, 0.0);
     
     UISwitch *switchCtl = [[UISwitch alloc] initWithFrame:frame];
     [switchCtl addTarget:self action:@selector(switchAction:) forControlEvents:UIControlEventValueChanged];
