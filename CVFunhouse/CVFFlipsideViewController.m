@@ -8,6 +8,12 @@
 
 #import "CVFFlipsideViewController.h"
 
+static NSString *SwitchCellIdentifier = @"SwitchCell";
+
+#define kSliderHeight 7.0
+// for tagging our embedded controls for removal at cell recycle time
+#define kViewTag 1
+
 @interface CVFFlipsideViewController () {
     int _demoNumber;    
 }
@@ -18,6 +24,7 @@
 @synthesize delegate = _delegate;
 @synthesize navBar = _navBar;
 @synthesize flipsidePopoverArray = _flipsidePopoverArray;
+@synthesize switchCtl = _switchCtl;
 
 - (void)awakeFromNib
 {
@@ -37,8 +44,9 @@
                              @"Sepia Filter",
                              @"Pass Thru",
                              NULL];
+
+    shouldShowFPS = [[NSUserDefaults standardUserDefaults] boolForKey:@"showFPS"];
     
-	// Do any additional setup after loading the view, typically from a nib.
     [self reloadViewHeight];
 }
 
@@ -82,31 +90,68 @@
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [_flipsidePopoverArray count];
+    if (section == 0) {
+        return [_flipsidePopoverArray count];
+    } else {
+        return 1;
+    }
+}
+
+- (void)createSwitchCell:(UITableViewCell **)cell_p {
+    *cell_p = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                      reuseIdentifier:SwitchCellIdentifier];
+    CGRect frame = CGRectMake(174.0, 12.0, 120.0, kSliderHeight);
+    
+    UISwitch *switchCtl = [[UISwitch alloc] initWithFrame:frame];
+    [switchCtl addTarget:self action:@selector(switchAction:) forControlEvents:UIControlEventValueChanged];
+    
+    // in case the parent view draws with a custom color or gradient, use a transparent color
+    switchCtl.backgroundColor = [UIColor clearColor];
+    
+    switchCtl.on = shouldShowFPS;
+    
+    // Add an accessibility label that describes the switch.
+    [switchCtl setAccessibilityLabel:NSLocalizedString(@"StandardSwitch", @"")];
+    
+    switchCtl.tag = kViewTag;	// tag this view for later so we can remove it from recycled table cells
+    
+    (*cell_p).textLabel.text = @"Show FPS";
+    
+    self.switchCtl = switchCtl;
+    
+    [(*cell_p).contentView addSubview:switchCtl];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault 
-                                      reuseIdentifier:CellIdentifier] ;
-    }
-    
-    if(indexPath.row < [_flipsidePopoverArray count]) {
-        cell.textLabel.text = [_flipsidePopoverArray objectAtIndex:indexPath.row];
-    }
+    UITableViewCell *cell;
+    if ([indexPath section] == 1 && [indexPath row] == 0) {
+        cell = [tableView dequeueReusableCellWithIdentifier:SwitchCellIdentifier];
+        if (cell == nil) {
+            [self createSwitchCell:&cell];
+        }
+    } else {
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault 
+                                          reuseIdentifier:CellIdentifier] ;
+        }
         
-    if (indexPath.row == _demoNumber) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    }
-    else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
+        if(indexPath.row < [_flipsidePopoverArray count]) {
+            cell.textLabel.text = [_flipsidePopoverArray objectAtIndex:indexPath.row];
+        }
+        
+        if (indexPath.row == _demoNumber) {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
+        else {
+            cell.accessoryType = UITableViewCellAccessoryNone;
+        }
     }
 
     return cell;
@@ -114,6 +159,10 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+    if (indexPath.section == 1) {
+        return;
+    }
     
     NSIndexPath *oldIndexPath = [NSIndexPath indexPathForRow:_demoNumber inSection:0];
     
@@ -135,6 +184,15 @@
 - (IBAction)done:(id)sender
 {
     [self.delegate flipsideViewControllerDidFinish:self];
+}
+
+#pragma mark Switch methods
+
+- (void)switchAction:(id)sender {
+    UISwitch *senderAsSwitch = (UISwitch *)sender;
+    shouldShowFPS = [senderAsSwitch isOn];
+    [[NSUserDefaults standardUserDefaults] setBool:shouldShowFPS forKey:@"showFPS"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"showFPS" object:nil];
 }
 
 @end

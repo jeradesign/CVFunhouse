@@ -47,6 +47,7 @@
 {
     [super viewDidLoad];
     
+    [self showHideFPS];
     [self resetImageProcessor];
     CameraState = 1;
     [self setupCamera];
@@ -54,6 +55,10 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(resetImageProcessor)
                                                  name:@"demoNumber"
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(showHideFPS)
+                                                 name:@"showFPS"
                                                object:nil];
 }
 
@@ -94,6 +99,11 @@
             self.imageProcessor = [[CVFPassThru alloc] init];
             break;
     }
+}
+
+- (void)showHideFPS {
+    bool showFPS = [[NSUserDefaults standardUserDefaults] boolForKey:@"showFPS"];
+    [self.fpsLabel setHidden:!showFPS];
 }
 
 - (void)setImageProcessor:(CVFImageProcessor *)imageProcessor

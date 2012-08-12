@@ -17,11 +17,13 @@
 @interface CVFFlipsideViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
     NSMutableArray *_flipsidePopoverArray;
+    bool shouldShowFPS;
 }
 @property (retain, nonatomic) NSMutableArray *flipsidePopoverArray;
 @property (retain, nonatomic) IBOutlet UITableView *menuTable;
 @property (weak, nonatomic) id <CVFFlipsideViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
+@property (weak, nonatomic) UISwitch *switchCtl;
 
 - (IBAction)done:(id)sender;
 
