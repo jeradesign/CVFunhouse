@@ -38,6 +38,7 @@
 }
 
 @synthesize fpsLabel = _fpsLabel;
+@synthesize flipCameraButton = _flipCameraButton;
 @synthesize flipsidePopoverController = _flipsidePopoverController;
 @synthesize previewView = _previewView;
 @synthesize imageView = _imageView;
@@ -131,6 +132,7 @@
     [self setPreviewView:nil];
     [self setImageView:nil];
     [self setFpsLabel:nil];
+    [self setFlipCameraButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -202,6 +204,9 @@
 - (void)setupCamera {
     _cameraDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     NSArray *devices = [AVCaptureDevice devices];
+    if (devices.count == 1) {
+        
+    }
     for (AVCaptureDevice *device in devices) {
         if (device.position == AVCaptureDevicePositionFront && CameraState == 1) {
             
@@ -215,8 +220,6 @@
         }
     }
 }
-
-
 
 - (void)turnCameraOn {
     NSError *error;
@@ -271,7 +274,9 @@
         // Get a CMSampleBuffer's Core Video image buffer for the media data
         CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
         
-        [self.imageProcessor processImageBuffer:imageBuffer withMirroring:(CameraState==1)];
+        [self.imageProcessor processImageBuffer:imageBuffer
+                                  withMirroring:(_cameraDevice.position ==
+                                                 AVCaptureDevicePositionFront)];
     }
 }
 

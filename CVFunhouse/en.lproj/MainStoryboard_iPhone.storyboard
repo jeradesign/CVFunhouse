@@ -62,6 +62,7 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="flipCameraButton" destination="lKb-tT-4x6" id="CMq-0W-Cdx"/>
                         <outlet property="fpsLabel" destination="dX3-k0-41q" id="sT8-Ia-RYD"/>
                         <outlet property="imageView" destination="Mkk-co-6Pr" id="3V6-gf-qa0"/>
                     </connections>
