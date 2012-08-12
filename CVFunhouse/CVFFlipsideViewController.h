@@ -16,7 +16,7 @@
 
 @interface CVFFlipsideViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
-    NSMutableArray *flipsidePopoverArray;
+    NSMutableArray *_flipsidePopoverArray;
 }
 @property (retain, nonatomic) NSMutableArray *flipsidePopoverArray;
 @property (retain, nonatomic) IBOutlet UITableView *menuTable;

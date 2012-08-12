@@ -107,6 +107,7 @@
     _demoNumber = [indexPath row];
     [[NSUserDefaults standardUserDefaults] setInteger:_demoNumber forKey:@"demoNumber"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"demoNumber" object:nil];
+    [self.delegate flipsideViewControllerDidFinish:self];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
