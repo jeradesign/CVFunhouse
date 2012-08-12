@@ -271,7 +271,7 @@
         // Get a CMSampleBuffer's Core Video image buffer for the media data
         CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
         
-        [self.imageProcessor processImageBuffer:imageBuffer];
+        [self.imageProcessor processImageBuffer:imageBuffer withMirroring:(CameraState==1)];
     }
 }
 

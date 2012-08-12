@@ -22,7 +22,7 @@
 
 @synthesize delegate;
 
--(void)processImageBuffer:(CVImageBufferRef)imageBuffer
+-(void)processImageBuffer:(CVImageBufferRef)imageBuffer withMirroring:(BOOL)shouldMirror
 {
     // Lock the base address of the pixel buffer
     CVPixelBufferLockBaseAddress(imageBuffer, 0);
@@ -45,7 +45,13 @@
 //    IplImage *flipCopy = cvCloneImage(iplimage);
 //    cvFlip(flipCopy, flipCopy, 0);
     IplImage *workingCopy = cvCreateImage(cvSize(height, width), IPL_DEPTH_8U, 4);
-    cvTranspose(iplimage, workingCopy);
+
+    if (shouldMirror) {
+        cvTranspose(iplimage, workingCopy);
+    } else {
+        cvTranspose(iplimage, workingCopy);
+        cvFlip(workingCopy, nil, 1);
+    }
 
     cvReleaseImageHeader(&iplimage);
     

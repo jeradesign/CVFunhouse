@@ -17,7 +17,7 @@
 
 @property (nonatomic, weak) id<CVFImageProcessorDelegate> delegate;
 
--(void)processImageBuffer:(CVImageBufferRef)imageBuffer;
+-(void)processImageBuffer:(CVImageBufferRef)imageBuffer withMirroring:(BOOL)shouldMirror;
 -(void)imageReady:(IplImage*)image;
 -(void)processIplImage:(IplImage*)iplImage;
 
