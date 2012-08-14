@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4201072015D9D75E002EBEBA /* SwitchCameraIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4201071F15D9D75E002EBEBA /* SwitchCameraIcon.png */; };
 		4209534315C0AC0600C37CD8 /* CVFLukasKanade.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4209534215C0AC0600C37CD8 /* CVFLukasKanade.mm */; };
 		4209534715C0BEB200C37CD8 /* CVFMotionTemplates.m in Sources */ = {isa = PBXBuildFile; fileRef = 4209534615C0BEB200C37CD8 /* CVFMotionTemplates.m */; };
 		420A3F8515BC6724004804EF /* CVFPassThru.m in Sources */ = {isa = PBXBuildFile; fileRef = 420A3F8415BC6724004804EF /* CVFPassThru.m */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4201071F15D9D75E002EBEBA /* SwitchCameraIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SwitchCameraIcon.png; sourceTree = "<group>"; };
 		4209534115C0ABF000C37CD8 /* CVFLukasKanade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CVFLukasKanade.h; path = CVFunhouse/CVFLukasKanade.h; sourceTree = "<group>"; };
 		4209534215C0AC0600C37CD8 /* CVFLukasKanade.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CVFLukasKanade.mm; path = CVFunhouse/CVFLukasKanade.mm; sourceTree = "<group>"; };
 		4209534515C0BE8A00C37CD8 /* CVFMotionTemplates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CVFMotionTemplates.h; path = CVFunhouse/CVFMotionTemplates.h; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 		4285252915BF6CDF00622EE8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4201071F15D9D75E002EBEBA /* SwitchCameraIcon.png */,
 				427D67DF15D9CB81008A25FA /* Settings.bundle */,
 				4285252E15BF750000622EE8 /* haarcascade_frontalface_alt.xml */,
 				42B3377815BA94A000CBD888 /* CVFunhouse57.png */,
@@ -274,6 +277,7 @@
 				42B3377915BA94A000CBD888 /* CVFunhouse57.png in Resources */,
 				4285252F15BF750000622EE8 /* haarcascade_frontalface_alt.xml in Resources */,
 				427D67E015D9CB81008A25FA /* Settings.bundle in Resources */,
+				4201072015D9D75E002EBEBA /* SwitchCameraIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
