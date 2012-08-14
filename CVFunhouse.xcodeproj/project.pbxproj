@@ -17,6 +17,7 @@
 		425370911508384900BFE3C0 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4253708F1508384900BFE3C0 /* CoreVideo.framework */; };
 		42537094150839FF00BFE3C0 /* CVFImageProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 42537093150839FF00BFE3C0 /* CVFImageProcessor.m */; };
 		4275AFCC15095A2C00D74063 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4275AFCB15095A2C00D74063 /* libz.dylib */; };
+		427D67E015D9CB81008A25FA /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 427D67DF15D9CB81008A25FA /* Settings.bundle */; };
 		4285252815BF698800622EE8 /* CVFFaceDetect.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4285252715BF698800622EE8 /* CVFFaceDetect.mm */; };
 		4285252F15BF750000622EE8 /* haarcascade_frontalface_alt.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4285252E15BF750000622EE8 /* haarcascade_frontalface_alt.xml */; };
 		4285253215BF792F00622EE8 /* CVFFarneback.m in Sources */ = {isa = PBXBuildFile; fileRef = 4285253115BF792F00622EE8 /* CVFFarneback.m */; };
@@ -55,6 +56,7 @@
 		42537093150839FF00BFE3C0 /* CVFImageProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVFImageProcessor.m; sourceTree = "<group>"; };
 		4253709515083BA800BFE3C0 /* CVFImageProcessorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVFImageProcessorDelegate.h; sourceTree = "<group>"; };
 		4275AFCB15095A2C00D74063 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		427D67DF15D9CB81008A25FA /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		4285252515BF5A9300622EE8 /* TODO.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = TODO.rtf; sourceTree = "<group>"; };
 		4285252615BF696700622EE8 /* CVFFaceDetect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CVFFaceDetect.h; path = CVFunhouse/CVFFaceDetect.h; sourceTree = "<group>"; };
 		4285252715BF698800622EE8 /* CVFFaceDetect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CVFFaceDetect.mm; path = CVFunhouse/CVFFaceDetect.mm; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 		4285252915BF6CDF00622EE8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				427D67DF15D9CB81008A25FA /* Settings.bundle */,
 				4285252E15BF750000622EE8 /* haarcascade_frontalface_alt.xml */,
 				42B3377815BA94A000CBD888 /* CVFunhouse57.png */,
 				42B3377515BA949400CBD888 /* CVFunhouse114.png */,
@@ -270,6 +273,7 @@
 				42B3377615BA949400CBD888 /* CVFunhouse114.png in Resources */,
 				42B3377915BA94A000CBD888 /* CVFunhouse57.png in Resources */,
 				4285252F15BF750000622EE8 /* haarcascade_frontalface_alt.xml in Resources */,
+				427D67E015D9CB81008A25FA /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
