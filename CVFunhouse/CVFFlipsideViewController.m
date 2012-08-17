@@ -9,6 +9,7 @@
 #import "CVFFlipsideViewController.h"
 
 static NSString *SwitchCellIdentifier = @"SwitchCell";
+static NSString *ShowDescriptionCellIdentifier = @"ShowDescription";
 
 #define kSliderHeight 7.0
 // for tagging our embedded controls for removal at cell recycle time
@@ -46,6 +47,7 @@ static NSString *SwitchCellIdentifier = @"SwitchCell";
                              NULL];
 
     shouldShowFPS = [[NSUserDefaults standardUserDefaults] boolForKey:@"showFPS"];
+    shouldShowDescription = [[NSUserDefaults standardUserDefaults] boolForKey:@"showDescription"];
     
     [self reloadViewHeight];
 }
@@ -98,29 +100,33 @@ static NSString *SwitchCellIdentifier = @"SwitchCell";
     if (section == 0) {
         return [_flipsidePopoverArray count];
     } else {
-        return 1;
+        return 2;
     }
 }
 
-- (void)createSwitchCell:(UITableViewCell **)cell_p {
+- (void)createSwitchCell:(UITableViewCell **)cell_p
+               withLabel:(NSString *)labelString
+         reuseIdentifier:(NSString *)reuseIdentifier
+                selector:(SEL)selector
+            initialValue:(bool) value {
     *cell_p = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:SwitchCellIdentifier];
     CGRect frame = CGRectMake(220.0, 16.0, 0.0, 0.0);
     
     UISwitch *switchCtl = [[UISwitch alloc] initWithFrame:frame];
-    [switchCtl addTarget:self action:@selector(switchAction:) forControlEvents:UIControlEventValueChanged];
+    [switchCtl addTarget:self action:selector forControlEvents:UIControlEventValueChanged];
     
     // in case the parent view draws with a custom color or gradient, use a transparent color
     switchCtl.backgroundColor = [UIColor clearColor];
     
-    switchCtl.on = shouldShowFPS;
+    switchCtl.on = value;
     
     // Add an accessibility label that describes the switch.
     [switchCtl setAccessibilityLabel:NSLocalizedString(@"StandardSwitch", @"")];
     
     switchCtl.tag = kViewTag;	// tag this view for later so we can remove it from recycled table cells
     
-    (*cell_p).textLabel.text = @"Show Frame Rate";
+    (*cell_p).textLabel.text = labelString;
     
     self.switchCtl = switchCtl;
     
@@ -133,7 +139,20 @@ static NSString *SwitchCellIdentifier = @"SwitchCell";
     if ([indexPath section] == 1 && [indexPath row] == 0) {
         cell = [tableView dequeueReusableCellWithIdentifier:SwitchCellIdentifier];
         if (cell == nil) {
-            [self createSwitchCell:&cell];
+            [self createSwitchCell:&cell
+                         withLabel:@"Show Frame Rate"
+                   reuseIdentifier:SwitchCellIdentifier
+                          selector:@selector(switchAction:)
+                      initialValue:shouldShowFPS];
+        }
+    } else if ([indexPath section] == 1 && [indexPath row] == 1) {
+        cell = [tableView dequeueReusableCellWithIdentifier:ShowDescriptionCellIdentifier];
+        if (cell == nil) {
+            [self createSwitchCell:&cell
+                         withLabel:@"Show Description"
+                   reuseIdentifier:ShowDescriptionCellIdentifier
+                          selector:@selector(showHideDescription:)
+                      initialValue:shouldShowDescription];
         }
     } else {
         cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -193,6 +212,13 @@ static NSString *SwitchCellIdentifier = @"SwitchCell";
     shouldShowFPS = [senderAsSwitch isOn];
     [[NSUserDefaults standardUserDefaults] setBool:shouldShowFPS forKey:@"showFPS"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"showFPS" object:nil];
+}
+
+- (void)showHideDescription:(id)sender {
+    UISwitch *senderAsSwitch = (UISwitch *)sender;
+    shouldShowDescription = [senderAsSwitch isOn];
+    [[NSUserDefaults standardUserDefaults] setBool:shouldShowDescription forKey:@"showDescription"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"showDescription" object:nil];
 }
 
 @end

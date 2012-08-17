@@ -25,6 +25,7 @@
 @property (strong, atomic) CVFImageProcessor *imageProcessor;
 @property (weak, nonatomic) IBOutlet UILabel *fpsLabel;
 @property (weak, nonatomic) IBOutlet UIButton *flipCameraButton;
+@property (weak, nonatomic) IBOutlet UIWebView *descriptionView;
 
 
 - (IBAction)flipAction:(id)se;

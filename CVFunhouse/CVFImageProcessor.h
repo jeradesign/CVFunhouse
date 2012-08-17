@@ -16,6 +16,7 @@
 @interface CVFImageProcessor : NSObject
 
 @property (nonatomic, weak) id<CVFImageProcessorDelegate> delegate;
+@property (nonatomic, readonly) NSString *demoDescription;
 
 -(void)processImageBuffer:(CVImageBufferRef)imageBuffer withMirroring:(BOOL)shouldMirror;
 -(void)imageReady:(IplImage*)image;

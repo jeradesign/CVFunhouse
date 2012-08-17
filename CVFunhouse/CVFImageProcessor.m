@@ -22,6 +22,10 @@
 
 @synthesize delegate;
 
+-(NSString*)demoDescription {
+    return @"<h2>No Description Provided</h2>";
+}
+
 -(void)processImageBuffer:(CVImageBufferRef)imageBuffer withMirroring:(BOOL)shouldMirror
 {
     // Lock the base address of the pixel buffer

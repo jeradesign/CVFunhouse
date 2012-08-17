@@ -39,6 +39,7 @@
 
 @synthesize fpsLabel = _fpsLabel;
 @synthesize flipCameraButton = _flipCameraButton;
+@synthesize descriptionView = _descriptionView;
 @synthesize flipsidePopoverController = _flipsidePopoverController;
 @synthesize previewView = _previewView;
 @synthesize imageView = _imageView;
@@ -49,6 +50,7 @@
     [super viewDidLoad];
     
     [self showHideFPS];
+    [self showHideDescription];
     [self resetImageProcessor];
     CameraState = 1;
     [self setupCamera];
@@ -60,6 +62,10 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(showHideFPS)
                                                  name:@"showFPS"
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(showHideDescription)
+                                                 name:@"showDescription"
                                                object:nil];
 }
 
@@ -100,6 +106,9 @@
             self.imageProcessor = [[CVFPassThru alloc] init];
             break;
     }
+    
+    [self.descriptionView loadHTMLString:self.imageProcessor.demoDescription
+                                 baseURL:nil];
 }
 
 - (void)showHideFPS {
@@ -107,10 +116,18 @@
     [self.fpsLabel setHidden:!showFPS];
 }
 
+- (void)showHideDescription {
+    bool showDescription = [[NSUserDefaults standardUserDefaults] boolForKey:@"showDescription"];
+    [self.descriptionView setHidden:!showDescription];
+}
+
 - (void)setImageProcessor:(CVFImageProcessor *)imageProcessor
 {
-    _imageProcessor = imageProcessor;
-    _imageProcessor.delegate = self;
+    if (_imageProcessor != imageProcessor) {
+        _imageProcessor.delegate = nil;
+        _imageProcessor = imageProcessor;
+        _imageProcessor.delegate = self;
+    }
 }
 
 - (CVFImageProcessor *)imageProcessor {
@@ -133,6 +150,7 @@
     [self setImageView:nil];
     [self setFpsLabel:nil];
     [self setFlipCameraButton:nil];
+    [self setDescriptionView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

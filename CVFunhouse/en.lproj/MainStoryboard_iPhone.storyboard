@@ -56,11 +56,17 @@
                                     <segue destination="6" kind="modal" identifier="showAlternate" modalTransitionStyle="flipHorizontal" id="11"/>
                                 </connections>
                             </button>
+                            <webView contentMode="scaleToFill" id="TVS-vQ-ZgI">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="242"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="descriptionView" destination="TVS-vQ-ZgI" id="EpH-vs-i3P"/>
                         <outlet property="flipCameraButton" destination="lKb-tT-4x6" id="CMq-0W-Cdx"/>
                         <outlet property="fpsLabel" destination="dX3-k0-41q" id="sT8-Ia-RYD"/>
                         <outlet property="imageView" destination="Mkk-co-6Pr" id="3V6-gf-qa0"/>
@@ -129,6 +135,8 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CVFMainViewController.h"/>
             <relationships>
                 <relationship kind="action" name="flipAction:"/>
+                <relationship kind="action" name="togglePopover:"/>
+                <relationship kind="outlet" name="descriptionView" candidateClass="UIWebView"/>
                 <relationship kind="outlet" name="flipCameraButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="fpsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>

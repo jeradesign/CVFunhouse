@@ -18,6 +18,7 @@
 {
     NSMutableArray *_flipsidePopoverArray;
     bool shouldShowFPS;
+    bool shouldShowDescription;
 }
 @property (retain, nonatomic) NSMutableArray *flipsidePopoverArray;
 @property (retain, nonatomic) IBOutlet UITableView *menuTable;
