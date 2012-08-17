@@ -120,7 +120,7 @@ static NSString *SwitchCellIdentifier = @"SwitchCell";
     
     switchCtl.tag = kViewTag;	// tag this view for later so we can remove it from recycled table cells
     
-    (*cell_p).textLabel.text = @"Show FPS";
+    (*cell_p).textLabel.text = @"Show Frame Rate";
     
     self.switchCtl = switchCtl;
     
