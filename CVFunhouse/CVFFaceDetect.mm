@@ -67,7 +67,6 @@ double scale = 1;
     Mat img = Mat::Mat(rgbImage, false);
     
     int i = 0;
-    double t = 0;
     vector<cv::Rect> faces;
     const static Scalar colors[] =  { CV_RGB(0,0,255),
         CV_RGB(0,128,255),
@@ -83,16 +82,13 @@ double scale = 1;
     resize( gray, smallImg, smallImg.size(), 0, 0, INTER_LINEAR );
     equalizeHist( smallImg, smallImg );
     
-    t = (double)cvGetTickCount();
     cascade.detectMultiScale( smallImg, faces,
-                             1.1, 2, 0
+                             1.2, 2, 0
                              //|CV_HAAR_FIND_BIGGEST_OBJECT
                              //|CV_HAAR_DO_ROUGH_SEARCH
                              |CV_HAAR_SCALE_IMAGE
                              ,
-                             cv::Size(30, 30) );
-    t = (double)cvGetTickCount() - t;
-    printf( "detection time = %g ms\n", t/((double)cvGetTickFrequency()*1000.) );
+                             cv::Size(75, 75) );
     for( vector<cv::Rect>::const_iterator r = faces.begin(); r != faces.end(); r++, i++ )
     {
         Mat smallImgROI;
