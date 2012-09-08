@@ -10,6 +10,7 @@
 
 static NSString *SwitchCellIdentifier = @"SwitchCell";
 static NSString *ShowDescriptionCellIdentifier = @"ShowDescription";
+static NSString *ShowDescriptionHintCellIdentifier = @"ShowDescriptionHint";
 
 #define kSliderHeight 7.0
 // for tagging our embedded controls for removal at cell recycle time
@@ -153,6 +154,12 @@ static NSString *ShowDescriptionCellIdentifier = @"ShowDescription";
                    reuseIdentifier:ShowDescriptionCellIdentifier
                           selector:@selector(showHideDescription:)
                       initialValue:shouldShowDescription];
+        }
+    } else if ([indexPath section] == 1 && [indexPath row] == 2) {
+        cell = [tableView dequeueReusableCellWithIdentifier:ShowDescriptionHintCellIdentifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                          reuseIdentifier:ShowDescriptionHintCellIdentifier] ;
         }
     } else {
         cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];

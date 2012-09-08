@@ -29,5 +29,7 @@
 
 
 - (IBAction)flipAction:(id)se;
+- (IBAction)swipeUpAction:(id)sender;
+- (IBAction)swipeDownAction:(id)sender;
 
 @end

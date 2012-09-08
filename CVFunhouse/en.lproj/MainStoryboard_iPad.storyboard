@@ -57,12 +57,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <webView contentMode="scaleToFill" id="hPX-KJ-ZGW">
-                                <rect key="frame" x="0.0" y="510" width="768" height="514"/>
+                                <rect key="frame" x="20" y="510" width="728" height="514"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="haR-n2-fTo" appends="YES" id="JIT-T7-Idk"/>
+                            <outletCollection property="gestureRecognizers" destination="McB-zn-nke" appends="YES" id="rlp-Ok-prX"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="descriptionView" destination="hPX-KJ-ZGW" id="Eev-Nz-X35"/>
@@ -74,6 +79,16 @@
                         </segue>
                     </connections>
                 </viewController>
+                <swipeGestureRecognizer direction="up" id="haR-n2-fTo">
+                    <connections>
+                        <action selector="swipeUpAction:" destination="2" id="gS5-O1-qFE"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="McB-zn-nke">
+                    <connections>
+                        <action selector="swipeDownAction:" destination="2" id="8Ep-rf-EPX"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-286" y="15"/>
         </scene>
@@ -119,6 +134,30 @@
         <image name="SwitchCameraIcon44.png" width="44" height="25"/>
         <image name="iButton30.png" width="30" height="30"/>
     </resources>
+    <classes>
+        <class className="CVFFlipsideViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CVFFlipsideViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="outlet" name="menuTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="navBar" candidateClass="UINavigationBar"/>
+            </relationships>
+        </class>
+        <class className="CVFMainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CVFMainViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="flipAction:"/>
+                <relationship kind="action" name="swipeDownAction:"/>
+                <relationship kind="action" name="swipeUpAction:"/>
+                <relationship kind="action" name="togglePopover:"/>
+                <relationship kind="outlet" name="descriptionView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="flipCameraButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="fpsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="previewView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <nil key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

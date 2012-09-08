@@ -35,6 +35,8 @@
     AVCaptureVideoPreviewLayer *_previewLayer;
     CVFImageProcessor *_imageProcessor;
     NSDate *_lastFrameTime;
+    CGPoint _descriptionOffScreenCenter;
+    CGPoint _descriptionOnScreenCenter;
 }
 
 @synthesize fpsLabel = _fpsLabel;
@@ -50,11 +52,12 @@
     [super viewDidLoad];
     
     [self showHideFPS];
-    [self showHideDescription];
+    [self initializeDescription];
     [self resetImageProcessor];
     CameraState = 1;
     [self setupCamera];
     [self turnCameraOn];
+
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(resetImageProcessor)
                                                  name:@"demoNumber"
@@ -116,9 +119,35 @@
     [self.fpsLabel setHidden:!showFPS];
 }
 
+- (void)initializeDescription {
+    self.descriptionView.layer.borderColor = [UIColor blackColor].CGColor;
+    self.descriptionView.layer.borderWidth = 1.0;
+    
+    _descriptionOnScreenCenter = self.descriptionView.center;
+    _descriptionOffScreenCenter = self.descriptionView.center;
+    int descriptionTopY = self.descriptionView.center.y -
+    self.descriptionView.bounds.size.height / 2;
+    _descriptionOffScreenCenter.y += self.view.bounds.size.height - descriptionTopY;
+
+    bool showDescription = [[NSUserDefaults standardUserDefaults] boolForKey:@"showDescription"];
+    self.descriptionView.hidden = !showDescription;
+}
+
 - (void)showHideDescription {
     bool showDescription = [[NSUserDefaults standardUserDefaults] boolForKey:@"showDescription"];
-    [self.descriptionView setHidden:!showDescription];
+    if (showDescription && self.descriptionView.isHidden) {
+        self.descriptionView.center = _descriptionOffScreenCenter;
+        [self.descriptionView setHidden:false];
+        [UIView animateWithDuration:0.5 animations:^{
+            self.descriptionView.center = _descriptionOnScreenCenter;
+        }];
+    } else if (!showDescription && !self.descriptionView.isHidden) {
+        [UIView animateWithDuration:0.5 animations:^{
+            self.descriptionView.center = _descriptionOffScreenCenter;
+        } completion:^(BOOL finished) {
+            self.descriptionView.hidden = true;
+        }];
+    }
 }
 
 - (void)setImageProcessor:(CVFImageProcessor *)imageProcessor
@@ -198,6 +227,16 @@
     } else {
         [self performSegueWithIdentifier:@"showAlternate" sender:sender];
     }
+}
+
+- (IBAction)swipeUpAction:(id)sender {
+    [[NSUserDefaults standardUserDefaults] setBool:true forKey:@"showDescription"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"showDescription" object:nil];
+}
+
+- (IBAction)swipeDownAction:(id)sender {
+    [[NSUserDefaults standardUserDefaults] setBool:false forKey:@"showDescription"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"showDescription" object:nil];
 }
 
 #pragma mark - CVFImageProcessorDelegate
