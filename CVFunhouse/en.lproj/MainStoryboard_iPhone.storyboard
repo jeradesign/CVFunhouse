@@ -103,6 +103,20 @@
                                 <rect key="frame" x="0.0" y="44" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="g7W-Js-wQb">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="57"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Shortcut: to show/hide description, swipe up or down on main screen." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Au5-gO-AmD">
+                                            <rect key="frame" x="15" y="7" width="291" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </view>
                                 <connections>
                                     <outlet property="dataSource" destination="6" id="1z8-d5-R6N"/>
                                     <outlet property="delegate" destination="6" id="6rS-nT-3Wi"/>
@@ -137,30 +151,6 @@
         <image name="SwitchCameraIcon44.png" width="44" height="25"/>
         <image name="iButton30.png" width="30" height="30"/>
     </resources>
-    <classes>
-        <class className="CVFFlipsideViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CVFFlipsideViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="outlet" name="menuTable" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="navBar" candidateClass="UINavigationBar"/>
-            </relationships>
-        </class>
-        <class className="CVFMainViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CVFMainViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="flipAction:"/>
-                <relationship kind="action" name="swipeDownAction:"/>
-                <relationship kind="action" name="swipeUpAction:"/>
-                <relationship kind="action" name="togglePopover:"/>
-                <relationship kind="outlet" name="descriptionView" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="flipCameraButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="fpsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="previewView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <nil key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

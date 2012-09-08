@@ -105,6 +105,20 @@
                                 <rect key="frame" x="0.0" y="44" width="320" height="808"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="hKs-eZ-Dwf">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Shortcut: to show/hide description, swipe up or down on main screen." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" id="di1-9x-W3v">
+                                            <rect key="frame" x="15" y="4" width="291" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </view>
                                 <connections>
                                     <outlet property="dataSource" destination="5" id="8Yy-BJ-uj0"/>
                                     <outlet property="delegate" destination="5" id="am0-fu-LVE"/>
@@ -149,7 +163,6 @@
                 <relationship kind="action" name="flipAction:"/>
                 <relationship kind="action" name="swipeDownAction:"/>
                 <relationship kind="action" name="swipeUpAction:"/>
-                <relationship kind="action" name="togglePopover:"/>
                 <relationship kind="outlet" name="descriptionView" candidateClass="UIWebView"/>
                 <relationship kind="outlet" name="flipCameraButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="fpsLabel" candidateClass="UILabel"/>
