@@ -12,10 +12,13 @@
 
 @class CVFImageProcessor;
 
-@interface CVFMainViewController : UIViewController <CVFFlipsideViewControllerDelegate,
+@interface CVFMainViewController : UIViewController <
+    CVFFlipsideViewControllerDelegate,
     UIPopoverControllerDelegate,
     AVCaptureVideoDataOutputSampleBufferDelegate,
-    CVFImageProcessorDelegate>
+    CVFImageProcessorDelegate,
+    UIWebViewDelegate
+    >
 {
     int CameraState;
 }

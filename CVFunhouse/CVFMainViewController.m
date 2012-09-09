@@ -219,6 +219,22 @@
     }
 }
 
+#pragma mark - UIWebViewDelegate methods
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request
+ navigationType:(UIWebViewNavigationType)navigationType
+{
+    NSURL *url = [request URL];
+    if ([[url scheme] isEqual: @"about"]) {
+        return YES;
+    }
+
+    [[UIApplication sharedApplication] openURL:url];
+    return NO;
+}
+
+#pragma mark - IBAction methods
+
 - (IBAction)togglePopover:(id)sender
 {
     if (self.flipsidePopoverController) {

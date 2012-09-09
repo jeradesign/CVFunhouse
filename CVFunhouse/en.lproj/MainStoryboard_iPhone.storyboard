@@ -22,6 +22,9 @@
                                 <rect key="frame" x="0.0" y="238" width="320" height="177"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="Ad1-fd-nXq"/>
+                                </connections>
                             </webView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="dX3-k0-41q">
                                 <rect key="frame" x="113" y="434" width="95" height="21"/>
@@ -151,6 +154,30 @@
         <image name="SwitchCameraIcon44.png" width="44" height="25"/>
         <image name="iButton30.png" width="30" height="30"/>
     </resources>
+    <classes>
+        <class className="CVFFlipsideViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CVFFlipsideViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="outlet" name="menuTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="navBar" candidateClass="UINavigationBar"/>
+            </relationships>
+        </class>
+        <class className="CVFMainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CVFMainViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="flipAction:"/>
+                <relationship kind="action" name="swipeDownAction:"/>
+                <relationship kind="action" name="swipeUpAction:"/>
+                <relationship kind="action" name="togglePopover:"/>
+                <relationship kind="outlet" name="descriptionView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="flipCameraButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="fpsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="previewView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <nil key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
