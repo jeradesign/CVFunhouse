@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4208EEAD1612D46D006E7842 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4208EEAC1612D46D006E7842 /* Default-568h@2x.png */; };
 		4209534315C0AC0600C37CD8 /* CVFLukasKanade.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4209534215C0AC0600C37CD8 /* CVFLukasKanade.mm */; };
 		4209534715C0BEB200C37CD8 /* CVFMotionTemplates.m in Sources */ = {isa = PBXBuildFile; fileRef = 4209534615C0BEB200C37CD8 /* CVFMotionTemplates.m */; };
 		420A3F8515BC6724004804EF /* CVFPassThru.m in Sources */ = {isa = PBXBuildFile; fileRef = 420A3F8415BC6724004804EF /* CVFPassThru.m */; };
@@ -45,6 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4208EEAC1612D46D006E7842 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4209534115C0ABF000C37CD8 /* CVFLukasKanade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CVFLukasKanade.h; path = CVFunhouse/CVFLukasKanade.h; sourceTree = "<group>"; };
 		4209534215C0AC0600C37CD8 /* CVFLukasKanade.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CVFLukasKanade.mm; path = CVFunhouse/CVFLukasKanade.mm; sourceTree = "<group>"; };
 		4209534515C0BE8A00C37CD8 /* CVFMotionTemplates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CVFMotionTemplates.h; path = CVFunhouse/CVFMotionTemplates.h; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 		42AA08481508314500B379F4 = {
 			isa = PBXGroup;
 			children = (
+				4208EEAC1612D46D006E7842 /* Default-568h@2x.png */,
 				4285252515BF5A9300622EE8 /* TODO.rtf */,
 				42AA085D1508314600B379F4 /* CVFunhouse */,
 				4209534415C0ACC000C37CD8 /* Demos */,
@@ -290,6 +293,7 @@
 				423FA83815DB1AD3001D30AC /* SwitchCameraIcon44@2x.png in Resources */,
 				423FA83B15DB264B001D30AC /* iButton30.png in Resources */,
 				423FA83C15DB264B001D30AC /* iButton30@2x.png in Resources */,
+				4208EEAD1612D46D006E7842 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,7 +354,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = armv7;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -380,7 +384,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = armv7;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
