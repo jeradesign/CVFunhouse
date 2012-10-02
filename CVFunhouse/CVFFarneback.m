@@ -13,8 +13,6 @@
 #include "opencv2/video/tracking.hpp"
 #include "opencv2/imgproc/imgproc_c.h"
 
-CvMat* prevgray = 0, *gray = 0, *flow = 0, *cflow = 0;
-
 static void drawOptFlowMap(const CvMat* flow, CvMat* cflowmap, int step,
                            double scale, CvScalar color)
 {
@@ -29,6 +27,15 @@ static void drawOptFlowMap(const CvMat* flow, CvMat* cflowmap, int step,
             cvCircle(cflowmap, cvPoint(x,y), 2, color, -1, 8, 0);
         }
 }
+
+@interface CVFFarneback () {
+    CvMat *prevgray;
+    CvMat *gray;
+    CvMat *flow;
+    CvMat *cflow;
+}
+
+@end
 
 @implementation CVFFarneback
 
@@ -63,16 +70,15 @@ static void drawOptFlowMap(const CvMat* flow, CvMat* cflowmap, int step,
     cvCvtColor(frame, gray, CV_BGR2GRAY);
     cvReleaseImage(&frame);
     
+    cvCvtColor(gray, cflow, CV_GRAY2BGR);
+
     if( !firstFrame )
     {
         cvCalcOpticalFlowFarneback(prevgray, gray, flow, 0.5, 3, 15, 3, 5, 1.2, 0);
-        cvCvtColor(prevgray, cflow, CV_GRAY2BGR);
         drawOptFlowMap(flow, cflow, 16, 1.5, CV_RGB(0, 255, 0));
     }
-    {
-        CvMat* temp;
-        CV_SWAP(prevgray, gray, temp);
-    }
+
+    cvCopy(gray, prevgray, nil);
     
     // Call imageReady with your new image.
     IplImage *tempImage = cvAlloc(sizeof(IplImage));
