@@ -19,6 +19,7 @@
 
 #import "CVFSephiaDemo.h"
 #import "CVFPassThru.h"
+#import "CVFAugmentedReality.h"
 
 @interface CVFMainViewController ()
 
@@ -105,6 +106,10 @@
             break;
             
         case 7:
+            self.imageProcessor = [[CVFAugmentedReality alloc] init];
+            break;
+            
+        case 8:
         default:
             self.imageProcessor = [[CVFPassThru alloc] init];
             break;

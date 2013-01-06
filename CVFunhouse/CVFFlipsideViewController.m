@@ -44,6 +44,7 @@ static NSString *ShowDescriptionHintCellIdentifier = @"ShowDescriptionHint";
                              @"Lukas-Kanade",
                              @"Motion Templates",
                              @"Sepia Filter",
+                             @"Augmented Reality",
                              @"Pass Thru",
                              NULL];
 

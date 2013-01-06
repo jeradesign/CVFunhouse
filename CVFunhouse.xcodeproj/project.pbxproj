@@ -44,6 +44,19 @@
 		42B3377615BA949400CBD888 /* CVFunhouse114.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B3377515BA949400CBD888 /* CVFunhouse114.png */; };
 		42B3377915BA94A000CBD888 /* CVFunhouse57.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B3377815BA94A000CBD888 /* CVFunhouse57.png */; };
 		42B3377C15BB2F5200CBD888 /* CVFCannyDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B3377B15BB2F5200CBD888 /* CVFCannyDemo.m */; };
+		42B55F80169947C600F35168 /* iPad3_back_Distortion.xml in Resources */ = {isa = PBXBuildFile; fileRef = 42B55F7C169947C600F35168 /* iPad3_back_Distortion.xml */; };
+		42B55F81169947C600F35168 /* iPad3_back_Intrinsics.xml in Resources */ = {isa = PBXBuildFile; fileRef = 42B55F7D169947C600F35168 /* iPad3_back_Intrinsics.xml */; };
+		42B55F82169947C600F35168 /* iPad3_front_Distortion.xml in Resources */ = {isa = PBXBuildFile; fileRef = 42B55F7E169947C600F35168 /* iPad3_front_Distortion.xml */; };
+		42B55F83169947C600F35168 /* iPad3_front_Intrinsics.xml in Resources */ = {isa = PBXBuildFile; fileRef = 42B55F7F169947C600F35168 /* iPad3_front_Intrinsics.xml */; };
+		42B55F88169948B700F35168 /* CVFAugmentedReality.mm in Sources */ = {isa = PBXBuildFile; fileRef = 42B55F87169948B700F35168 /* CVFAugmentedReality.mm */; };
+		42B55F9B16994AFA00F35168 /* arucofidmarkers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42B55F8A16994AFA00F35168 /* arucofidmarkers.cpp */; };
+		42B55F9C16994AFA00F35168 /* board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42B55F8C16994AFA00F35168 /* board.cpp */; };
+		42B55F9D16994AFA00F35168 /* boarddetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42B55F8E16994AFA00F35168 /* boarddetector.cpp */; };
+		42B55F9E16994AFA00F35168 /* cameraparameters.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42B55F9016994AFA00F35168 /* cameraparameters.cpp */; };
+		42B55F9F16994AFA00F35168 /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 42B55F9216994AFA00F35168 /* CMakeLists.txt */; };
+		42B55FA016994AFA00F35168 /* cvdrawingutils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42B55F9316994AFA00F35168 /* cvdrawingutils.cpp */; };
+		42B55FA216994AFA00F35168 /* marker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42B55F9716994AFA00F35168 /* marker.cpp */; };
+		42B55FA316994AFA00F35168 /* markerdetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42B55F9916994AFA00F35168 /* markerdetector.cpp */; };
 		CD7E937715BB5354004D709A /* CVFSephiaDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7E937615BB5354004D709A /* CVFSephiaDemo.m */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +114,29 @@
 		42B3377815BA94A000CBD888 /* CVFunhouse57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CVFunhouse57.png; sourceTree = "<group>"; };
 		42B3377A15BB2F5200CBD888 /* CVFCannyDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CVFCannyDemo.h; path = CVFunhouse/CVFCannyDemo.h; sourceTree = "<group>"; };
 		42B3377B15BB2F5200CBD888 /* CVFCannyDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CVFCannyDemo.m; path = CVFunhouse/CVFCannyDemo.m; sourceTree = "<group>"; };
+		42B55F7C169947C600F35168 /* iPad3_back_Distortion.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = iPad3_back_Distortion.xml; sourceTree = "<group>"; };
+		42B55F7D169947C600F35168 /* iPad3_back_Intrinsics.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = iPad3_back_Intrinsics.xml; sourceTree = "<group>"; };
+		42B55F7E169947C600F35168 /* iPad3_front_Distortion.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = iPad3_front_Distortion.xml; sourceTree = "<group>"; };
+		42B55F7F169947C600F35168 /* iPad3_front_Intrinsics.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = iPad3_front_Intrinsics.xml; sourceTree = "<group>"; };
+		42B55F86169948B700F35168 /* CVFAugmentedReality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CVFAugmentedReality.h; path = CVFunhouse/CVFAugmentedReality.h; sourceTree = "<group>"; };
+		42B55F87169948B700F35168 /* CVFAugmentedReality.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CVFAugmentedReality.mm; path = CVFunhouse/CVFAugmentedReality.mm; sourceTree = "<group>"; };
+		42B55F8916994AFA00F35168 /* aruco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aruco.h; sourceTree = "<group>"; };
+		42B55F8A16994AFA00F35168 /* arucofidmarkers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = arucofidmarkers.cpp; sourceTree = "<group>"; };
+		42B55F8B16994AFA00F35168 /* arucofidmarkers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = arucofidmarkers.h; sourceTree = "<group>"; };
+		42B55F8C16994AFA00F35168 /* board.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = board.cpp; sourceTree = "<group>"; };
+		42B55F8D16994AFA00F35168 /* board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = board.h; sourceTree = "<group>"; };
+		42B55F8E16994AFA00F35168 /* boarddetector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = boarddetector.cpp; sourceTree = "<group>"; };
+		42B55F8F16994AFA00F35168 /* boarddetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = boarddetector.h; sourceTree = "<group>"; };
+		42B55F9016994AFA00F35168 /* cameraparameters.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cameraparameters.cpp; sourceTree = "<group>"; };
+		42B55F9116994AFA00F35168 /* cameraparameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cameraparameters.h; sourceTree = "<group>"; };
+		42B55F9216994AFA00F35168 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		42B55F9316994AFA00F35168 /* cvdrawingutils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cvdrawingutils.cpp; sourceTree = "<group>"; };
+		42B55F9416994AFA00F35168 /* cvdrawingutils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cvdrawingutils.h; sourceTree = "<group>"; };
+		42B55F9516994AFA00F35168 /* exports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exports.h; sourceTree = "<group>"; };
+		42B55F9716994AFA00F35168 /* marker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = marker.cpp; sourceTree = "<group>"; };
+		42B55F9816994AFA00F35168 /* marker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = marker.h; sourceTree = "<group>"; };
+		42B55F9916994AFA00F35168 /* markerdetector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = markerdetector.cpp; sourceTree = "<group>"; };
+		42B55F9A16994AFA00F35168 /* markerdetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = markerdetector.h; sourceTree = "<group>"; };
 		CD7E937515BB5354004D709A /* CVFSephiaDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CVFSephiaDemo.h; path = CVFunhouse/CVFSephiaDemo.h; sourceTree = "<group>"; };
 		CD7E937615BB5354004D709A /* CVFSephiaDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CVFSephiaDemo.m; path = CVFunhouse/CVFSephiaDemo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,6 +180,8 @@
 				4209534215C0AC0600C37CD8 /* CVFLukasKanade.mm */,
 				4209534515C0BE8A00C37CD8 /* CVFMotionTemplates.h */,
 				4209534615C0BEB200C37CD8 /* CVFMotionTemplates.m */,
+				42B55F86169948B700F35168 /* CVFAugmentedReality.h */,
+				42B55F87169948B700F35168 /* CVFAugmentedReality.mm */,
 			);
 			name = Demos;
 			sourceTree = "<group>";
@@ -153,6 +191,10 @@
 			children = (
 				428D978216A275450073329A /* CVFFaceDetect.html */,
 				428D978316A275450073329A /* CVFCannyDemo.html */,
+				42B55F7C169947C600F35168 /* iPad3_back_Distortion.xml */,
+				42B55F7D169947C600F35168 /* iPad3_back_Intrinsics.xml */,
+				42B55F7E169947C600F35168 /* iPad3_front_Distortion.xml */,
+				42B55F7F169947C600F35168 /* iPad3_front_Intrinsics.xml */,
 				423FA83915DB264B001D30AC /* iButton30.png */,
 				423FA83A15DB264B001D30AC /* iButton30@2x.png */,
 				423FA83515DB1AD3001D30AC /* SwitchCameraIcon44.png */,
@@ -174,6 +216,7 @@
 				4285252515BF5A9300622EE8 /* TODO.rtf */,
 				42AA085D1508314600B379F4 /* CVFunhouse */,
 				4209534415C0ACC000C37CD8 /* Demos */,
+				42B55F851699480400F35168 /* ArUco */,
 				4285252915BF6CDF00622EE8 /* Resources */,
 				42AA08561508314600B379F4 /* Frameworks */,
 				42AA08541508314600B379F4 /* Products */,
@@ -232,6 +275,30 @@
 				42AA08651508314600B379F4 /* CVFunhouse-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		42B55F851699480400F35168 /* ArUco */ = {
+			isa = PBXGroup;
+			children = (
+				42B55F8916994AFA00F35168 /* aruco.h */,
+				42B55F8A16994AFA00F35168 /* arucofidmarkers.cpp */,
+				42B55F8B16994AFA00F35168 /* arucofidmarkers.h */,
+				42B55F8C16994AFA00F35168 /* board.cpp */,
+				42B55F8D16994AFA00F35168 /* board.h */,
+				42B55F8E16994AFA00F35168 /* boarddetector.cpp */,
+				42B55F8F16994AFA00F35168 /* boarddetector.h */,
+				42B55F9016994AFA00F35168 /* cameraparameters.cpp */,
+				42B55F9116994AFA00F35168 /* cameraparameters.h */,
+				42B55F9216994AFA00F35168 /* CMakeLists.txt */,
+				42B55F9316994AFA00F35168 /* cvdrawingutils.cpp */,
+				42B55F9416994AFA00F35168 /* cvdrawingutils.h */,
+				42B55F9516994AFA00F35168 /* exports.h */,
+				42B55F9716994AFA00F35168 /* marker.cpp */,
+				42B55F9816994AFA00F35168 /* marker.h */,
+				42B55F9916994AFA00F35168 /* markerdetector.cpp */,
+				42B55F9A16994AFA00F35168 /* markerdetector.h */,
+			);
+			name = ArUco;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +369,11 @@
 				4208EEAD1612D46D006E7842 /* Default-568h@2x.png in Resources */,
 				428D978416A275450073329A /* CVFFaceDetect.html in Resources */,
 				428D978516A275450073329A /* CVFCannyDemo.html in Resources */,
+				42B55F80169947C600F35168 /* iPad3_back_Distortion.xml in Resources */,
+				42B55F81169947C600F35168 /* iPad3_back_Intrinsics.xml in Resources */,
+				42B55F82169947C600F35168 /* iPad3_front_Distortion.xml in Resources */,
+				42B55F83169947C600F35168 /* iPad3_front_Intrinsics.xml in Resources */,
+				42B55F9F16994AFA00F35168 /* CMakeLists.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +397,14 @@
 				4285253515BF83FF00622EE8 /* CVFLaplace.mm in Sources */,
 				4209534315C0AC0600C37CD8 /* CVFLukasKanade.mm in Sources */,
 				4209534715C0BEB200C37CD8 /* CVFMotionTemplates.m in Sources */,
+				42B55F88169948B700F35168 /* CVFAugmentedReality.mm in Sources */,
+				42B55F9B16994AFA00F35168 /* arucofidmarkers.cpp in Sources */,
+				42B55F9C16994AFA00F35168 /* board.cpp in Sources */,
+				42B55F9D16994AFA00F35168 /* boarddetector.cpp in Sources */,
+				42B55F9E16994AFA00F35168 /* cameraparameters.cpp in Sources */,
+				42B55FA016994AFA00F35168 /* cvdrawingutils.cpp in Sources */,
+				42B55FA216994AFA00F35168 /* marker.cpp in Sources */,
+				42B55FA316994AFA00F35168 /* markerdetector.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
