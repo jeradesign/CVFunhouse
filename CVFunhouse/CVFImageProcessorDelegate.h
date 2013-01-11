@@ -13,5 +13,6 @@
 @protocol CVFImageProcessorDelegate <NSObject>
 
 -(void)imageProcessor:(CVFImageProcessor*)imageProcessor didCreateImage:(UIImage*)image;
+-(void)imageProcessor:(CVFImageProcessor*)imageProcessor didProvideData:(NSObject*)data;
 
 @end

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C54" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="CVFMainViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3">
+                    <view key="view" contentMode="scaleToFill" id="3" customClass="GLKView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -16,6 +16,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <glkView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Fzl-dC-KMr">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </glkView>
                             <webView contentMode="scaleToFill" id="TVS-vQ-ZgI">
                                 <rect key="frame" x="0.0" y="238" width="320" height="177"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -75,6 +79,7 @@
                         <outlet property="descriptionView" destination="TVS-vQ-ZgI" id="EpH-vs-i3P"/>
                         <outlet property="flipCameraButton" destination="lKb-tT-4x6" id="CMq-0W-Cdx"/>
                         <outlet property="fpsLabel" destination="dX3-k0-41q" id="sT8-Ia-RYD"/>
+                        <outlet property="glkView" destination="Fzl-dC-KMr" id="hQC-RJ-JM8"/>
                         <outlet property="imageView" destination="Mkk-co-6Pr" id="3V6-gf-qa0"/>
                     </connections>
                 </viewController>
@@ -153,6 +158,30 @@
         <image name="SwitchCameraIcon44.png" width="44" height="25"/>
         <image name="iButton30.png" width="30" height="30"/>
     </resources>
+    <classes>
+        <class className="CVFFlipsideViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CVFFlipsideViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="outlet" name="menuTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="navBar" candidateClass="UINavigationBar"/>
+            </relationships>
+        </class>
+        <class className="CVFMainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CVFMainViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="flipAction:"/>
+                <relationship kind="action" name="swipeDownAction:"/>
+                <relationship kind="action" name="swipeUpAction:"/>
+                <relationship kind="outlet" name="descriptionView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="flipCameraButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="fpsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="glkView" candidateClass="GLKView"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="previewView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <nil key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

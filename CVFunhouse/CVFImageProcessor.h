@@ -20,6 +20,7 @@
 
 -(void)processImageBuffer:(CVImageBufferRef)imageBuffer withMirroring:(BOOL)shouldMirror;
 -(void)imageReady:(IplImage*)image;
+-(void)dataReady:(NSObject*)data;
 -(void)processIplImage:(IplImage*)iplImage;
 
 @end

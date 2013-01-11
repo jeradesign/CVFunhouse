@@ -87,6 +87,13 @@
     });
 }
 
+-(void)dataReady:(NSObject *)data
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.delegate imageProcessor:self didProvideData:data];
+    });
+}
+
 -(UIImage*)UIImageFromIplImage:(IplImage*)iplImage
 {
     CGImageRef cgImage = [self CGImageFromIplImage:iplImage];

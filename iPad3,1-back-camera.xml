@@ -7,4 +7,10 @@
   <data>
     4.48670044e+02 0. 1.66833725e+02 0. 4.35391052e+02 2.34817947e+02 0.
     0. 1.</data></Intrinsics>
+<Distortion type_id="opencv-matrix">
+    <rows>4</rows>
+    <cols>1</cols>
+    <dt>f</dt>
+    <data>
+        1.88471422e-01 -5.72416902e-01 -1.09042898e-02 -5.39302174e-03</data></Distortion>
 </opencv_storage>

@@ -8,6 +8,7 @@
 
 #import "CVFFlipsideViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import <GLKit/GLKit.h>
 #import "CVFImageProcessorDelegate.h"
 
 @class CVFImageProcessor;
@@ -17,7 +18,8 @@
     UIPopoverControllerDelegate,
     AVCaptureVideoDataOutputSampleBufferDelegate,
     CVFImageProcessorDelegate,
-    UIWebViewDelegate
+    UIWebViewDelegate,
+    GLKViewDelegate
     >
 @property (strong, nonatomic) UIPopoverController *flipsidePopoverController;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -25,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *fpsLabel;
 @property (weak, nonatomic) IBOutlet UIButton *flipCameraButton;
 @property (weak, nonatomic) IBOutlet UIWebView *descriptionView;
+@property (weak, nonatomic) IBOutlet GLKView *glkView;
 
 
 - (IBAction)flipAction:(id)sender;
