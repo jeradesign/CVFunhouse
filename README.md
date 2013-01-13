@@ -10,7 +10,7 @@ hack.
 NOTE: CVFunhouse includes a copy of the OpenCV library built as an iOS
 framework. OpenCV is licensed separately under similar terms. See the file
 "OpenCV license.txt" for details. For more information on OpenCV (including full
-source code to the library), see the [OpenCV website](http://opencv.org/)
+source code to the library), see the [OpenCV website](http://opencv.org/).
 
 Rebasing
 --------
@@ -18,7 +18,7 @@ Rebasing
 If you forked or cloned before 12-Jan-2013, you'll need to rebase your code to
 have your changes fit into the history properly. To do this:
 
-* Enter `git fetch` (__Do not use__ `git pull`)
+* Enter `git fetch` (**Do not use** `git pull`)
 * Enter `git rebase -i`
 * An editor window will appear.
 	* Delete the line that starts: `pick 2a02f2a`
