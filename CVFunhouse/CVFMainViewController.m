@@ -110,8 +110,10 @@
             break;
     }
     
-    [self.descriptionView loadHTMLString:self.imageProcessor.demoDescription
-                                 baseURL:nil];
+    NSString *className = NSStringFromClass([self.imageProcessor class]);
+    NSURL *descriptionUrl = [[NSBundle mainBundle] URLForResource:className withExtension:@"html"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:descriptionUrl];
+    [self.descriptionView loadRequest:request];
 }
 
 - (void)showHideFPS {
@@ -226,6 +228,9 @@
 {
     NSURL *url = [request URL];
     if ([[url scheme] isEqual: @"about"]) {
+        return YES;
+    }
+    if ([[url scheme] isEqual:@"file"]) {
         return YES;
     }
 

@@ -27,6 +27,8 @@
 		4285252F15BF750000622EE8 /* haarcascade_frontalface_alt.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4285252E15BF750000622EE8 /* haarcascade_frontalface_alt.xml */; };
 		4285253215BF792F00622EE8 /* CVFFarneback.m in Sources */ = {isa = PBXBuildFile; fileRef = 4285253115BF792F00622EE8 /* CVFFarneback.m */; };
 		4285253515BF83FF00622EE8 /* CVFLaplace.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4285253415BF83FF00622EE8 /* CVFLaplace.mm */; };
+		428D978416A275450073329A /* CVFFaceDetect.html in Resources */ = {isa = PBXBuildFile; fileRef = 428D978216A275450073329A /* CVFFaceDetect.html */; };
+		428D978516A275450073329A /* CVFCannyDemo.html in Resources */ = {isa = PBXBuildFile; fileRef = 428D978316A275450073329A /* CVFCannyDemo.html */; };
 		42AA08581508314600B379F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AA08571508314600B379F4 /* UIKit.framework */; };
 		42AA085A1508314600B379F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AA08591508314600B379F4 /* Foundation.framework */; };
 		42AA085C1508314600B379F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AA085B1508314600B379F4 /* CoreGraphics.framework */; };
@@ -75,6 +77,8 @@
 		4285253115BF792F00622EE8 /* CVFFarneback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CVFFarneback.m; path = CVFunhouse/CVFFarneback.m; sourceTree = "<group>"; };
 		4285253315BF83E700622EE8 /* CVFLaplace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CVFLaplace.h; path = CVFunhouse/CVFLaplace.h; sourceTree = "<group>"; };
 		4285253415BF83FF00622EE8 /* CVFLaplace.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CVFLaplace.mm; path = CVFunhouse/CVFLaplace.mm; sourceTree = "<group>"; };
+		428D978216A275450073329A /* CVFFaceDetect.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = CVFFaceDetect.html; sourceTree = "<group>"; };
+		428D978316A275450073329A /* CVFCannyDemo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = CVFCannyDemo.html; sourceTree = "<group>"; };
 		42AA08531508314600B379F4 /* CVFunhouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CVFunhouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42AA08571508314600B379F4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		42AA08591508314600B379F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -147,6 +151,8 @@
 		4285252915BF6CDF00622EE8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				428D978216A275450073329A /* CVFFaceDetect.html */,
+				428D978316A275450073329A /* CVFCannyDemo.html */,
 				423FA83915DB264B001D30AC /* iButton30.png */,
 				423FA83A15DB264B001D30AC /* iButton30@2x.png */,
 				423FA83515DB1AD3001D30AC /* SwitchCameraIcon44.png */,
@@ -294,6 +300,8 @@
 				423FA83B15DB264B001D30AC /* iButton30.png in Resources */,
 				423FA83C15DB264B001D30AC /* iButton30@2x.png in Resources */,
 				4208EEAD1612D46D006E7842 /* Default-568h@2x.png in Resources */,
+				428D978416A275450073329A /* CVFFaceDetect.html in Resources */,
+				428D978516A275450073329A /* CVFCannyDemo.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
