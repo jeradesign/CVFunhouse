@@ -112,7 +112,6 @@ GLfloat gCubeVertexData[216] =
 - (void)turnCameraOn;
 - (void)turnCameraOff;
 - (void)resetImageProcessor;
-- (void)drawBackground;
 
 @property (strong,nonatomic) NSArray *modelView;
 
