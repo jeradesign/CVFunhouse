@@ -1,17 +1,17 @@
 //
 //  Shader.fsh
-//  VideoCube
+//  Globe
 //
-//  Created by John Brewer on 2/22/12.
-//  Copyright (c) 2012 Jera Design LLC. All rights reserved.
+//  Created by John Brewer on 1/19/13.
+//  Copyright (c) 2013 Jera Design LLC. All rights reserved.
 //
 
-varying lowp vec4 colorVarying;
-varying lowp vec2 texVarying;
+varying lowp vec2 v_texCoord;
+varying lowp float nDotVP;
 
-uniform sampler2D texture;
+uniform sampler2D s_texture;
 
 void main()
 {
-    gl_FragColor = colorVarying * texture2D(texture, texVarying);
+    gl_FragColor = texture2D(s_texture, v_texCoord) * nDotVP;
 }
