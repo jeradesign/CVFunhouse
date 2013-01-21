@@ -6,6 +6,9 @@
 //  Copyright (c) 2013 Jera Design LLC. All rights reserved.
 //
 
+#define LOG_MATRICES 0
+#define DRAW_MARKERS 0
+
 #import "CVFAugmentedReality.h"
 #import "markerdetector.h"
 #import <sys/sysctl.h>
@@ -102,8 +105,9 @@ aruco::MarkerDetector markerDetector;
     }
     
     for (auto marker : markers) {
+#if DRAW_MARKERS
         marker.draw(rgbMat, cv::Scalar(0, 255, 0, 0));
-        
+#endif
         marker.calculateExtrinsics(1.0, intrinsics, distortion, false);
         double modelview_matrix[16] = {
             -0.219635, 0.974761, 0.040022, 0.000000,
@@ -114,12 +118,14 @@ aruco::MarkerDetector markerDetector;
         
 //        modelview_matrix[5] = -4.0;
 
+#if LOG_MATRICES
         NSLog(@"modelview_matrix =\n%f, %f, %f, %f\n%f, %f, %f, %f\n%f, %f, %f, %f\n%f, %f, %f, %f\n",
               modelview_matrix[0],modelview_matrix[1],modelview_matrix[2],modelview_matrix[3],
               modelview_matrix[4],modelview_matrix[5],modelview_matrix[6],modelview_matrix[7],
               modelview_matrix[8],modelview_matrix[9],modelview_matrix[10],modelview_matrix[11],
               modelview_matrix[12],modelview_matrix[13],modelview_matrix[14],modelview_matrix[15]
               );
+#endif
 
         NSData *modelviewData = [NSData dataWithBytes:modelview_matrix
                                                length:sizeof(modelview_matrix)];

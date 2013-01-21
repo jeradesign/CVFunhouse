@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 Jera Design LLC. All rights reserved.
 //
 
+#define LOG_MATRICES 0
+
 #import "CVFMainViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "CVFFlipsideViewController.h"
@@ -441,25 +443,31 @@ GLfloat gCubeVertexData[216] =
 
 - (void)update
 {
+    _rotation = fmod(2.0 * M_PI * CACurrentMediaTime() / 10.0, 2.0 * M_PI);
+    
     float aspect = fabsf(self.view.bounds.size.width / self.view.bounds.size.height);
 
     GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(65.0f), aspect, 0.1f, 100.0f);
 
     if (self.modelView.count > 0) {
         NSData *projectionData = [self.modelView objectAtIndex:0];
+#if LOG_MATRICES
         NSLog(@"modelViewData.length = %d", projectionData.length);
+#endif
         const double *projectionArray = [projectionData bytes];
         float projectionFloatArray[16];
         for (int i = 0; i < 16; i++) {
             projectionFloatArray[i] = projectionArray[i];
         }
         projectionMatrix = GLKMatrix4MakeWithArray(projectionFloatArray);
+#if LOG_MATRICES
         NSLog(@"AR projectionMatrix =\n%f, %f, %f, %f\n%f, %f, %f, %f\n%f, %f, %f, %f\n%f, %f, %f, %f\n",
               projectionMatrix.m00, projectionMatrix.m01, projectionMatrix.m02, projectionMatrix.m03,
               projectionMatrix.m10, projectionMatrix.m11, projectionMatrix.m12, projectionMatrix.m13,
               projectionMatrix.m20, projectionMatrix.m21, projectionMatrix.m22, projectionMatrix.m23,
               projectionMatrix.m30, projectionMatrix.m31, projectionMatrix.m32, projectionMatrix.m33
               );
+#endif
     }
     
     
@@ -479,23 +487,28 @@ GLfloat gCubeVertexData[216] =
 
     if (self.modelView.count > 0) {
         NSData *modelViewData = [self.modelView objectAtIndex:1];
+#if LOG_MATRICES
         NSLog(@"modelViewData.length = %d", modelViewData.length);
+#endif
         const double *modelViewArray = [modelViewData bytes];
         float modelViewFloatArray[16];
         for (int i = 0; i < 16; i++) {
             modelViewFloatArray[i] = modelViewArray[i];
         }
         modelViewMatrix = GLKMatrix4MakeWithArray(modelViewFloatArray);
+#if LOG_MATRICES
         NSLog(@"AR modelViewMatrix =\n%f, %f, %f, %f\n%f, %f, %f, %f\n%f, %f, %f, %f\n%f, %f, %f, %f\n",
               modelViewMatrix.m00, modelViewMatrix.m01, modelViewMatrix.m02, modelViewMatrix.m03,
               modelViewMatrix.m10, modelViewMatrix.m11, modelViewMatrix.m12, modelViewMatrix.m13,
               modelViewMatrix.m20, modelViewMatrix.m21, modelViewMatrix.m22, modelViewMatrix.m23,
               modelViewMatrix.m30, modelViewMatrix.m31, modelViewMatrix.m32, modelViewMatrix.m33
               );
+#endif
     }
 
-//    modelViewMatrix = GLKMatrix4Multiply(baseModelViewMatrix, modelViewMatrix);
-
+    modelViewMatrix = GLKMatrix4Translate(modelViewMatrix, 0.0f, 0.0f, 1.5f);
+    modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, M_PI/2, 1.0f, 0.0f, 0.0f);
+    modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, _rotation, 0.0f, 1.0f, 0.0f);
     
 //    // Compute the model view matrix for the object rendered with ES2
 //    modelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, 1.5f);
@@ -506,7 +519,6 @@ GLfloat gCubeVertexData[216] =
     
     _modelViewProjectionMatrix = GLKMatrix4Multiply(projectionMatrix, modelViewMatrix);
     
-//    _rotation += self.timeSinceLastUpdate * 0.5f;
     [self.glkView setNeedsDisplay];
 }
 
