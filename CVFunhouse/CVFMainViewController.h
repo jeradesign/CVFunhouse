@@ -19,11 +19,7 @@
     CVFImageProcessorDelegate,
     UIWebViewDelegate
     >
-{
-    int CameraState;
-}
 @property (strong, nonatomic) UIPopoverController *flipsidePopoverController;
-@property (weak, nonatomic) IBOutlet UIView *previewView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, atomic) CVFImageProcessor *imageProcessor;
 @property (weak, nonatomic) IBOutlet UILabel *fpsLabel;
@@ -31,7 +27,7 @@
 @property (weak, nonatomic) IBOutlet UIWebView *descriptionView;
 
 
-- (IBAction)flipAction:(id)se;
+- (IBAction)flipAction:(id)sender;
 - (IBAction)swipeUpAction:(id)sender;
 - (IBAction)swipeDownAction:(id)sender;
 

@@ -37,13 +37,13 @@
     NSDate *_lastFrameTime;
     CGPoint _descriptionOffScreenCenter;
     CGPoint _descriptionOnScreenCenter;
+    bool _useBackCamera;
 }
 
 @synthesize fpsLabel = _fpsLabel;
 @synthesize flipCameraButton = _flipCameraButton;
 @synthesize descriptionView = _descriptionView;
 @synthesize flipsidePopoverController = _flipsidePopoverController;
-@synthesize previewView = _previewView;
 @synthesize imageView = _imageView;
 //@synthesize imageProcessor = _imageProcessor;
 
@@ -54,7 +54,7 @@
     [self showHideFPS];
     [self initializeDescription];
     [self resetImageProcessor];
-    CameraState = 1;
+    _useBackCamera = [[NSUserDefaults standardUserDefaults] boolForKey:@"useBackCamera"];
     [self setupCamera];
     [self turnCameraOn];
 
@@ -166,18 +166,9 @@
 }
 
 
-- (IBAction)flipAction:(id)se
-{
-    CameraState = CameraState == 1 ? 2 : 1;
-    [self turnCameraOff];
-    [self setupCamera];
-    [self turnCameraOn];
-}
-
 - (void)viewDidUnload
 {
     [self turnCameraOff];
-    [self setPreviewView:nil];
     [self setImageView:nil];
     [self setFpsLabel:nil];
     [self setFlipCameraButton:nil];
@@ -240,6 +231,15 @@
 
 #pragma mark - IBAction methods
 
+- (IBAction)flipAction:(id)sender
+{
+    _useBackCamera = !_useBackCamera;
+    [[NSUserDefaults standardUserDefaults] setBool:_useBackCamera forKey:@"useBackCamera"];
+    [self turnCameraOff];
+    [self setupCamera];
+    [self turnCameraOn];
+}
+
 - (IBAction)togglePopover:(id)sender
 {
     if (self.flipsidePopoverController) {
@@ -286,12 +286,12 @@
         
     }
     for (AVCaptureDevice *device in devices) {
-        if (device.position == AVCaptureDevicePositionFront && CameraState == 1) {
+        if (device.position == AVCaptureDevicePositionFront && !_useBackCamera) {
             
             _cameraDevice = device;
             break;
         }
-        if (device.position == AVCaptureDevicePositionBack && CameraState == 2) {
+        if (device.position == AVCaptureDevicePositionBack && _useBackCamera) {
             
             _cameraDevice = device;
             break;
