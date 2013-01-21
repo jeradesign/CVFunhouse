@@ -93,8 +93,8 @@ aruco::MarkerDetector markerDetector;
         cameraParams.glGetProjectionMatrix(cvGetSize(rgbImage),
                                            cvGetSize(rgbImage),
                                            proj_matrix,
-                                           0.05,
-                                           10,
+                                           0.01,
+                                           100,
                                            false);
         NSData *projectionData = [NSData dataWithBytes:proj_matrix
                                                length:sizeof(proj_matrix)];
@@ -104,7 +104,7 @@ aruco::MarkerDetector markerDetector;
     for (auto marker : markers) {
         marker.draw(rgbMat, cv::Scalar(0, 255, 0, 0));
         
-        marker.calculateExtrinsics(1.0, intrinsics, distortion, true);
+        marker.calculateExtrinsics(1.0, intrinsics, distortion, false);
         double modelview_matrix[16] = {
             -0.219635, 0.974761, 0.040022, 0.000000,
             -0.082859, -0.059514, 0.994783, 0.000000,
