@@ -6,6 +6,9 @@
 //  Copyright (c) 2012 Jera Design LLC. All rights reserved.
 //
 
+#define FLAT_TARGET 0
+#define OUTLINE_ONLY 0
+
 #import "CVFMainViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "CVFFlipsideViewController.h"
@@ -40,10 +43,18 @@ enum
     NUM_ATTRIBUTES
 };
 
-GLfloat gCubeVertexData[216] =
+GLfloat gCubeVertexData[] =
 {
     // Data layout for each line below is:
     // positionX, positionY, positionZ,     normalX, normalY, normalZ,
+#if FLAT_TARGET
+    0.5f, 0.5f, 0.0f,          0.0f, 0.0f, 1.0f,
+    -0.5f, 0.5f, 0.0f,         0.0f, 0.0f, 1.0f,
+    0.5f, -0.5f, 0.0f,         0.0f, 0.0f, 1.0f,
+    0.5f, -0.5f, 0.0f,         0.0f, 0.0f, 1.0f,
+    -0.5f, 0.5f, 0.0f,         0.0f, 0.0f, 1.0f,
+    -0.5f, -0.5f, 0.0f,        0.0f, 0.0f, 1.0f,
+#else
     0.5f, -0.5f, -0.5f,        1.0f, 0.0f, 0.0f,
     0.5f, 0.5f, -0.5f,         1.0f, 0.0f, 0.0f,
     0.5f, -0.5f, 0.5f,         1.0f, 0.0f, 0.0f,
@@ -85,6 +96,7 @@ GLfloat gCubeVertexData[216] =
     0.5f, 0.5f, -0.5f,         0.0f, 0.0f, -1.0f,
     -0.5f, -0.5f, -0.5f,       0.0f, 0.0f, -1.0f,
     -0.5f, 0.5f, -0.5f,        0.0f, 0.0f, -1.0f
+#endif
 };
 
 @interface CVFMainViewController () {
@@ -474,7 +486,7 @@ GLfloat gCubeVertexData[216] =
     
     self.effect.transform.projectionMatrix = projectionMatrix;
     
-//    GLKMatrix4 baseModelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -4.0f);
+    GLKMatrix4 baseModelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, 0.5f);
 //    baseModelViewMatrix = GLKMatrix4Rotate(baseModelViewMatrix, _rotation, 0.0f, 1.0f, 0.0f);
     
     // Compute the model view matrix for the object rendered with GLKit
@@ -504,7 +516,7 @@ GLfloat gCubeVertexData[216] =
               );
     }
 
-//    modelViewMatrix = GLKMatrix4Multiply(baseModelViewMatrix, modelViewMatrix);
+    modelViewMatrix = GLKMatrix4Multiply(modelViewMatrix, baseModelViewMatrix);
 
     self.effect.transform.modelviewMatrix = modelViewMatrix;
     
@@ -517,7 +529,8 @@ GLfloat gCubeVertexData[216] =
 //    
 //    _modelViewProjectionMatrix = GLKMatrix4Multiply(projectionMatrix, modelViewMatrix);
     
-//    _rotation += self.timeSinceLastUpdate * 0.5f;
+    _rotation = fmod(CACurrentMediaTime(), 3.0);
+    NSLog(@"_rotation = %f", _rotation);
     [self.glkView setNeedsDisplay];
 }
 
@@ -532,7 +545,11 @@ GLfloat gCubeVertexData[216] =
     [self.effect prepareToDraw];
     
     if (self.modelView.count > 0) {
-        glDrawArrays(GL_TRIANGLES, 0, 36);
+#if OUTLINE_ONLY
+        glDrawArrays(GL_LINES, 0, sizeof(gCubeVertexData)/6);
+#else
+        glDrawArrays(GL_TRIANGLES, 0, sizeof(gCubeVertexData)/6);
+#endif
     }
 //    // Render the object again with ES2
 //    glUseProgram(_program);
