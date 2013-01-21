@@ -7,6 +7,7 @@
 //
 
 #define LOG_MATRICES 0
+#define HORIZONTAL_MARKER 0
 
 #import "CVFMainViewController.h"
 #import <AVFoundation/AVFoundation.h>
@@ -506,10 +507,17 @@ GLfloat gCubeVertexData[216] =
 #endif
     }
 
+#if HORIZONTAL_MARKER
     modelViewMatrix = GLKMatrix4Translate(modelViewMatrix, 0.0f, 0.0f, 1.5f);
     modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, M_PI/2, 1.0f, 0.0f, 0.0f);
     modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, _rotation, 0.0f, 1.0f, 0.0f);
-    
+#else
+    modelViewMatrix = GLKMatrix4Translate(modelViewMatrix, 0.0f, 0.0f, 1.0f);
+    modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, M_PI/2, 0.0f, 0.0f, 1.0f);
+    modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, _rotation, 0.0f, 1.0f, 0.0f);
+    modelViewMatrix = GLKMatrix4Scale(modelViewMatrix, 0.75f, 0.75f, 0.75f);
+#endif
+
 //    // Compute the model view matrix for the object rendered with ES2
 //    modelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, 1.5f);
 //    modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, _rotation, 1.0f, 1.0f, 1.0f);
@@ -528,7 +536,6 @@ GLfloat gCubeVertexData[216] =
     glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
-    glMatrixMode(GL_MODELVIEW);
     // Render the object again with ES2
     glUseProgram(_program);
 
