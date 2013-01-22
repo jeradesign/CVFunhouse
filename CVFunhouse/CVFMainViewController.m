@@ -7,7 +7,7 @@
 //
 
 #define LOG_MATRICES 0
-#define HORIZONTAL_MARKER 0
+#define HORIZONTAL_MARKER 1
 
 #import "CVFMainViewController.h"
 #import <AVFoundation/AVFoundation.h>
