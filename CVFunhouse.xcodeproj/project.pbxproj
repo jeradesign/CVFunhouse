@@ -59,6 +59,8 @@
 		42B55FA016994AFA00F35168 /* cvdrawingutils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42B55F9316994AFA00F35168 /* cvdrawingutils.cpp */; };
 		42B55FA216994AFA00F35168 /* marker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42B55F9716994AFA00F35168 /* marker.cpp */; };
 		42B55FA316994AFA00F35168 /* markerdetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42B55F9916994AFA00F35168 /* markerdetector.cpp */; };
+		42D4860516AF4AC700F93BAB /* DebugShader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = 42D4860416AF4AC700F93BAB /* DebugShader.fsh */; };
+		42D4860716AF4C8200F93BAB /* DebugShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 42D4860416AF4AC700F93BAB /* DebugShader.fsh */; };
 		42EBA19F169BB26900E699FA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EBA19E169BB26900E699FA /* OpenGLES.framework */; };
 		42EBA1A1169BB28100E699FA /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EBA1A0169BB28100E699FA /* GLKit.framework */; };
 		42EBA1A2169BB30200E699FA /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 42EBA195169BADF700E699FA /* Shader.fsh */; };
@@ -149,6 +151,7 @@
 		42B55F9816994AFA00F35168 /* marker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = marker.h; sourceTree = "<group>"; };
 		42B55F9916994AFA00F35168 /* markerdetector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = markerdetector.cpp; sourceTree = "<group>"; };
 		42B55F9A16994AFA00F35168 /* markerdetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = markerdetector.h; sourceTree = "<group>"; };
+		42D4860416AF4AC700F93BAB /* DebugShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = DebugShader.fsh; sourceTree = "<group>"; };
 		42EBA195169BADF700E699FA /* Shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.fsh; sourceTree = "<group>"; };
 		42EBA196169BADF700E699FA /* Shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.vsh; sourceTree = "<group>"; };
 		42EBA19E169BB26900E699FA /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -303,6 +306,7 @@
 				42AA08631508314600B379F4 /* main.m */,
 				42AA08651508314600B379F4 /* CVFunhouse-Prefix.pch */,
 				42EBA195169BADF700E699FA /* Shader.fsh */,
+				42D4860416AF4AC700F93BAB /* DebugShader.fsh */,
 				42EBA196169BADF700E699FA /* Shader.vsh */,
 			);
 			name = "Supporting Files";
@@ -384,6 +388,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42D4860716AF4C8200F93BAB /* DebugShader.fsh in Resources */,
 				42EBA1A2169BB30200E699FA /* Shader.fsh in Resources */,
 				42EBA1A3169BB30200E699FA /* Shader.vsh in Resources */,
 				42AA08621508314600B379F4 /* InfoPlist.strings in Resources */,
@@ -441,6 +446,7 @@
 				42B55FA316994AFA00F35168 /* markerdetector.cpp in Sources */,
 				426FD94016AA0DFB005BD3AF /* sun_position.c in Sources */,
 				426FD94116AA0DFB005BD3AF /* drawglobe.c in Sources */,
+				42D4860516AF4AC700F93BAB /* DebugShader.fsh in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
