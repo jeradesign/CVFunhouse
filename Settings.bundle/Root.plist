@@ -9,7 +9,7 @@
 			<string>PSGroupSpecifier</string>
 			<key>Title</key>
 			<string>CVFunhouse
-Copyright (c) 2012, Jera Design LLC
+Copyright (c) 2012,2013 Jera Design LLC
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -22,9 +22,9 @@ Redistribution and use in source and binary forms, with or without modification,
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-NOTE: CVFunhouse includes a copy of the OpenCV library in built as an iOS framework.  OpenCV is licensed separately under similar terms.  See the file &quot;OpenCV license.txt&quot; for details.  For more information on OpenCV (including full source code to the library), see http://opencv.org/
+NOTE: CVFunhouse includes a copy of the OpenCV library built as an iOS framework.  OpenCV is licensed separately under similar terms.  See the file &quot;OpenCV license.txt&quot; for details.  For more information on OpenCV (including full source code to the library), see http://opencv.org/
 
-</string>
+NOTE: CVFunhouse uses the ArUco augmented reality library for the Augmented Reality demo.  AruCo is licensed separately under similar terms.  See the individual AruCo source files (located in the ArUco directory) for license details.  For more information about ArUco, see the http://www.uco.es/investiga/grupos/ava/node/26</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -70,6 +70,38 @@ or tort (including negligence or otherwise) arising in any way out of
 the use of this software, even if advised of the possibility of such damage.
 
 </string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>ArUco
+                    Copyright 2011 Rafael Muñoz Salinas. All rights reserved.
+                    
+                    Redistribution and use in source and binary forms, with or without modification, are
+                    permitted provided that the following conditions are met:
+                    
+                    1. Redistributions of source code must retain the above copyright notice, this list of
+                    conditions and the following disclaimer.
+                    
+                    2. Redistributions in binary form must reproduce the above copyright notice, this list
+                    of conditions and the following disclaimer in the documentation and/or other materials
+                    provided with the distribution.
+                    
+                    THIS SOFTWARE IS PROVIDED BY Rafael Muñoz Salinas &apos;&apos;AS IS&apos;&apos; AND ANY EXPRESS OR IMPLIED
+                    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+                    FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL Rafael Muñoz Salinas OR
+                    CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+                    CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+                    SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+                    ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+                    NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+                    ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+                    
+                    The views and conclusions contained in the software and documentation are those of the
+                    authors and should not be interpreted as representing official policies, either expressed
+                    or implied, of Rafael Muñoz Salinas.
+                </string>
 		</dict>
 		<dict>
 			<key>Type</key>

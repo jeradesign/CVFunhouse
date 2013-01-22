@@ -12,6 +12,12 @@ framework. OpenCV is licensed separately under similar terms. See the file
 "OpenCV license.txt" for details. For more information on OpenCV (including full
 source code to the library), see the [OpenCV website](http://opencv.org/).
 
+NOTE: CVFunhouse uses the ArUco augmented reality library for the Augmented
+Reality demo.  AruCo is licensed separately under similar terms.  See the
+individual AruCo source files (located in the ArUco directory) for license
+details.  For more information about ArUco, see the
+[AruCo website](http://www.uco.es/investiga/grupos/ava/node/26).
+
 Rebasing
 --------
 
