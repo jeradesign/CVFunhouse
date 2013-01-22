@@ -55,7 +55,6 @@
 		42B55F9C16994AFA00F35168 /* board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42B55F8C16994AFA00F35168 /* board.cpp */; };
 		42B55F9D16994AFA00F35168 /* boarddetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42B55F8E16994AFA00F35168 /* boarddetector.cpp */; };
 		42B55F9E16994AFA00F35168 /* cameraparameters.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42B55F9016994AFA00F35168 /* cameraparameters.cpp */; };
-		42B55F9F16994AFA00F35168 /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 42B55F9216994AFA00F35168 /* CMakeLists.txt */; };
 		42B55FA016994AFA00F35168 /* cvdrawingutils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42B55F9316994AFA00F35168 /* cvdrawingutils.cpp */; };
 		42B55FA216994AFA00F35168 /* marker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42B55F9716994AFA00F35168 /* marker.cpp */; };
 		42B55FA316994AFA00F35168 /* markerdetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42B55F9916994AFA00F35168 /* markerdetector.cpp */; };
@@ -143,7 +142,6 @@
 		42B55F8F16994AFA00F35168 /* boarddetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = boarddetector.h; sourceTree = "<group>"; };
 		42B55F9016994AFA00F35168 /* cameraparameters.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cameraparameters.cpp; sourceTree = "<group>"; };
 		42B55F9116994AFA00F35168 /* cameraparameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cameraparameters.h; sourceTree = "<group>"; };
-		42B55F9216994AFA00F35168 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 		42B55F9316994AFA00F35168 /* cvdrawingutils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cvdrawingutils.cpp; sourceTree = "<group>"; };
 		42B55F9416994AFA00F35168 /* cvdrawingutils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cvdrawingutils.h; sourceTree = "<group>"; };
 		42B55F9516994AFA00F35168 /* exports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exports.h; sourceTree = "<group>"; };
@@ -324,7 +322,6 @@
 				42B55F8F16994AFA00F35168 /* boarddetector.h */,
 				42B55F9016994AFA00F35168 /* cameraparameters.cpp */,
 				42B55F9116994AFA00F35168 /* cameraparameters.h */,
-				42B55F9216994AFA00F35168 /* CMakeLists.txt */,
 				42B55F9316994AFA00F35168 /* cvdrawingutils.cpp */,
 				42B55F9416994AFA00F35168 /* cvdrawingutils.h */,
 				42B55F9516994AFA00F35168 /* exports.h */,
@@ -333,7 +330,7 @@
 				42B55F9916994AFA00F35168 /* markerdetector.cpp */,
 				42B55F9A16994AFA00F35168 /* markerdetector.h */,
 			);
-			name = ArUco;
+			path = ArUco;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,7 +406,6 @@
 				428D978516A275450073329A /* CVFCannyDemo.html in Resources */,
 				42B55F81169947C600F35168 /* iPad3,1-back-camera.xml in Resources */,
 				42B55F83169947C600F35168 /* iPad3,1-front-camera.xml in Resources */,
-				42B55F9F16994AFA00F35168 /* CMakeLists.txt in Resources */,
 				42FC15BB169FC504007E8CE1 /* iPhone5,1-front-camera.xml in Resources */,
 				42FC15BE169FC504007E8CE1 /* iPhone5,1-back-camera.xml in Resources */,
 				426FD94916AA1325005BD3AF /* tinyworld4.png in Resources */,
