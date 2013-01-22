@@ -8,6 +8,9 @@
 
 #define LOG_MATRICES 0
 #define HORIZONTAL_MARKER 1
+#define DEBUG_SQUARE 0
+#define DEBUG_CUBE 0
+#define DEBUG_OUTLINE_ONLY 0
 
 #import "CVFMainViewController.h"
 #import <AVFoundation/AVFoundation.h>
@@ -46,10 +49,18 @@ enum
     NUM_ATTRIBUTES
 };
 
-GLfloat gCubeVertexData[216] =
+GLfloat gCubeVertexData[] =
 {
     // Data layout for each line below is:
     // positionX, positionY, positionZ,     normalX, normalY, normalZ,
+#if DEBUG_SQUARE
+    0.5f, 0.5f, 0.0f,          0.0f, 0.0f, 1.0f,
+    -0.5f, 0.5f, 0.0f,         0.0f, 0.0f, 1.0f,
+    0.5f, -0.5f, 0.0f,         0.0f, 0.0f, 1.0f,
+    0.5f, -0.5f, 0.0f,         0.0f, 0.0f, 1.0f,
+    -0.5f, 0.5f, 0.0f,         0.0f, 0.0f, 1.0f,
+    -0.5f, -0.5f, 0.0f,        0.0f, 0.0f, 1.0f,
+#else
     0.5f, -0.5f, -0.5f,        1.0f, 0.0f, 0.0f,
     0.5f, 0.5f, -0.5f,         1.0f, 0.0f, 0.0f,
     0.5f, -0.5f, 0.5f,         1.0f, 0.0f, 0.0f,
@@ -91,6 +102,7 @@ GLfloat gCubeVertexData[216] =
     0.5f, 0.5f, -0.5f,         0.0f, 0.0f, -1.0f,
     -0.5f, -0.5f, -0.5f,       0.0f, 0.0f, -1.0f,
     -0.5f, 0.5f, -0.5f,        0.0f, 0.0f, -1.0f
+#endif
 };
 
 @interface CVFMainViewController () {
@@ -473,7 +485,7 @@ GLfloat gCubeVertexData[216] =
     
     
     
-//    GLKMatrix4 baseModelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -4.0f);
+    GLKMatrix4 baseModelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, 0.5f);
 //    baseModelViewMatrix = GLKMatrix4Rotate(baseModelViewMatrix, _rotation, 0.0f, 1.0f, 0.0f);
     
     // Compute the model view matrix for the object rendered with GLKit
@@ -507,6 +519,9 @@ GLfloat gCubeVertexData[216] =
 #endif
     }
 
+#if DEBUG_SQUARE || DEBUG_CUBE
+    modelViewMatrix = GLKMatrix4Multiply(modelViewMatrix, baseModelViewMatrix);
+#else
 #if HORIZONTAL_MARKER
     modelViewMatrix = GLKMatrix4Translate(modelViewMatrix, 0.0f, 0.0f, 1.5f);
     modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, M_PI/2, 1.0f, 0.0f, 0.0f);
@@ -516,6 +531,7 @@ GLfloat gCubeVertexData[216] =
     modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, M_PI/2, 0.0f, 0.0f, 1.0f);
     modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, _rotation, 0.0f, 1.0f, 0.0f);
     modelViewMatrix = GLKMatrix4Scale(modelViewMatrix, 0.75f, 0.75f, 0.75f);
+#endif
 #endif
 
 //    // Compute the model view matrix for the object rendered with ES2
@@ -543,8 +559,15 @@ GLfloat gCubeVertexData[216] =
     glUniformMatrix3fv(uniforms[UNIFORM_NORMAL_MATRIX], 1, 0, _normalMatrix.m);
 
     if (self.modelView.count > 0) {
-        //        glDrawArrays(GL_TRIANGLES, 0, 36);
+#if DEBUG_SQUARE || DEBUG_CUBE
+#if DEBUG_OUTLINE_ONLY
+        glDrawArrays(GL_LINES, 0, sizeof(gCubeVertexData)/6);
+#else
+        glDrawArrays(GL_TRIANGLES, 0, sizeof(gCubeVertexData)/6);
+#endif
+#else
         drawGlobeWithVertexArrays();
+#endif
     }
 }
 
