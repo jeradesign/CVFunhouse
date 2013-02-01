@@ -38,6 +38,7 @@
     CGPoint _descriptionOffScreenCenter;
     CGPoint _descriptionOnScreenCenter;
     bool _useBackCamera;
+    NSArray *_demoList;
 }
 
 @synthesize fpsLabel = _fpsLabel;
@@ -51,6 +52,9 @@
 {
     [super viewDidLoad];
     
+    NSString *demoListPath = [[NSBundle mainBundle] pathForResource:@"Demos" ofType:@"plist"];
+    _demoList = [NSArray arrayWithContentsOfFile:demoListPath];
+
     [self showHideFPS];
     [self initializeDescription];
     [self resetImageProcessor];
@@ -87,43 +91,16 @@
 - (void)resetImageProcessor {
     int demoNumber = [[NSUserDefaults standardUserDefaults] integerForKey:@"demoNumber"];
 
-    switch (demoNumber) {
-        case 0:
-            self.imageProcessor = [[CVFCannyDemo alloc] init];
-            break;
-            
-        case 1:
-            self.imageProcessor = [[CVFFaceDetect alloc] init];
-            break;
-            
-        case 2:
-            self.imageProcessor = [[CVFFarneback alloc] init];
-            break;
-            
-        case 3:
-            self.imageProcessor = [[CVFLaplace alloc] init];
-            break;
-            
-        case 4:
-            self.imageProcessor = [[CVFLukasKanade alloc] init];
-            break;
-            
-        case 5:
-            self.imageProcessor = [[CVFMotionTemplates alloc] init];
-            break;
-            
-        case 6:
-            self.imageProcessor = [[CVFSephiaDemo alloc] init];
-            break;
-            
-        case 7:
-        default:
-            self.imageProcessor = [[CVFPassThru alloc] init];
-            break;
-    }
+    NSArray *demoInfo = [_demoList objectAtIndex:demoNumber];
+    NSString *className = [demoInfo objectAtIndex:1];
+    Class class = NSClassFromString(className);
+    self.imageProcessor = [[class alloc] init];
     
-    NSString *className = NSStringFromClass([self.imageProcessor class]);
     NSURL *descriptionUrl = [[NSBundle mainBundle] URLForResource:className withExtension:@"html"];
+    if (descriptionUrl == nil) {
+        descriptionUrl = [[NSBundle mainBundle] URLForResource:@"NoDescription"
+                                                 withExtension:@"html"];
+    }
     NSURLRequest *request = [NSURLRequest requestWithURL:descriptionUrl];
     [self.descriptionView loadRequest:request];
 }
@@ -229,7 +206,11 @@
 #pragma unused(sender)
     if ([[segue identifier] isEqualToString:@"showAlternate"]) {
         [[segue destinationViewController] setDelegate:self];
-        
+        if ([segue.destinationViewController respondsToSelector:@selector(setDemoList:)]) {
+            [segue.destinationViewController performSelector:@selector(setDemoList:)
+                                                  withObject:_demoList];
+        }
+
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
             UIPopoverController *popoverController = [(UIStoryboardPopoverSegue *)segue popoverController];
             self.flipsidePopoverController = popoverController;

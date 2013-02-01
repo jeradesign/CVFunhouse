@@ -25,7 +25,6 @@ static NSString *ShowDescriptionHintCellIdentifier = @"ShowDescriptionHint";
 @synthesize menuTable = _menuTable;
 @synthesize delegate = _delegate;
 @synthesize navBar = _navBar;
-@synthesize flipsidePopoverArray = _flipsidePopoverArray;
 @synthesize switchCtl = _switchCtl;
 
 - (void)awakeFromNib
@@ -36,16 +35,6 @@ static NSString *ShowDescriptionHintCellIdentifier = @"ShowDescriptionHint";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.flipsidePopoverArray = [[NSMutableArray alloc] initWithObjects:
-                             @"Canny Edge Detector",
-                             @"Face Detector",
-                             @"Farneback",
-                             @"Laplace",
-                             @"Lukas-Kanade",
-                             @"Motion Templates",
-                             @"Sepia Filter",
-                             @"Pass Thru",
-                             NULL];
 
     shouldShowFPS = [[NSUserDefaults standardUserDefaults] boolForKey:@"showFPS"];
     shouldShowDescription = [[NSUserDefaults standardUserDefaults] boolForKey:@"showDescription"];
@@ -104,7 +93,7 @@ static NSString *ShowDescriptionHintCellIdentifier = @"ShowDescriptionHint";
 #pragma unused(tableView)
     // Return the number of rows in the section.
     if (section == 0) {
-        return [_flipsidePopoverArray count];
+        return [self.demoList count];
     } else {
         return 2;
     }
@@ -173,8 +162,9 @@ static NSString *ShowDescriptionHintCellIdentifier = @"ShowDescriptionHint";
                                           reuseIdentifier:CellIdentifier] ;
         }
         
-        if(indexPath.row < (NSInteger)[_flipsidePopoverArray count]) {
-            cell.textLabel.text = [_flipsidePopoverArray objectAtIndex:indexPath.row];
+        if(indexPath.row < (NSInteger)[self.demoList count]) {
+            NSArray *demoInfo = [self.demoList objectAtIndex:indexPath.row];
+            cell.textLabel.text = [demoInfo objectAtIndex:0];
         }
         
         if (indexPath.row == _demoNumber) {

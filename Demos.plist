@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<string>Canny Edge Detector</string>
+		<string>CVFCannyDemo</string>
+	</array>
+	<array>
+		<string>Face Detector</string>
+		<string>CVFFaceDetect</string>
+	</array>
+	<array>
+		<string>Farneback</string>
+		<string>CVFFarneback</string>
+	</array>
+	<array>
+		<string>Laplace</string>
+		<string>CVFLaplace</string>
+	</array>
+	<array>
+		<string>Lukas-Kanade</string>
+		<string>CVFLukasKanade</string>
+	</array>
+	<array>
+		<string>Motion Templates</string>
+		<string>CVFMotionTemplates</string>
+	</array>
+	<array>
+		<string>Sepia Filter</string>
+		<string>CVFSephiaDemo</string>
+	</array>
+	<array>
+		<string>Pass Thru</string>
+		<string>CVFPassThru</string>
+	</array>
+</array>
+</plist>
