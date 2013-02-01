@@ -9,7 +9,10 @@
 #endif
 
 #ifdef __cplusplus
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wall"
 #import "opencv2/opencv.hpp"
+#pragma clang diagnostic pop
 #endif
 
 #ifdef __OBJC__

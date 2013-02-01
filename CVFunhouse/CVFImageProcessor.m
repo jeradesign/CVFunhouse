@@ -100,6 +100,8 @@
 
 static void ReleaseDataCallback(void *info, const void *data, size_t size)
 {
+#pragma unused(data)
+#pragma unused(size)
     IplImage *iplImage = info;
     cvReleaseImage(&iplImage);
 }
@@ -121,6 +123,8 @@ static void ReleaseDataCallback(void *info, const void *data, size_t size)
     } else if (iplImage->nChannels == 4) {
         bitsPerPixel = 32;
         space = CGColorSpaceCreateDeviceRGB(); // must release after CGImageCreate
+    } else {
+        abort();
     }
 
     CGBitmapInfo bitmapInfo = kCGBitmapByteOrderDefault | kCGImageAlphaNone;

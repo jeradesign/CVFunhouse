@@ -147,6 +147,7 @@
         [UIView animateWithDuration:0.5 animations:^{
             self.descriptionView.center = _descriptionOffScreenCenter;
         } completion:^(BOOL finished) {
+#pragma unused(finished)
             self.descriptionView.hidden = true;
         }];
     }
@@ -186,6 +187,7 @@
 
 - (void)flipsideViewControllerDidFinish:(CVFFlipsideViewController *)controller
 {
+#pragma unused(controller)
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         [self dismissModalViewControllerAnimated:YES];
     } else {
@@ -196,11 +198,13 @@
 
 - (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
 {
+#pragma unused(popoverController)
     self.flipsidePopoverController = nil;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+#pragma unused(sender)
     if ([[segue identifier] isEqualToString:@"showAlternate"]) {
         [[segue destinationViewController] setDelegate:self];
         
@@ -217,6 +221,9 @@
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request
  navigationType:(UIWebViewNavigationType)navigationType
 {
+#pragma unused(webView)
+#pragma unused(navigationType)
+
     NSURL *url = [request URL];
     if ([[url scheme] isEqual: @"about"]) {
         return YES;
@@ -233,6 +240,7 @@
 
 - (IBAction)flipAction:(id)sender
 {
+#pragma unused(sender)
     _useBackCamera = !_useBackCamera;
     [[NSUserDefaults standardUserDefaults] setBool:_useBackCamera forKey:@"useBackCamera"];
     [self turnCameraOff];
@@ -251,11 +259,13 @@
 }
 
 - (IBAction)swipeUpAction:(id)sender {
+#pragma unused(sender)
     [[NSUserDefaults standardUserDefaults] setBool:true forKey:@"showDescription"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"showDescription" object:nil];
 }
 
 - (IBAction)swipeDownAction:(id)sender {
+#pragma unused(sender)
     [[NSUserDefaults standardUserDefaults] setBool:false forKey:@"showDescription"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"showDescription" object:nil];
 }
@@ -264,6 +274,7 @@
 
 -(void)imageProcessor:(CVFImageProcessor*)imageProcessor didCreateImage:(UIImage*)image
 {
+#pragma unused(imageProcessor)
 //    NSLog(@"Image Received");
     [self.imageView setImage:image];
     NSDate *now = [NSDate date];
@@ -349,6 +360,8 @@
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
     @autoreleasepool {
+#pragma unused(captureOutput)
+#pragma unused(connection)
         // Get a CMSampleBuffer's Core Video image buffer for the media data
         CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
         

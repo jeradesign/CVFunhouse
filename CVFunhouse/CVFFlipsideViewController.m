@@ -70,6 +70,7 @@ static NSString *ShowDescriptionHintCellIdentifier = @"ShowDescriptionHint";
 }
 
 - (void) viewWillAppear:(BOOL)animated {
+#pragma unused(animated)
     _demoNumber = [[NSUserDefaults standardUserDefaults] integerForKey:@"demoNumber"];
 }
 
@@ -94,11 +95,13 @@ static NSString *ShowDescriptionHintCellIdentifier = @"ShowDescriptionHint";
 
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+#pragma unused(tableView)
     // Return the number of sections.
     return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+#pragma unused(tableView)
     // Return the number of rows in the section.
     if (section == 0) {
         return [_flipsidePopoverArray count];
@@ -113,7 +116,7 @@ static NSString *ShowDescriptionHintCellIdentifier = @"ShowDescriptionHint";
                 selector:(SEL)selector
             initialValue:(bool) value {
     *cell_p = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                      reuseIdentifier:SwitchCellIdentifier];
+                                      reuseIdentifier:reuseIdentifier];
     CGRect frame = CGRectMake(220.0, 16.0, 0.0, 0.0);
     
     UISwitch *switchCtl = [[UISwitch alloc] initWithFrame:frame];
@@ -170,7 +173,7 @@ static NSString *ShowDescriptionHintCellIdentifier = @"ShowDescriptionHint";
                                           reuseIdentifier:CellIdentifier] ;
         }
         
-        if(indexPath.row < [_flipsidePopoverArray count]) {
+        if(indexPath.row < (NSInteger)[_flipsidePopoverArray count]) {
             cell.textLabel.text = [_flipsidePopoverArray objectAtIndex:indexPath.row];
         }
         
@@ -204,6 +207,8 @@ static NSString *ShowDescriptionHintCellIdentifier = @"ShowDescriptionHint";
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+#pragma unused(tableView)
+#pragma unused(indexPath)
     return 60;
 }
 
@@ -211,6 +216,7 @@ static NSString *ShowDescriptionHintCellIdentifier = @"ShowDescriptionHint";
 
 - (IBAction)done:(id)sender
 {
+#pragma unused(sender)
     [self.delegate flipsideViewControllerDidFinish:self];
 }
 
