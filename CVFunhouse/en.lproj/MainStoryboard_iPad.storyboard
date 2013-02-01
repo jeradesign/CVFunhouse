@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C54" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -166,12 +165,10 @@
                 <relationship kind="action" name="flipAction:"/>
                 <relationship kind="action" name="swipeDownAction:"/>
                 <relationship kind="action" name="swipeUpAction:"/>
-                <relationship kind="action" name="togglePopover:"/>
                 <relationship kind="outlet" name="descriptionView" candidateClass="UIWebView"/>
                 <relationship kind="outlet" name="flipCameraButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="fpsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="previewView" candidateClass="UIView"/>
             </relationships>
         </class>
     </classes>
