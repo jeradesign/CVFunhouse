@@ -72,6 +72,18 @@
                                                object:nil];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+#pragma unused(animated)
+    bool showDescription = [[NSUserDefaults standardUserDefaults] boolForKey:@"showDescription"];
+    if (showDescription) {
+        double delayInSeconds = 1.0;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [self.descriptionView.scrollView flashScrollIndicators];
+        });
+    }
+}
+
 - (void)resetImageProcessor {
     int demoNumber = [[NSUserDefaults standardUserDefaults] integerForKey:@"demoNumber"];
 
@@ -133,6 +145,13 @@
 
     bool showDescription = [[NSUserDefaults standardUserDefaults] boolForKey:@"showDescription"];
     self.descriptionView.hidden = !showDescription;
+    if (showDescription) {
+        double delayInSeconds = 2.0;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [self.descriptionView.scrollView flashScrollIndicators];
+        });
+    }
 }
 
 - (void)showHideDescription {
@@ -142,6 +161,9 @@
         [self.descriptionView setHidden:false];
         [UIView animateWithDuration:0.5 animations:^{
             self.descriptionView.center = _descriptionOnScreenCenter;
+        } completion:^(BOOL finished) {
+#pragma unused(finished)
+            [self.descriptionView.scrollView flashScrollIndicators];
         }];
     } else if (!showDescription && !self.descriptionView.isHidden) {
         [UIView animateWithDuration:0.5 animations:^{
