@@ -25,10 +25,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *fpsLabel;
 @property (weak, nonatomic) IBOutlet UIButton *flipCameraButton;
 @property (weak, nonatomic) IBOutlet UIWebView *descriptionView;
+@property (weak, nonatomic) IBOutlet UIView *descriptionContainer;
 
 
 - (IBAction)flipAction:(id)sender;
 - (IBAction)swipeUpAction:(id)sender;
 - (IBAction)swipeDownAction:(id)sender;
+- (IBAction)closeDescription:(id)sender;
 
 @end

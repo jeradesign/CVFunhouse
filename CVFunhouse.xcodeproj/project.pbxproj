@@ -12,6 +12,7 @@
 		4209534715C0BEB200C37CD8 /* CVFMotionTemplates.m in Sources */ = {isa = PBXBuildFile; fileRef = 4209534615C0BEB200C37CD8 /* CVFMotionTemplates.m */; };
 		420A3F8515BC6724004804EF /* CVFPassThru.m in Sources */ = {isa = PBXBuildFile; fileRef = 420A3F8415BC6724004804EF /* CVFPassThru.m */; };
 		42171D1215BA6C19008BEA68 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42171D1115BA6C19008BEA68 /* opencv2.framework */; };
+		421897E616BC879900AC716C /* CloseButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 421897E516BC879900AC716C /* CloseButton.png */; };
 		423FA83715DB1AD3001D30AC /* SwitchCameraIcon44.png in Resources */ = {isa = PBXBuildFile; fileRef = 423FA83515DB1AD3001D30AC /* SwitchCameraIcon44.png */; };
 		423FA83815DB1AD3001D30AC /* SwitchCameraIcon44@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 423FA83615DB1AD3001D30AC /* SwitchCameraIcon44@2x.png */; };
 		423FA83B15DB264B001D30AC /* iButton30.png in Resources */ = {isa = PBXBuildFile; fileRef = 423FA83915DB264B001D30AC /* iButton30.png */; };
@@ -58,6 +59,7 @@
 		420A3F8315BC6724004804EF /* CVFPassThru.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CVFPassThru.h; path = CVFunhouse/CVFPassThru.h; sourceTree = "<group>"; };
 		420A3F8415BC6724004804EF /* CVFPassThru.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CVFPassThru.m; path = CVFunhouse/CVFPassThru.m; sourceTree = "<group>"; };
 		42171D1115BA6C19008BEA68 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		421897E516BC879900AC716C /* CloseButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseButton.png; sourceTree = "<group>"; };
 		423FA83515DB1AD3001D30AC /* SwitchCameraIcon44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SwitchCameraIcon44.png; sourceTree = "<group>"; };
 		423FA83615DB1AD3001D30AC /* SwitchCameraIcon44@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SwitchCameraIcon44@2x.png"; sourceTree = "<group>"; };
 		423FA83915DB264B001D30AC /* iButton30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iButton30.png; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 		4285252915BF6CDF00622EE8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				421897E516BC879900AC716C /* CloseButton.png */,
 				428D978216A275450073329A /* CVFFaceDetect.html */,
 				428D978316A275450073329A /* CVFCannyDemo.html */,
 				423FA83915DB264B001D30AC /* iButton30.png */,
@@ -310,6 +313,7 @@
 				428D978516A275450073329A /* CVFCannyDemo.html in Resources */,
 				42E60DB416BB52E500F9712B /* Demos.plist in Resources */,
 				426B881416BC6BE30093D62F /* NoDescription.html in Resources */,
+				421897E616BC879900AC716C /* CloseButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

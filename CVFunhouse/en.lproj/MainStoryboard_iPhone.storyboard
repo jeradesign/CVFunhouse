@@ -16,14 +16,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <webView contentMode="scaleToFill" id="TVS-vQ-ZgI">
-                                <rect key="frame" x="0.0" y="238" width="320" height="177"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <outlet property="delegate" destination="2" id="Ad1-fd-nXq"/>
-                                </connections>
-                            </webView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="dX3-k0-41q">
                                 <rect key="frame" x="113" y="434" width="95" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
@@ -62,6 +54,36 @@
                                     <segue destination="6" kind="modal" identifier="showAlternate" modalTransitionStyle="flipHorizontal" id="11"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" id="fnl-NY-TTY">
+                                <rect key="frame" x="0.0" y="238" width="320" height="177"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <webView contentMode="scaleToFill" id="TVS-vQ-ZgI">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="177"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="2" id="Ad1-fd-nXq"/>
+                                        </connections>
+                                    </webView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RlS-1Z-PKE">
+                                        <rect key="frame" x="286.5" y="9.5" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" image="CloseButton.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closeDescription:" destination="2" eventType="touchUpInside" id="xnA-mm-soM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -72,6 +94,7 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="descriptionContainer" destination="fnl-NY-TTY" id="z6k-Kb-5eT"/>
                         <outlet property="descriptionView" destination="TVS-vQ-ZgI" id="EpH-vs-i3P"/>
                         <outlet property="flipCameraButton" destination="lKb-tT-4x6" id="CMq-0W-Cdx"/>
                         <outlet property="fpsLabel" destination="dX3-k0-41q" id="sT8-Ia-RYD"/>
@@ -150,6 +173,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="CloseButton.png" width="100" height="100"/>
         <image name="SwitchCameraIcon44.png" width="44" height="25"/>
         <image name="iButton30.png" width="30" height="30"/>
     </resources>
@@ -165,9 +189,11 @@
         <class className="CVFMainViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CVFMainViewController.h"/>
             <relationships>
+                <relationship kind="action" name="closeDescription:"/>
                 <relationship kind="action" name="flipAction:"/>
                 <relationship kind="action" name="swipeDownAction:"/>
                 <relationship kind="action" name="swipeUpAction:"/>
+                <relationship kind="outlet" name="descriptionContainer" candidateClass="UIView"/>
                 <relationship kind="outlet" name="descriptionView" candidateClass="UIWebView"/>
                 <relationship kind="outlet" name="flipCameraButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="fpsLabel" candidateClass="UILabel"/>

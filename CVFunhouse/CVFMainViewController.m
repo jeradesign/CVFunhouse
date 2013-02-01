@@ -111,17 +111,17 @@
 }
 
 - (void)initializeDescription {
-    self.descriptionView.layer.borderColor = [UIColor blackColor].CGColor;
-    self.descriptionView.layer.borderWidth = 1.0;
+    self.descriptionContainer.layer.borderColor = [UIColor blackColor].CGColor;
+    self.descriptionContainer.layer.borderWidth = 1.0;
     
-    _descriptionOnScreenCenter = self.descriptionView.center;
-    _descriptionOffScreenCenter = self.descriptionView.center;
-    int descriptionTopY = self.descriptionView.center.y -
-    self.descriptionView.bounds.size.height / 2;
+    _descriptionOnScreenCenter = self.descriptionContainer.center;
+    _descriptionOffScreenCenter = self.descriptionContainer.center;
+    int descriptionTopY = self.descriptionContainer.center.y -
+    self.descriptionContainer.bounds.size.height / 2;
     _descriptionOffScreenCenter.y += self.view.bounds.size.height - descriptionTopY;
 
     bool showDescription = [[NSUserDefaults standardUserDefaults] boolForKey:@"showDescription"];
-    self.descriptionView.hidden = !showDescription;
+    self.descriptionContainer.hidden = !showDescription;
     if (showDescription) {
         double delayInSeconds = 2.0;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
@@ -133,21 +133,21 @@
 
 - (void)showHideDescription {
     bool showDescription = [[NSUserDefaults standardUserDefaults] boolForKey:@"showDescription"];
-    if (showDescription && self.descriptionView.isHidden) {
-        self.descriptionView.center = _descriptionOffScreenCenter;
-        [self.descriptionView setHidden:false];
+    if (showDescription && self.descriptionContainer.isHidden) {
+        self.descriptionContainer.center = _descriptionOffScreenCenter;
+        [self.descriptionContainer setHidden:false];
         [UIView animateWithDuration:0.5 animations:^{
-            self.descriptionView.center = _descriptionOnScreenCenter;
+            self.descriptionContainer.center = _descriptionOnScreenCenter;
         } completion:^(BOOL finished) {
 #pragma unused(finished)
             [self.descriptionView.scrollView flashScrollIndicators];
         }];
-    } else if (!showDescription && !self.descriptionView.isHidden) {
+    } else if (!showDescription && !self.descriptionContainer.isHidden) {
         [UIView animateWithDuration:0.5 animations:^{
-            self.descriptionView.center = _descriptionOffScreenCenter;
+            self.descriptionContainer.center = _descriptionOffScreenCenter;
         } completion:^(BOOL finished) {
 #pragma unused(finished)
-            self.descriptionView.hidden = true;
+            self.descriptionContainer.hidden = true;
         }];
     }
 }
@@ -173,6 +173,7 @@
     [self setFpsLabel:nil];
     [self setFlipCameraButton:nil];
     [self setDescriptionView:nil];
+    [self setDescriptionContainer:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -270,6 +271,13 @@
 }
 
 - (IBAction)swipeDownAction:(id)sender {
+#pragma unused(sender)
+    [[NSUserDefaults standardUserDefaults] setBool:false forKey:@"showDescription"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"showDescription" object:nil];
+}
+
+- (IBAction)closeDescription:(id)sender {
 #pragma unused(sender)
     [[NSUserDefaults standardUserDefaults] setBool:false forKey:@"showDescription"];
     [[NSUserDefaults standardUserDefaults] synchronize];
