@@ -243,6 +243,7 @@
 #pragma unused(sender)
     _useBackCamera = !_useBackCamera;
     [[NSUserDefaults standardUserDefaults] setBool:_useBackCamera forKey:@"useBackCamera"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     [self turnCameraOff];
     [self setupCamera];
     [self turnCameraOn];
@@ -261,12 +262,14 @@
 - (IBAction)swipeUpAction:(id)sender {
 #pragma unused(sender)
     [[NSUserDefaults standardUserDefaults] setBool:true forKey:@"showDescription"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"showDescription" object:nil];
 }
 
 - (IBAction)swipeDownAction:(id)sender {
 #pragma unused(sender)
     [[NSUserDefaults standardUserDefaults] setBool:false forKey:@"showDescription"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"showDescription" object:nil];
 }
 

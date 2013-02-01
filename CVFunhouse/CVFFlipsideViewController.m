@@ -202,6 +202,7 @@ static NSString *ShowDescriptionHintCellIdentifier = @"ShowDescriptionHint";
     
     _demoNumber = [indexPath row];
     [[NSUserDefaults standardUserDefaults] setInteger:_demoNumber forKey:@"demoNumber"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"demoNumber" object:nil];
     [self.delegate flipsideViewControllerDidFinish:self];
 }
@@ -226,6 +227,7 @@ static NSString *ShowDescriptionHintCellIdentifier = @"ShowDescriptionHint";
     UISwitch *senderAsSwitch = (UISwitch *)sender;
     shouldShowFPS = [senderAsSwitch isOn];
     [[NSUserDefaults standardUserDefaults] setBool:shouldShowFPS forKey:@"showFPS"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"showFPS" object:nil];
 }
 
@@ -233,6 +235,7 @@ static NSString *ShowDescriptionHintCellIdentifier = @"ShowDescriptionHint";
     UISwitch *senderAsSwitch = (UISwitch *)sender;
     shouldShowDescription = [senderAsSwitch isOn];
     [[NSUserDefaults standardUserDefaults] setBool:shouldShowDescription forKey:@"showDescription"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"showDescription" object:nil];
 }
 
