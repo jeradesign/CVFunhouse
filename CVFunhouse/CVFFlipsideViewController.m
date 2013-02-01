@@ -163,8 +163,8 @@ static NSString *ShowDescriptionHintCellIdentifier = @"ShowDescriptionHint";
         }
         
         if(indexPath.row < (NSInteger)[self.demoList count]) {
-            NSArray *demoInfo = [self.demoList objectAtIndex:indexPath.row];
-            cell.textLabel.text = [demoInfo objectAtIndex:0];
+            NSArray *demoInfo = (self.demoList)[indexPath.row];
+            cell.textLabel.text = demoInfo[0];
         }
         
         if (indexPath.row == _demoNumber) {

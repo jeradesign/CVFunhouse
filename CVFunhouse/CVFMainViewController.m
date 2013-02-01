@@ -91,8 +91,8 @@
 - (void)resetImageProcessor {
     int demoNumber = [[NSUserDefaults standardUserDefaults] integerForKey:@"demoNumber"];
 
-    NSArray *demoInfo = [_demoList objectAtIndex:demoNumber];
-    NSString *className = [demoInfo objectAtIndex:1];
+    NSArray *demoInfo = _demoList[demoNumber];
+    NSString *className = demoInfo[1];
     Class class = NSClassFromString(className);
     self.imageProcessor = [[class alloc] init];
     
@@ -348,8 +348,7 @@
     
     // Specify the pixel format
     output.videoSettings = 
-    [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:kCVPixelFormatType_32BGRA] 
-                                forKey:(id)kCVPixelBufferPixelFormatTypeKey];
+    @{(id)kCVPixelBufferPixelFormatTypeKey: @(kCVPixelFormatType_32BGRA)};
     output.alwaysDiscardsLateVideoFrames = YES;
     //kCVPixelFormatType_32BGRA
     
