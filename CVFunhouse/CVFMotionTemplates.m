@@ -106,20 +106,13 @@ static void  update_mhi( IplImage* img, IplImage* dst, int diff_threshold )
     
     // iterate through the motion components,
     // One more iteration (i == -1) corresponds to the whole image (global motion)
-    for( i = -1; i < seq->total; i++ ) {
+    for( i = 0; i < seq->total; i++ ) {
         
-        if( i < 0 ) { // case of the whole image
-            comp_rect = cvRect( 0, 0, size.width, size.height );
-            color = CV_RGB(255,255,255);
-            magnitude = 100;
-        }
-        else { // i-th motion component
-            comp_rect = ((CvConnectedComp*)cvGetSeqElem( seq, i ))->rect;
-            if( comp_rect.width + comp_rect.height < 100 ) // reject very small components
-                continue;
-            color = CV_RGB(255,0,0);
-            magnitude = 30;
-        }
+        comp_rect = ((CvConnectedComp*)cvGetSeqElem( seq, i ))->rect;
+        if( comp_rect.width + comp_rect.height < 200 ) // reject very small components
+            continue;
+        color = CV_RGB(255,0,0);
+        magnitude = 30;
         
         // select component ROI
         cvSetImageROI( silh, comp_rect );
