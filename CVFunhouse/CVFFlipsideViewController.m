@@ -92,7 +92,7 @@ static NSString *ShowDescriptionHintCellIdentifier = @"ShowDescriptionHint";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #pragma unused(tableView)
     // Return the number of rows in the section.
-    if (section == 0) {
+    if (section == 1) {
         return [self.demoList count];
     } else {
         return 2;
@@ -131,16 +131,7 @@ static NSString *ShowDescriptionHintCellIdentifier = @"ShowDescriptionHint";
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell;
-    if ([indexPath section] == 1 && [indexPath row] == 0) {
-        cell = [tableView dequeueReusableCellWithIdentifier:SwitchCellIdentifier];
-        if (cell == nil) {
-            [self createSwitchCell:&cell
-                         withLabel:@"Show Frame Rate"
-                   reuseIdentifier:SwitchCellIdentifier
-                          selector:@selector(switchAction:)
-                      initialValue:shouldShowFPS];
-        }
-    } else if ([indexPath section] == 1 && [indexPath row] == 1) {
+    if ([indexPath section] == 0 && [indexPath row] == 0) {
         cell = [tableView dequeueReusableCellWithIdentifier:ShowDescriptionCellIdentifier];
         if (cell == nil) {
             [self createSwitchCell:&cell
@@ -149,7 +140,16 @@ static NSString *ShowDescriptionHintCellIdentifier = @"ShowDescriptionHint";
                           selector:@selector(showHideDescription:)
                       initialValue:shouldShowDescription];
         }
-    } else if ([indexPath section] == 1 && [indexPath row] == 2) {
+    } else if ([indexPath section] == 0 && [indexPath row] == 1) {
+        cell = [tableView dequeueReusableCellWithIdentifier:SwitchCellIdentifier];
+        if (cell == nil) {
+            [self createSwitchCell:&cell
+                         withLabel:@"Show Frame Rate"
+                   reuseIdentifier:SwitchCellIdentifier
+                          selector:@selector(switchAction:)
+                      initialValue:shouldShowFPS];
+        }
+    } else if ([indexPath section] == 0 && [indexPath row] == 2) {
         cell = [tableView dequeueReusableCellWithIdentifier:ShowDescriptionHintCellIdentifier];
         if (cell == nil) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
@@ -197,7 +197,7 @@ static NSString *ShowDescriptionHintCellIdentifier = @"ShowDescriptionHint";
     [self.delegate flipsideViewControllerDidFinish:self];
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 #pragma unused(tableView)
 #pragma unused(indexPath)
     return 60;

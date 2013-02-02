@@ -125,10 +125,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="sA0-X1-b9n">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="sA0-X1-b9n">
                                 <rect key="frame" x="0.0" y="44" width="320" height="808"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="hKs-eZ-Dwf">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -190,6 +190,7 @@
                 <relationship kind="action" name="flipAction:"/>
                 <relationship kind="action" name="swipeDownAction:"/>
                 <relationship kind="action" name="swipeUpAction:"/>
+                <relationship kind="action" name="togglePopover:"/>
                 <relationship kind="outlet" name="descriptionContainer" candidateClass="UIView"/>
                 <relationship kind="outlet" name="descriptionView" candidateClass="UIWebView"/>
                 <relationship kind="outlet" name="flipCameraButton" candidateClass="UIButton"/>
