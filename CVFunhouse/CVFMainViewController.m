@@ -120,6 +120,10 @@
     self.descriptionContainer.bounds.size.height / 2;
     _descriptionOffScreenCenter.y += self.view.bounds.size.height - descriptionTopY;
 
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"showDescription"] == nil) {
+        [[NSUserDefaults standardUserDefaults] setBool:true forKey:@"showDescription"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
     bool showDescription = [[NSUserDefaults standardUserDefaults] boolForKey:@"showDescription"];
     self.descriptionContainer.hidden = !showDescription;
     if (showDescription) {
