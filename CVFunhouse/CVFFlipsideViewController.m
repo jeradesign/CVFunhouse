@@ -181,11 +181,11 @@ static NSString *ShowDescriptionHintCellIdentifier = @"ShowDescriptionHint";
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-    if (indexPath.section == 1) {
+    if (indexPath.section == 0) {
         return;
     }
     
-    NSIndexPath *oldIndexPath = [NSIndexPath indexPathForRow:_demoNumber inSection:0];
+    NSIndexPath *oldIndexPath = [NSIndexPath indexPathForRow:_demoNumber inSection:1];
     
     [[tableView cellForRowAtIndexPath:oldIndexPath] setAccessoryType:UITableViewCellAccessoryNone];
     [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
