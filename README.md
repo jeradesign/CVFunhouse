@@ -12,6 +12,12 @@ framework. OpenCV is licensed separately under similar terms. See the file
 "OpenCV license.txt" for details. For more information on OpenCV (including full
 source code to the library), see the [OpenCV website](http://opencv.org/).
 
+Augmented Reality
+-----------------
+
+The augmented reality demo is currently checked into a separate branch. To use
+it, enter `git checkout augmented-reality` on the command line.
+
 Rebasing
 --------
 
