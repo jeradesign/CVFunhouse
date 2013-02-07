@@ -14,7 +14,7 @@
 #import "CVFFaceDetect.h"
 #import "CVFFarneback.h"
 #import "CVFLaplace.h"
-#import "CVFLukasKanade.h"
+#import "CVFLucasKanade.h"
 #import "CVFMotionTemplates.h"
 
 #import "CVFSephiaDemo.h"

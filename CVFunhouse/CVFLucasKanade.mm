@@ -8,7 +8,7 @@
 
 // Based on the OpenCV example: <opencv>/samples/cpp/lkdemo.cpp
 
-#import "CVFLukasKanade.h"
+#import "CVFLucasKanade.h"
 
 #include "opencv2/video/tracking.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
@@ -20,7 +20,7 @@ TermCriteria termcrit(CV_TERMCRIT_ITER|CV_TERMCRIT_EPS,20,0.03);
 cv::Size subPixWinSize(10,10), winSize(31,31);
 const int MAX_COUNT = 500;
 
-@interface CVFLukasKanade () {
+@interface CVFLucasKanade () {
     bool hasBeenInited;
     Mat gray, prevGray, image;
     vector<Point2f> points[2];
@@ -29,7 +29,7 @@ const int MAX_COUNT = 500;
 @end
 
 
-@implementation CVFLukasKanade
+@implementation CVFLucasKanade
 
 /*
  *  processIplImage

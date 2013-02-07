@@ -19,8 +19,8 @@
 		<string>CVFLaplace</string>
 	</array>
 	<array>
-		<string>Lukas-Kanade</string>
-		<string>CVFLukasKanade</string>
+		<string>Lucas-Kanade</string>
+		<string>CVFLucasKanade</string>
 	</array>
 	<array>
 		<string>Motion Templates</string>

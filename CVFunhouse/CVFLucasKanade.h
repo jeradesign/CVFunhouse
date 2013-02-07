@@ -1,5 +1,5 @@
 //
-//  CVFLukasKanade.h
+//  CVFLucasKanade.h
 //  CVFunhouse
 //
 //  Created by John Brewer on 7/25/12.
@@ -8,6 +8,6 @@
 
 #import "CVFImageProcessor.h"
 
-@interface CVFLukasKanade : CVFImageProcessor
+@interface CVFLucasKanade : CVFImageProcessor
 
 @end
