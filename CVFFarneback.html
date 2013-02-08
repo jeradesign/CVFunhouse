@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<h2>Farnebäck Flow</h2>
+<p><strong>What You’re Seeing:</strong><br />
+This demo shows an example of a <em>dense optical flow</em>.  It uses the Farnebäck’s algorithm to estimate the motion of every pixel in the image from frame to frame.  Although motion is computed for every pixel, it’s only displayed every 16 pixels, both horizontally and vertically.</p>
+<p><strong>How It Works:</strong><br />
+Farnebäck’s algorithm estimates the motion for subregions on several different scales.  Then on a pixel level, it estimates the pixel’s motion within the region by attempting to minimize the value of a set of simultaneous equations.</p>
+<p><strong>What It’s Used For:</strong><br />
+Motion flow is an important part of digital video compression.  Video compressors can store much less data by indicating that subsequent frames of video can be produced by simply moving around regions from the preceding frame.</p>
+<p><strong>Try and Notice:</strong><br />
+Move your hand or head around and watch the image the lines track the motion. Also notice how slowly the screen updates. Computing motion for every pixel on the screen is lots of work! See the Lucas-Kanade demo for another, faster approach to tracking the flow of motion.</p>
+<p><strong>Learn More:</strong><br />
+ <a href="http://en.wikipedia.org/wiki/Optical_flow">Optical flow</a> on Wikipedia</p>
+<p><strong>Credit:</strong><br />
+Based on the OpenCV Farnebäck example.</p>
+</body>
+</html>

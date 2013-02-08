@@ -1,8 +1,15 @@
 <h2>Face Detector</h2>
-<p>This face detector uses a technique called a cascade classifier to detect faces.  The classifier scans across the entire image looking for face-like features.  It's called a 
-'cascade' because each candidate region is run through multiple dectectors, any of which 
-can reject it.</p>
-<p>Note that this detector was trained with full-face images.  If you tilt your head or show only a profile, the detector will not be able to find your face.</p>
-<p>For more information, see the 
-<a href='http://docs.opencv.org/modules/objdetect/doc/cascade_classification.html'>
-the OpenCV Cascade Classifier documentation</a>.</p>
+<p><strong>What You&rsquo;re Seeing:</strong><br />
+This face detector draws a red circle around any faces it detects.  (There&rsquo;s a size threshold, so distant faces won&rsquo;t be recognized.)</p>
+<p><strong>How It Works:</strong><br />
+This face detector uses a technique called a <em>cascade classifier</em> to detect faces. The classifier scans across then entire image looking for <em>haar-like features</em> that match those of faces in its training database.  It&rsquo;s called a &lsquo;cascade&rsquo; because each candidate region is run through a cascade of different detectors, any of which can reject it.  A region is only marked as a facepasses if it passes <em>all </em>of the detectors.</p>
+<p><strong>What It&rsquo;s Used For:</strong><br />
+Face detection is widely used in from everything to digital cameras to security applications to digital photo albums.</p>
+<p><strong>Try and Notice:<br />
+  </strong>Turn your head to either side, or tilt it slightly.  Note that the face detector no longer recognizes your face.  That&rsquo;s because this face detector was only trained on full-face images.  Other, more sophisticated face recognizers can recognize faces from a wider range of angles.</p>
+<p><strong>Learn More:<br />
+</strong><a href="http://en.wikipedia.org/wiki/Cascading_classifiers">Cascading classifiers</a> on Wikipedia<br />
+<a href="http://en.wikipedia.org/wiki/Haar-like_features">Haar-like features</a> on Wikipedia<br />
+  <br />
+  <strong>  Credit:<br />
+  </strong>Based on the OpenCV face detector example.</p>

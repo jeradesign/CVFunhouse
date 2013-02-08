@@ -1,0 +1,13 @@
+<h2>Lucas-Kanade Flow</h2>
+<p><strong>Note:</strong><br />
+If you move too rapidly, or point the camera at a different scene, the green dots may get lost.  If this happens, you can restart the demo by tapping the  <img src="iButton30@2x.png" alt="i" width="20" height="20" align="absbottom" />button and choosing “Lucas-Kanade” from the demo list again.</p>
+<p><strong>What You’re Seeing:</strong><br />
+This is an example of <em>sparse optical flow</em>. Unlike the Farnebäck flow, which tries to estimate flow for every pixel in the image, Lucas-Kanade looks at the initial frame of video for features -- locations that it can track easily.  Then for each subsequent frame, it tracks those same features as they move around. Each feature is marked by a green dot.</p>
+<p><strong>How it Works:</strong><br />
+The Lucas-Kanade starts by looking for “corners” — places where an image changes both vertically and horizontally.  Then it tracks those corners from frame to frame by searching nearby regions of the image.  (It assumes that objects don’t move too much between frames.)</p>
+<p><strong>Try and Notice:</strong><br />
+With the camera pointing at yourself, reset the Lucas-Kanade demo and then move your arm across your face.  You should be able to “wipe” most of the green dots off your face. This is because Lucas-Kanade always updates point positions to the closest matching nearby location it can find.  Usually this will be the same point on the same object.  When you cover up part of the image with your arm, the closest matching nearby point is usually somewhere along your arm, so the points start following your arm.  Even when you face is visible again, the points have moved, and so don’t find their original location because it’s too far from their new location.</p>
+<p><strong>Learn More:</strong><br />
+ <a href="http://en.wikipedia.org/wiki/Lucas–Kanade_method">Lucas–Kanade method</a> on Wikipedia</p>
+<p><strong>Credit:</strong><br />
+Based on the OpenCV Lucas-Kanade example.</p>

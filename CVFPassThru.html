@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<h2>Pass Thru</h2>
+<p><strong>What You’re Seeing:</strong><br />
+You’re seeing exactly what the camera does.  This demo simply takes what the camera sees and displays it on the screen.  It’s not a very impressive demo visually.  But you can modify the code for it to create computer vision demos of your own.</p>
+<p><strong>How it Works:</strong><br />
+Every demo in this app was written using the <em>OpenCV computer vision library</em> and the <em>CVFunhouse framework</em>. The framework takes images from the camera, passes them to an object that transforms the image using the OpenCV library, and then returns the transformed image to display.<br />
+Note that
+even doing “nothing” requires some work.  The camera produces an image in BGRA (storing the blue, green, red, and alpha components of each pixel in that order).  The screen wants the pixels in RGB (red, green, blue) order, so the code has to convert the image in order to do nothing.</p>
+<p><strong>What it’s Used For:</strong><br />
+It’s used by people just like you to create their own computer vision demonstrations.</p>
+<p><strong>Try and Notice:</strong><br />
+Check out the code from <a href="http://github.com/jeradesign/CVFunhouse">http://github.com/jeradesign/CVFunhouse</a> and start building computer vision demos of your own. As a simple starter, in file CVPassThru.m, change the body of method <code>processIplImage:</code> with the single line:</p>
+<p> <code>[self imageReady:iplImage];</code></p>
+<p>Note that red and blue are reversed in the image.  Everywhere in the image that was red shows up as blue, and vice-versa.</p>
+<p><strong>Learn More:</strong><br />
+<a href="http://opencv.org">The OpenCV project website</a>. Complete documentation and tutorials for the OpenCV library.</p>
+</body>
+</html>

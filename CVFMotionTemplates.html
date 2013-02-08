@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<h2>Motion Templates</h2>
+<p><strong>What You’re Seeing:</strong><br />
+Things that have moved lately appear in red, and gradually fade to black once they stop moving.  (Moving the camera will also produce this effect for everything in the scene.  Try to hold the device steady, or better yet, put it in a stand.) Regions of the image that moved have a blue circle with a line that shows the direction of motion.</p>
+<p><strong>How It Works:</strong><br />
+Each time the camera generates a new frame, that image is subtracted from the image of the previous frame. Any place the two images differ is treated as motion. The motion is then stored in a motion history image, which tracks recent areas where motion occurred. The motion template code looks a the motion history image, and uses it to compute gradients of motion for each area of motion. Those are then visualized as blue circles. The motion template image itself is visualized in red.</p>
+<p><strong>What it’s Used For:</strong><br />
+Motion templates are used in security applications.  For example, a security camera might be set up to motion detect motion and flag anything the camera saw that moved for a person to examine.</p>
+<p><strong>Try and Notice:</strong><br />
+Hold very still and eventually you’ll disappear from the image.  Just like the T. Rex in Jurassic Park, this demo only senses motion.  You can also try moving one hand down and the other hand up, and see that each one is tracked by a blue circle with a line indicating the direction of motion. </p>
+<p><strong>Learn More:</strong><br />
+ <a href="http://en.wikipedia.org/wiki/Motion_analysis">Motion analysis</a> on Wikipedia</p>
+<p><strong>Credit:</strong><br />
+Based on the OpenCV motion template example.</p>
+</body>
+</html>
