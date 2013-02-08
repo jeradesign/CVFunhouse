@@ -61,6 +61,9 @@ static NSString *ShowDescriptionHintCellIdentifier = @"ShowDescriptionHint";
 - (void) viewWillAppear:(BOOL)animated {
 #pragma unused(animated)
     _demoNumber = [[NSUserDefaults standardUserDefaults] integerForKey:@"demoNumber"];
+    if (_demoNumber <= (int)_demoList.count) {
+        _demoNumber = _demoList.count - 1;
+    }
 }
 
 -(void) reloadViewHeight
