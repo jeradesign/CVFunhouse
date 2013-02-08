@@ -11,12 +11,12 @@
 		<string>CVFFaceDetect</string>
 	</array>
 	<array>
-		<string>Farneback</string>
-		<string>CVFFarneback</string>
-	</array>
-	<array>
 		<string>Laplace</string>
 		<string>CVFLaplace</string>
+	</array>
+	<array>
+		<string>Farneback</string>
+		<string>CVFFarneback</string>
 	</array>
 	<array>
 		<string>Lucas-Kanade</string>
@@ -25,10 +25,6 @@
 	<array>
 		<string>Motion Templates</string>
 		<string>CVFMotionTemplates</string>
-	</array>
-	<array>
-		<string>Sepia Filter</string>
-		<string>CVFSephiaDemo</string>
 	</array>
 	<array>
 		<string>Pass Thru</string>
