@@ -181,6 +181,7 @@
     [self setFlipCameraButton:nil];
     [self setDescriptionView:nil];
     [self setDescriptionContainer:nil];
+    [self setArView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

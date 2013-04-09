@@ -16,6 +16,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <glkView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" enableSetNeedsDisplay="NO" id="DjF-MQ-6lU">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </glkView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="dX3-k0-41q">
                                 <rect key="frame" x="113" y="434" width="95" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
@@ -94,6 +98,7 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="arView" destination="DjF-MQ-6lU" id="GGj-Lc-5Ig"/>
                         <outlet property="descriptionContainer" destination="fnl-NY-TTY" id="z6k-Kb-5eT"/>
                         <outlet property="descriptionView" destination="TVS-vQ-ZgI" id="EpH-vs-i3P"/>
                         <outlet property="flipCameraButton" destination="lKb-tT-4x6" id="CMq-0W-Cdx"/>
@@ -193,6 +198,8 @@
                 <relationship kind="action" name="flipAction:"/>
                 <relationship kind="action" name="swipeDownAction:"/>
                 <relationship kind="action" name="swipeUpAction:"/>
+                <relationship kind="action" name="togglePopover:"/>
+                <relationship kind="outlet" name="arView" candidateClass="GLKView"/>
                 <relationship kind="outlet" name="descriptionContainer" candidateClass="UIView"/>
                 <relationship kind="outlet" name="descriptionView" candidateClass="UIWebView"/>
                 <relationship kind="outlet" name="flipCameraButton" candidateClass="UIButton"/>

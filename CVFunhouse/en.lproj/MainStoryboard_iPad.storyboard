@@ -16,6 +16,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <glkView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" enableSetNeedsDisplay="NO" id="gab-yj-w4B">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </glkView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3Kb-lW-bhg">
                                 <rect key="frame" x="714.5" y="23.5" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -93,6 +97,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="arView" destination="gab-yj-w4B" id="fQZ-z0-ZmB"/>
                         <outlet property="descriptionContainer" destination="PAM-VT-1N3" id="sMS-oX-Tbi"/>
                         <outlet property="descriptionView" destination="hPX-KJ-ZGW" id="Eev-Nz-X35"/>
                         <outlet property="flipCameraButton" destination="7u2-8o-3p8" id="FQA-hU-wEE"/>
@@ -190,6 +195,8 @@
                 <relationship kind="action" name="flipAction:"/>
                 <relationship kind="action" name="swipeDownAction:"/>
                 <relationship kind="action" name="swipeUpAction:"/>
+                <relationship kind="action" name="togglePopover:"/>
+                <relationship kind="outlet" name="arView" candidateClass="GLKView"/>
                 <relationship kind="outlet" name="descriptionContainer" candidateClass="UIView"/>
                 <relationship kind="outlet" name="descriptionView" candidateClass="UIWebView"/>
                 <relationship kind="outlet" name="flipCameraButton" candidateClass="UIButton"/>

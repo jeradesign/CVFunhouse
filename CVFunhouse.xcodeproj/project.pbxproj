@@ -23,6 +23,7 @@
 		423FA83B15DB264B001D30AC /* iButton30.png in Resources */ = {isa = PBXBuildFile; fileRef = 423FA83915DB264B001D30AC /* iButton30.png */; };
 		423FA83C15DB264B001D30AC /* iButton30@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 423FA83A15DB264B001D30AC /* iButton30@2x.png */; };
 		4249F7AB16697A0900271FD5 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4249F7AA16697A0900271FD5 /* libc++.dylib */; };
+		4250A8E91714C82200B880C3 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4250A8E81714C82200B880C3 /* GLKit.framework */; };
 		4253708C1508383800BFE3C0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4253708B1508383800BFE3C0 /* AVFoundation.framework */; };
 		425370901508384900BFE3C0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4253708E1508384900BFE3C0 /* CoreMedia.framework */; };
 		425370911508384900BFE3C0 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4253708F1508384900BFE3C0 /* CoreVideo.framework */; };
@@ -75,6 +76,7 @@
 		423FA83915DB264B001D30AC /* iButton30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iButton30.png; sourceTree = "<group>"; };
 		423FA83A15DB264B001D30AC /* iButton30@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iButton30@2x.png"; sourceTree = "<group>"; };
 		4249F7AA16697A0900271FD5 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		4250A8E81714C82200B880C3 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		4253708B1508383800BFE3C0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		4253708E1508384900BFE3C0 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		4253708F1508384900BFE3C0 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
@@ -126,15 +128,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4249F7AB16697A0900271FD5 /* libc++.dylib in Frameworks */,
-				42171D1215BA6C19008BEA68 /* opencv2.framework in Frameworks */,
-				4275AFCC15095A2C00D74063 /* libz.dylib in Frameworks */,
 				42AA08581508314600B379F4 /* UIKit.framework in Frameworks */,
 				42AA085A1508314600B379F4 /* Foundation.framework in Frameworks */,
 				42AA085C1508314600B379F4 /* CoreGraphics.framework in Frameworks */,
 				4253708C1508383800BFE3C0 /* AVFoundation.framework in Frameworks */,
 				425370901508384900BFE3C0 /* CoreMedia.framework in Frameworks */,
 				425370911508384900BFE3C0 /* CoreVideo.framework in Frameworks */,
+				4250A8E91714C82200B880C3 /* GLKit.framework in Frameworks */,
+				42171D1215BA6C19008BEA68 /* opencv2.framework in Frameworks */,
+				4249F7AB16697A0900271FD5 /* libc++.dylib in Frameworks */,
+				4275AFCC15095A2C00D74063 /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +224,7 @@
 				4253708B1508383800BFE3C0 /* AVFoundation.framework */,
 				4253708E1508384900BFE3C0 /* CoreMedia.framework */,
 				4253708F1508384900BFE3C0 /* CoreVideo.framework */,
+				4250A8E81714C82200B880C3 /* GLKit.framework */,
 				42171D1115BA6C19008BEA68 /* opencv2.framework */,
 				4275AFCB15095A2C00D74063 /* libz.dylib */,
 				4249F7AA16697A0900271FD5 /* libc++.dylib */,
