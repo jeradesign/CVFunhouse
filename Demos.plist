@@ -31,6 +31,10 @@
 		<string>CVFHough</string>
 	</array>
 	<array>
+		<string>Augmented Reality</string>
+		<string>CVFAugmentedReality2</string>
+	</array>
+	<array>
 		<string>Pass Thru</string>
 		<string>CVFPassThru</string>
 	</array>

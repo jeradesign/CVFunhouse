@@ -53,6 +53,7 @@
 		42B3377615BA949400CBD888 /* CVFunhouse114.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B3377515BA949400CBD888 /* CVFunhouse114.png */; };
 		42B3377915BA94A000CBD888 /* CVFunhouse57.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B3377815BA94A000CBD888 /* CVFunhouse57.png */; };
 		42B3377C15BB2F5200CBD888 /* CVFCannyDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B3377B15BB2F5200CBD888 /* CVFCannyDemo.m */; };
+		42B719F51717C47800A1AAC0 /* CVFAugmentedReality2.mm in Sources */ = {isa = PBXBuildFile; fileRef = 42B719F41717C47800A1AAC0 /* CVFAugmentedReality2.mm */; };
 		42E60DB416BB52E500F9712B /* Demos.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42E60DB316BB52E500F9712B /* Demos.plist */; };
 		CD7E937715BB5354004D709A /* CVFSephiaDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7E937615BB5354004D709A /* CVFSephiaDemo.m */; };
 /* End PBXBuildFile section */
@@ -121,6 +122,8 @@
 		42B3377815BA94A000CBD888 /* CVFunhouse57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CVFunhouse57.png; sourceTree = "<group>"; };
 		42B3377A15BB2F5200CBD888 /* CVFCannyDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CVFCannyDemo.h; path = CVFunhouse/CVFCannyDemo.h; sourceTree = "<group>"; };
 		42B3377B15BB2F5200CBD888 /* CVFCannyDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CVFCannyDemo.m; path = CVFunhouse/CVFCannyDemo.m; sourceTree = "<group>"; };
+		42B719F31717C47800A1AAC0 /* CVFAugmentedReality2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVFAugmentedReality2.h; sourceTree = "<group>"; };
+		42B719F41717C47800A1AAC0 /* CVFAugmentedReality2.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CVFAugmentedReality2.mm; sourceTree = "<group>"; };
 		42E60DB316BB52E500F9712B /* Demos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Demos.plist; sourceTree = "<group>"; };
 		CD7E937515BB5354004D709A /* CVFSephiaDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CVFSephiaDemo.h; path = CVFunhouse/CVFSephiaDemo.h; sourceTree = "<group>"; };
 		CD7E937615BB5354004D709A /* CVFSephiaDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CVFSephiaDemo.m; path = CVFunhouse/CVFSephiaDemo.m; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 				4209534615C0BEB200C37CD8 /* CVFMotionTemplates.m */,
 				4262EDEC17AB70BC00DED325 /* CVFHough.h */,
 				4262EDED17AB70BC00DED325 /* CVFHough.mm */,
+				42B719F31717C47800A1AAC0 /* CVFAugmentedReality2.h */,
+				42B719F41717C47800A1AAC0 /* CVFAugmentedReality2.mm */,
 			);
 			name = Demos;
 			sourceTree = "<group>";
@@ -367,6 +372,7 @@
 				4209534315C0AC0600C37CD8 /* CVFLucasKanade.mm in Sources */,
 				4209534715C0BEB200C37CD8 /* CVFMotionTemplates.m in Sources */,
 				4262EDEE17AB70BC00DED325 /* CVFHough.mm in Sources */,
+				42B719F51717C47800A1AAC0 /* CVFAugmentedReality2.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
