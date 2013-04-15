@@ -10,40 +10,39 @@
 
 @implementation CVFAugmentedReality2
 
-/*
- *  processIplImage
- *
- *  Inputs:
- *      iplImage: an IplImage in BGRA format, 8 bits per pixel.
- *          YOU ARE RESPONSIBLE FOR CALLING cvReleaseImage on this image.
- *
- *  Outputs:
- *      When you are done, call imageReady: with an RGB, RGBA, or grayscale
- *      IplImage with 8-bits per pixel.
- *
- *      You can call imageReady: from any thread and it will do the right thing.
- *      You can fork as many threads to process the image as you like; just call
- *      imageReady when you are done.
- *
- *      imageReady: will dispose of the IplImage you pass it once the system is
- *      done with it.
- */
 -(void)processIplImage:(IplImage*)iplImage
 {
-    // We get an BGRA image at 8-bits per pixel, but we need an RGB image
-    // to pass to imageReady:, so we need to do a brief conversion.
-    
-    // To do the conversion, first create an IplImage the same size...
-    IplImage *rgbImage = cvCreateImage(cvGetSize(iplImage), IPL_DEPTH_8U, 3);
-    
-    // Call cvCvtColor to do the conversion
-    cvCvtColor(iplImage, rgbImage, CV_BGR2RGB);
-    
-    // Release the original image or you will run out of memory very fast!
+    // Create a gray cv::Mat
+    cv::Mat mat(iplImage);
+    cv::Mat grayImage;
+    cv::cvtColor(mat, grayImage, CV_BGR2GRAY);
     cvReleaseImage(&iplImage);
+
+    // look for a big square
+    cv::Mat outlines;
+    cv::threshold(grayImage, outlines, 128, 255, cv::THRESH_BINARY);
     
+    std::vector<std::vector<cv::Point> > contours;
+    std::vector<cv::Vec4i> hierarchy;
+    cv::findContours(outlines, contours, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE);
+    
+    std::vector<std::vector<cv::Point> > contours_poly;
+    for( size_t i = 0; i < contours.size(); i++ ) {
+        std::vector<cv::Point> contour_poly;
+        approxPolyDP( contours[i], contour_poly, 3, true );
+        if (contour_poly.size() == 4) {
+            contours_poly.push_back(contour_poly);
+        }
+    }
+    
+    NSLog(@"#contours = %ld", contours_poly.size());
+    cv::drawContours(grayImage, contours_poly, -1, cv::Scalar(128, 128, 128), 2, 8);
+
+    // Process output
+    IplImage grayIplImage = grayImage;
+    IplImage *outImage = cvCloneImage(&grayIplImage);
     // Call imageReady with your new image.
-    [self imageReady:rgbImage];
+    [self imageReady:outImage];
 }
 
 @end
