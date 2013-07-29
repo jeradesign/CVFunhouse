@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -12,7 +12,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" id="Mkk-co-6Pr">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="Mkk-co-6Pr">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -198,7 +198,6 @@
                 <relationship kind="action" name="flipAction:"/>
                 <relationship kind="action" name="swipeDownAction:"/>
                 <relationship kind="action" name="swipeUpAction:"/>
-                <relationship kind="action" name="togglePopover:"/>
                 <relationship kind="outlet" name="arView" candidateClass="GLKView"/>
                 <relationship kind="outlet" name="descriptionContainer" candidateClass="UIView"/>
                 <relationship kind="outlet" name="descriptionView" candidateClass="UIWebView"/>

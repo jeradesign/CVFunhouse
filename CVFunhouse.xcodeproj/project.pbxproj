@@ -53,6 +53,8 @@
 		42B3377915BA94A000CBD888 /* CVFunhouse57.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B3377815BA94A000CBD888 /* CVFunhouse57.png */; };
 		42B3377C15BB2F5200CBD888 /* CVFCannyDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B3377B15BB2F5200CBD888 /* CVFCannyDemo.m */; };
 		42E60DB416BB52E500F9712B /* Demos.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42E60DB316BB52E500F9712B /* Demos.plist */; };
+		42EDA7D617A640A7007486EC /* CVFFreak.mm in Sources */ = {isa = PBXBuildFile; fileRef = 42EDA7D517A640A7007486EC /* CVFFreak.mm */; };
+		42EDA7D817A64523007486EC /* lena.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 42EDA7D717A64523007486EC /* lena.jpg */; };
 		CD7E937715BB5354004D709A /* CVFSephiaDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7E937615BB5354004D709A /* CVFSephiaDemo.m */; };
 /* End PBXBuildFile section */
 
@@ -119,6 +121,9 @@
 		42B3377A15BB2F5200CBD888 /* CVFCannyDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CVFCannyDemo.h; path = CVFunhouse/CVFCannyDemo.h; sourceTree = "<group>"; };
 		42B3377B15BB2F5200CBD888 /* CVFCannyDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CVFCannyDemo.m; path = CVFunhouse/CVFCannyDemo.m; sourceTree = "<group>"; };
 		42E60DB316BB52E500F9712B /* Demos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Demos.plist; sourceTree = "<group>"; };
+		42EDA7D417A640A7007486EC /* CVFFreak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVFFreak.h; sourceTree = "<group>"; };
+		42EDA7D517A640A7007486EC /* CVFFreak.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CVFFreak.mm; sourceTree = "<group>"; };
+		42EDA7D717A64523007486EC /* lena.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lena.jpg; sourceTree = "<group>"; };
 		CD7E937515BB5354004D709A /* CVFSephiaDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CVFSephiaDemo.h; path = CVFunhouse/CVFSephiaDemo.h; sourceTree = "<group>"; };
 		CD7E937615BB5354004D709A /* CVFSephiaDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CVFSephiaDemo.m; path = CVFunhouse/CVFSephiaDemo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,6 +168,8 @@
 				4209534215C0AC0600C37CD8 /* CVFLucasKanade.mm */,
 				4209534515C0BE8A00C37CD8 /* CVFMotionTemplates.h */,
 				4209534615C0BEB200C37CD8 /* CVFMotionTemplates.m */,
+				42EDA7D417A640A7007486EC /* CVFFreak.h */,
+				42EDA7D517A640A7007486EC /* CVFFreak.mm */,
 			);
 			name = Demos;
 			sourceTree = "<group>";
@@ -170,6 +177,7 @@
 		4285252915BF6CDF00622EE8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				42EDA7D717A64523007486EC /* lena.jpg */,
 				421897E516BC879900AC716C /* CloseButton.png */,
 				428D978216A275450073329A /* CVFFaceDetect.html */,
 				428D978316A275450073329A /* CVFCannyDemo.html */,
@@ -265,9 +273,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		42AA08521508314600B379F4 /* CVFunhouse */ = {
+		42AA08521508314600B379F4 /* CVFunhouse-FREAK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 42AA08771508314600B379F4 /* Build configuration list for PBXNativeTarget "CVFunhouse" */;
+			buildConfigurationList = 42AA08771508314600B379F4 /* Build configuration list for PBXNativeTarget "CVFunhouse-FREAK" */;
 			buildPhases = (
 				42AA084F1508314600B379F4 /* Sources */,
 				42AA08501508314600B379F4 /* Frameworks */,
@@ -277,7 +285,7 @@
 			);
 			dependencies = (
 			);
-			name = CVFunhouse;
+			name = "CVFunhouse-FREAK";
 			productName = CVFunhouse;
 			productReference = 42AA08531508314600B379F4 /* CVFunhouse.app */;
 			productType = "com.apple.product-type.application";
@@ -304,7 +312,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				42AA08521508314600B379F4 /* CVFunhouse */,
+				42AA08521508314600B379F4 /* CVFunhouse-FREAK */,
 			);
 		};
 /* End PBXProject section */
@@ -338,6 +346,7 @@
 				420A4FB116C4B45200256C66 /* CVFLucasKanade.html in Resources */,
 				420A4FB216C4B45200256C66 /* CVFMotionTemplates.html in Resources */,
 				420A4FB316C4B45200256C66 /* CVFPassThru.html in Resources */,
+				42EDA7D817A64523007486EC /* lena.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +370,7 @@
 				4285253515BF83FF00622EE8 /* CVFLaplace.mm in Sources */,
 				4209534315C0AC0600C37CD8 /* CVFLucasKanade.mm in Sources */,
 				4209534715C0BEB200C37CD8 /* CVFMotionTemplates.m in Sources */,
+				42EDA7D617A640A7007486EC /* CVFFreak.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,7 +525,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		42AA08771508314600B379F4 /* Build configuration list for PBXNativeTarget "CVFunhouse" */ = {
+		42AA08771508314600B379F4 /* Build configuration list for PBXNativeTarget "CVFunhouse-FREAK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				42AA08781508314600B379F4 /* Debug */,
