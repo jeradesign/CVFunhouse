@@ -23,7 +23,7 @@ cv::Mat targetDescriptors;
     
     cv::FREAK extractor;
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"lena" ofType:@"jpg"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"IMG_2721" ofType:@"jpg"];
     const char * cpath = [path cStringUsingEncoding:NSUTF8StringEncoding];
     targetImage = cv::imread(cpath, CV_LOAD_IMAGE_GRAYSCALE);
     
@@ -60,16 +60,36 @@ cv::Mat targetDescriptors;
     std::vector<cv::DMatch> matches;
     
     detector.detect(image2, searchKeyPoints);
+    if (searchKeyPoints.size() == 0) {
+        [self imageReady:grayImage];
+        return;
+    }
+    
     extractor.compute(image2, searchKeyPoints, searchDescriptors);
     
-    matcher.match(targetDescriptors, searchDescriptors, matches);
+//    NSLog(@"targetDescriptors.type = %d", targetDescriptors.type());
+//    NSLog(@"searchDescriptors.type = %d", searchDescriptors.type());
+//    NSLog(@"targetDescriptors.cols = %d", targetDescriptors.cols);
+//    NSLog(@"searchDescriptors.cols = %d", searchDescriptors.cols);
+    if (searchDescriptors.cols == 0) {
+        [self imageReady:grayImage];
+        return;
+    }
 
-    int nofmatches = 30;
-    nth_element(matches.begin(),matches.begin()+nofmatches,matches.end());
-    matches.erase(matches.begin()+nofmatches+1,matches.end());
+    matcher.match(targetDescriptors, searchDescriptors, matches);
+    if (matches.size() > 30) {
+        int nofmatches = 30;
+        nth_element(matches.begin(),matches.begin()+nofmatches,matches.end());
+        matches.erase(matches.begin()+nofmatches+1,matches.end());
+    }
+    
+    if (matches.size() == 0) {
+        [self imageReady:grayImage];
+        return;
+    }
 
     cv::Mat imgMatch;
-    drawMatches(targetImage, targetKeyPoints, image2, searchKeyPoints, matches, imgMatch,
+    cv::drawMatches(targetImage, targetKeyPoints, image2, searchKeyPoints, matches, imgMatch,
                 cv::Scalar::all(-1), cv::Scalar::all(-1), std::vector<char>(),
                 cv::DrawMatchesFlags::DRAW_RICH_KEYPOINTS | cv::DrawMatchesFlags::NOT_DRAW_SINGLE_POINTS);
 
