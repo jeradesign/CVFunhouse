@@ -19,7 +19,11 @@
 @property (nonatomic, readonly) NSString *demoDescription;
 
 -(void)processImageBuffer:(CVImageBufferRef)imageBuffer withMirroring:(BOOL)shouldMirror;
--(void)imageReady:(IplImage*)image;
 -(void)processIplImage:(IplImage*)iplImage;
+-(void)imageReady:(IplImage*)image;
+#ifdef __cplusplus
+-(void)processMat:(cv::Mat)mat;
+-(void)matReady:(cv::Mat)mat;
+#endif
 
 @end
