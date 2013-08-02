@@ -27,6 +27,10 @@
 		<string>CVFMotionTemplates</string>
 	</array>
 	<array>
+		<string>Hough Transform</string>
+		<string>CVFHough</string>
+	</array>
+	<array>
 		<string>Pass Thru</string>
 		<string>CVFPassThru</string>
 	</array>
