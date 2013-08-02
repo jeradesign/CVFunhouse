@@ -82,6 +82,12 @@
     cvCvtColor(iplImage, rgbImage, CV_BGR2RGB);
     cvReleaseImage(&iplImage);
 
+    CvFont font = cvFont(1.0);
+    cvPutText(rgbImage,
+              "override processMat or processIplImage",
+              cvPoint(20, 100),
+              &font,
+              cvScalar(255));
     [self imageReady:rgbImage];
 }
 
