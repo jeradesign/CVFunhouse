@@ -27,7 +27,7 @@ double scale = 1;
 
 @implementation CVFFaceDetect
 
--(void)processNatMat:(cv::Mat)mat
+-(void)processMat:(cv::Mat)mat
 {
     if (!_inited) {
         NSString* haarDataPath =
