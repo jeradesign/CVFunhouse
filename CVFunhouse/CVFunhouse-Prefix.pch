@@ -11,6 +11,7 @@
 #ifdef __cplusplus
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wall"
+#pragma clang diagnostic ignored "-Wnested-anon-types"
 #import "opencv2/opencv.hpp"
 #pragma clang diagnostic pop
 #endif
