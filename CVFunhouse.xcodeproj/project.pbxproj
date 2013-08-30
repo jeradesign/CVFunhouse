@@ -107,7 +107,7 @@
 		4285253415BF83FF00622EE8 /* CVFLaplace.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CVFLaplace.mm; path = CVFunhouse/CVFLaplace.mm; sourceTree = "<group>"; };
 		428D978216A275450073329A /* CVFFaceDetect.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = CVFFaceDetect.html; sourceTree = "<group>"; };
 		428D978316A275450073329A /* CVFCannyDemo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = CVFCannyDemo.html; sourceTree = "<group>"; };
-		42AA08531508314600B379F4 /* CVFunhouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CVFunhouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42AA08531508314600B379F4 /* CVFunhouse-AR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CVFunhouse-AR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42AA08571508314600B379F4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		42AA08591508314600B379F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		42AA085B1508314600B379F4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -249,7 +249,7 @@
 		42AA08541508314600B379F4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				42AA08531508314600B379F4 /* CVFunhouse.app */,
+				42AA08531508314600B379F4 /* CVFunhouse-AR.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -336,9 +336,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		42AA08521508314600B379F4 /* CVFunhouse */ = {
+		42AA08521508314600B379F4 /* CVFunhouse-AR */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 42AA08771508314600B379F4 /* Build configuration list for PBXNativeTarget "CVFunhouse" */;
+			buildConfigurationList = 42AA08771508314600B379F4 /* Build configuration list for PBXNativeTarget "CVFunhouse-AR" */;
 			buildPhases = (
 				42AA084F1508314600B379F4 /* Sources */,
 				42AA08501508314600B379F4 /* Frameworks */,
@@ -348,9 +348,9 @@
 			);
 			dependencies = (
 			);
-			name = CVFunhouse;
+			name = "CVFunhouse-AR";
 			productName = CVFunhouse;
-			productReference = 42AA08531508314600B379F4 /* CVFunhouse.app */;
+			productReference = 42AA08531508314600B379F4 /* CVFunhouse-AR.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -375,7 +375,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				42AA08521508314600B379F4 /* CVFunhouse */,
+				42AA08521508314600B379F4 /* CVFunhouse-AR */,
 			);
 		};
 /* End PBXProject section */
@@ -575,7 +575,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		42AA08771508314600B379F4 /* Build configuration list for PBXNativeTarget "CVFunhouse" */ = {
+		42AA08771508314600B379F4 /* Build configuration list for PBXNativeTarget "CVFunhouse-AR" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				42AA08781508314600B379F4 /* Debug */,
