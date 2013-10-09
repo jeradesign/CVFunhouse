@@ -7,9 +7,9 @@
 		<dict>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
-			<key>Title</key>
+			<key>FooterText</key>
 			<string>CVFunhouse
-Copyright (c) 2012, Jera Design LLC
+Copyright (c) 2012, 2013, Jera Design LLC
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -29,7 +29,7 @@ NOTE: CVFunhouse includes a copy of the OpenCV library in built as an iOS framew
 		<dict>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
-			<key>Title</key>
+			<key>FooterText</key>
 			<string>OpenCV
 IMPORTANT: READ BEFORE DOWNLOADING, COPYING, INSTALLING OR USING. 
 
@@ -74,7 +74,7 @@ the use of this software, even if advised of the possibility of such damage.
 		<dict>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
-			<key>Title</key>
+			<key>FooterText</key>
 			<string>Icon: Switch Camera Front/Rear by Simon Strandgaard
 http://www.flickr.com/photos/12739382@N04/5463151636/</string>
 		</dict>
