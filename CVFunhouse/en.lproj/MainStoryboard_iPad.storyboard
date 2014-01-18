@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <deployment defaultVersion="1280" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -21,7 +22,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </glkView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3Kb-lW-bhg">
-                                <rect key="frame" x="714.5" y="23.5" width="30" height="30"/>
+                                <rect key="frame" x="715" y="24" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="39"/>
                                 <state key="normal" image="iButton30.png">
@@ -36,7 +37,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7u2-8o-3p8">
-                                <rect key="frame" x="16.5" y="16.5" width="44" height="44"/>
+                                <rect key="frame" x="17" y="17" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="24"/>
                                 <state key="normal" image="SwitchCameraIcon44.png">
@@ -71,7 +72,7 @@
                                         </connections>
                                     </webView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ltt-cb-8eG">
-                                        <rect key="frame" x="690" y="15.5" width="25" height="25"/>
+                                        <rect key="frame" x="690" y="16" width="25" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Close" image="CloseButton.png">
@@ -94,6 +95,7 @@
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="haR-n2-fTo" appends="YES" id="JIT-T7-Idk"/>
                             <outletCollection property="gestureRecognizers" destination="McB-zn-nke" appends="YES" id="rlp-Ok-prX"/>
+                            <outletCollection property="gestureRecognizers" destination="h80-En-EWc" appends="YES" id="zFH-em-qyO"/>
                         </connections>
                     </view>
                     <connections>
@@ -119,6 +121,11 @@
                         <action selector="swipeDownAction:" destination="2" id="8Ep-rf-EPX"/>
                     </connections>
                 </swipeGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="h80-En-EWc">
+                    <connections>
+                        <action selector="takeSnapshot:" destination="2" id="6uT-4L-UYi"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-286" y="15"/>
         </scene>
@@ -130,7 +137,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="sA0-X1-b9n">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="sA0-X1-b9n">
                                 <rect key="frame" x="0.0" y="44" width="320" height="808"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -179,34 +186,8 @@
         <image name="SwitchCameraIcon44.png" width="44" height="25"/>
         <image name="iButton30.png" width="30" height="30"/>
     </resources>
-    <classes>
-        <class className="CVFFlipsideViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CVFFlipsideViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="outlet" name="menuTable" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="navBar" candidateClass="UINavigationBar"/>
-            </relationships>
-        </class>
-        <class className="CVFMainViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CVFMainViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="closeDescription:"/>
-                <relationship kind="action" name="flipAction:"/>
-                <relationship kind="action" name="swipeDownAction:"/>
-                <relationship kind="action" name="swipeUpAction:"/>
-                <relationship kind="action" name="togglePopover:"/>
-                <relationship kind="outlet" name="arView" candidateClass="GLKView"/>
-                <relationship kind="outlet" name="descriptionContainer" candidateClass="UIView"/>
-                <relationship kind="outlet" name="descriptionView" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="flipCameraButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="fpsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <nil key="statusBar"/>
+        <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>

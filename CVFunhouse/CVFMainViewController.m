@@ -8,6 +8,7 @@
 
 #import "CVFMainViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 #import "CVFFlipsideViewController.h"
 
 #import "CVFCannyDemo.h"
@@ -20,15 +21,6 @@
 #import "CVFSephiaDemo.h"
 #import "CVFPassThru.h"
 
-@interface CVFMainViewController ()
-
-- (void)setupCamera;
-- (void)turnCameraOn;
-- (void)turnCameraOff;
-- (void)resetImageProcessor;
-
-@end
-
 @implementation CVFMainViewController {
     AVCaptureDevice *_cameraDevice;
     AVCaptureSession *_session;
@@ -39,6 +31,8 @@
     CGPoint _descriptionOnScreenCenter;
     bool _useBackCamera;
     NSArray *_demoList;
+    UIImage *_snapshotImage; // In case we need to hang onto it for ARC
+    ALAssetsLibrary *_library;
 }
 
 @synthesize fpsLabel = _fpsLabel;
@@ -74,6 +68,8 @@
                                              selector:@selector(showHideDescription)
                                                  name:@"showDescription"
                                                object:nil];
+    
+    _library = [[ALAssetsLibrary alloc] init];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -290,6 +286,30 @@
     [[NSUserDefaults standardUserDefaults] setBool:false forKey:@"showDescription"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"showDescription" object:nil];
+}
+
+- (IBAction)takeSnapshot:(UILongPressGestureRecognizer *)sender {
+    if (sender.state == UIGestureRecognizerStateBegan) {
+        _snapshotImage = self.imageView.image;
+        NSLog(@"_snapshotImage = %@", _snapshotImage);
+        NSLog(@"CGImage = %@", _snapshotImage.CGImage);
+        [_library writeImageToSavedPhotosAlbum:_snapshotImage.CGImage orientation:ALAssetOrientationUp completionBlock:^(NSURL *assetURL, NSError *error) {
+            NSLog(@"assetURL = %@, error = %@", assetURL, error);
+            _snapshotImage = nil;
+        }];
+        //    UIImageWriteToSavedPhotosAlbum(_snapshotImage,
+        //                                   self,
+        //                                   @selector(image:didFinishSavingWithError:contextInfo:),
+        //                                   nil);
+    }
+}
+
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+{
+    (void)image;
+    (void)contextInfo;
+    NSLog(@"image:%@ didFinishSavingWithError:%@", image, error);
+    _snapshotImage = nil;
 }
 
 #pragma mark - CVFImageProcessorDelegate

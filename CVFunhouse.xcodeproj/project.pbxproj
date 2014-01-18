@@ -32,6 +32,7 @@
 		426B881416BC6BE30093D62F /* NoDescription.html in Resources */ = {isa = PBXBuildFile; fileRef = 426B881316BC6BE30093D62F /* NoDescription.html */; };
 		4275AFCC15095A2C00D74063 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4275AFCB15095A2C00D74063 /* libz.dylib */; };
 		427D67E015D9CB81008A25FA /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 427D67DF15D9CB81008A25FA /* Settings.bundle */; };
+		427DEE02188A413800CAD1E1 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 427DEE01188A413800CAD1E1 /* AssetsLibrary.framework */; };
 		4285252815BF698800622EE8 /* CVFFaceDetect.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4285252715BF698800622EE8 /* CVFFaceDetect.mm */; };
 		4285252F15BF750000622EE8 /* haarcascade_frontalface_alt.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4285252E15BF750000622EE8 /* haarcascade_frontalface_alt.xml */; };
 		4285253215BF792F00622EE8 /* CVFFarneback.m in Sources */ = {isa = PBXBuildFile; fileRef = 4285253115BF792F00622EE8 /* CVFFarneback.m */; };
@@ -89,6 +90,7 @@
 		426B881316BC6BE30093D62F /* NoDescription.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = NoDescription.html; sourceTree = "<group>"; };
 		4275AFCB15095A2C00D74063 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		427D67DF15D9CB81008A25FA /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		427DEE01188A413800CAD1E1 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		4285252515BF5A9300622EE8 /* TODO.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = TODO.rtf; sourceTree = "<group>"; };
 		4285252615BF696700622EE8 /* CVFFaceDetect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CVFFaceDetect.h; path = CVFunhouse/CVFFaceDetect.h; sourceTree = "<group>"; };
 		4285252715BF698800622EE8 /* CVFFaceDetect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CVFFaceDetect.mm; path = CVFunhouse/CVFFaceDetect.mm; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				427DEE02188A413800CAD1E1 /* AssetsLibrary.framework in Frameworks */,
 				42AA08581508314600B379F4 /* UIKit.framework in Frameworks */,
 				42AA085A1508314600B379F4 /* Foundation.framework in Frameworks */,
 				42AA085C1508314600B379F4 /* CoreGraphics.framework in Frameworks */,
@@ -223,6 +226,7 @@
 		42AA08561508314600B379F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				427DEE01188A413800CAD1E1 /* AssetsLibrary.framework */,
 				42AA08571508314600B379F4 /* UIKit.framework */,
 				42AA08591508314600B379F4 /* Foundation.framework */,
 				42AA085B1508314600B379F4 /* CoreGraphics.framework */,
