@@ -89,7 +89,7 @@
 }
 
 - (void)resetImageProcessor {
-    int demoNumber = [[NSUserDefaults standardUserDefaults] integerForKey:@"demoNumber"];
+    NSInteger demoNumber = [[NSUserDefaults standardUserDefaults] integerForKey:@"demoNumber"];
     if (demoNumber >= (int)_demoList.count) {
         demoNumber = _demoList.count - 1; // Force to last demo.
     }

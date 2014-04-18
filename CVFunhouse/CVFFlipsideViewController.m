@@ -17,7 +17,7 @@ static NSString *ShowDescriptionHintCellIdentifier = @"ShowDescriptionHint";
 #define kViewTag 1
 
 @interface CVFFlipsideViewController () {
-    int _demoNumber;    
+    NSInteger _demoNumber;
 }
 @end
 

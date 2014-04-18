@@ -40,8 +40,8 @@
     }
 
     // Get the pixel buffer width and height
-    int width = CVPixelBufferGetWidth(imageBuffer);
-    int height = CVPixelBufferGetHeight(imageBuffer);
+    int width = (int)CVPixelBufferGetWidth(imageBuffer);
+    int height = (int)CVPixelBufferGetHeight(imageBuffer);
     
     //  char *savedImageData = 0;
     // create IplImage
