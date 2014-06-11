@@ -294,7 +294,7 @@
         NSLog(@"_snapshotImage = %@", _snapshotImage);
         NSLog(@"CGImage = %@", _snapshotImage.CGImage);
         [_library writeImageToSavedPhotosAlbum:_snapshotImage.CGImage orientation:ALAssetOrientationUp completionBlock:^(NSURL *assetURL, NSError *error) {
-            NSLog(@"assetURL = %@, error = %@", assetURL, error);
+            NSLog(@"library = %@, _snapshotImage = %@, assetURL = %@, error = %@", _library, _snapshotImage, assetURL, error);
             _snapshotImage = nil;
         }];
         //    UIImageWriteToSavedPhotosAlbum(_snapshotImage,
