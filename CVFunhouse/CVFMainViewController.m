@@ -210,9 +210,10 @@
 {
 #pragma unused(sender)
     if ([[segue identifier] isEqualToString:@"showAlternate"]) {
-        [[segue destinationViewController] setDelegate:self];
-        if ([segue.destinationViewController respondsToSelector:@selector(setDemoList:)]) {
-            [segue.destinationViewController performSelector:@selector(setDemoList:)
+        CVFFlipsideViewController *flipside = [segue destinationViewController];
+        [flipside setDelegate:self];
+        if ([flipside respondsToSelector:@selector(setDemoList:)]) {
+            [flipside performSelector:@selector(setDemoList:)
                                                   withObject:_demoList];
         }
 
