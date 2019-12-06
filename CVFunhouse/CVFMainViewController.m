@@ -33,6 +33,7 @@
     NSArray *_demoList;
     UIImage *_snapshotImage; // In case we need to hang onto it for ARC
     ALAssetsLibrary *_library;
+    BOOL _authorized;
 }
 
 @synthesize fpsLabel = _fpsLabel;
@@ -53,7 +54,7 @@
     [self initializeDescription];
     [self resetImageProcessor];
     _useBackCamera = [[NSUserDefaults standardUserDefaults] boolForKey:@"useBackCamera"];
-    [self setupCamera];
+    [self requestCamera];
     [self turnCameraOn];
 
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -333,6 +334,28 @@
 
 #pragma mark - Camera support
 
+- (void)requestCamera {
+    AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    if (status == AVAuthorizationStatusAuthorized) {
+        _authorized = true;
+        [self setupCamera];
+        [self turnCameraOn];
+    } else if (status == AVAuthorizationStatusNotDetermined) {
+        [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
+            if (granted) {
+                self->_authorized = true;
+                [self setupCamera];
+                [self turnCameraOn];
+            } else {
+                self->_authorized = false;
+            }
+        }];
+    } else {
+        // TODO: Handle AVAuthorizationStatusRestricted and AVAuthorizationStatusDenied
+        _authorized = false;
+    }
+}
+
 - (void)setupCamera {
     _cameraDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     NSArray *devices = [AVCaptureDevice devices];
@@ -354,6 +377,9 @@
 }
 
 - (void)turnCameraOn {
+    if (!_authorized) {
+         return;
+    }
     NSError *error;
     _session = [[AVCaptureSession alloc] init];
     [_session beginConfiguration];

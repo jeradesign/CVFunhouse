@@ -213,10 +213,11 @@ static void ReleaseMatDataCallback(void *info, const void *data, size_t size)
         abort();
     }
     
+    size_t len = mat->total() * mat->elemSize();
     CGBitmapInfo bitmapInfo = kCGBitmapByteOrderDefault | kCGImageAlphaNone;
     CGDataProviderRef provider = CGDataProviderCreateWithData(mat,
                                                               mat->data,
-                                                              0,
+                                                              len,
                                                               ReleaseMatDataCallback);
     const CGFloat *decode = NULL;
     bool shouldInterpolate = true;
