@@ -167,10 +167,11 @@ static void ReleaseMatDataCallback(void *info, const void *data, size_t size)
         abort();
     }
 
+    size_t len = iplImage->imageSize;
     CGBitmapInfo bitmapInfo = kCGBitmapByteOrderDefault | kCGImageAlphaNone;
     CGDataProviderRef provider = CGDataProviderCreateWithData(iplImage,
                                                               iplImage->imageData,
-                                                              0,
+                                                              len,
                                                               ReleaseDataCallback);
     const CGFloat *decode = NULL;
     bool shouldInterpolate = true;
