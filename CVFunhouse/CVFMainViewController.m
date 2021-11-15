@@ -388,6 +388,8 @@
                                                                         error:&error];
     if (input == nil) {
         NSLog(@"%@", error);
+        [_session commitConfiguration];
+        return;
     }
     
     [_session addInput:input];
